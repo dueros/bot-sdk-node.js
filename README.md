@@ -67,4 +67,3 @@ this.addIntentHandler('#personal_income_tax.inquiry', ()=>{
 这里`addIntentHandler`可以用来建立(intent) => handler的映射，第一个参数是条件，如果满足则执行对应的回调函数(第二个参数)。
 其中，this指向当前的Bot，`getSlot`继承自父类Bot，通过slot名字来获取对应的值。回调函数返回值是一个数组，可以包含多个字段，比如：`card`，`directives`，`outputSpeech`，`reprompt`。
 
-
