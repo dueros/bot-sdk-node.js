@@ -1,0 +1,1 @@
+BUILD_SUBMITTER -x -m baidu/duer/bot-sdk-javascript -c "cd baidu/duer/bot-sdk-javascript && mkdir output &&cp BCLOUD ./output/" -u ./
