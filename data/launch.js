@@ -8,7 +8,10 @@ var data = {
     "context": {
         "System": {
             "application": {
-                "applicationId": "sample_personal_tax"
+                "applicationId": "botId"
+            },
+            "user": {
+                "userId": "userId"
             }
         }
     },
