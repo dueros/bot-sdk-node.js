@@ -8,8 +8,8 @@ Bot基类. 请继承此类
 * [Bot](#Bot)
     * [new Bot(postData)](#new_Bot_new)
     * _instance_
-        * [.addIntentHandler(intent, func)](#Bot+addIntentHandler) ⇒ <code>Object</code>
-        * [.addEventListener(event, func)](#Bot+addEventListener) ⇒ <code>Object</code>
+        * [.addIntentHandler(intent, handler)](#Bot+addIntentHandler) ⇒ [<code>Bot</code>](#Bot)
+        * [.addEventListener(event, handler)](#Bot+addEventListener) ⇒ [<code>Bot</code>](#Bot)
         * [.getIntentName()](#Bot+getIntentName) ⇒ <code>string</code> \| <code>null</code>
         * [.getSessionAttribute(field, def)](#Bot+getSessionAttribute) ⇒ <code>Mixied</code>
         * [.setSessionAttribute(field, value, def)](#Bot+setSessionAttribute) ⇒ <code>null</code>
@@ -48,17 +48,17 @@ class MyBot extends BaseBot {
 ```
 <a name="Bot+addIntentHandler"></a>
 
-### bot.addIntentHandler(intent, func) ⇒ <code>Object</code>
+### bot.addIntentHandler(intent, handler) ⇒ [<code>Bot</code>](#Bot)
 对一个intent添加处理函数
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
-**Returns**: <code>Object</code> - 返回自己  
+**Returns**: [<code>Bot</code>](#Bot) - 返回自己  
 **Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | intent | <code>string</code> | 意图名：'#intentName'， 以‘#’ 开头 |
-| func | <code>function</code> | 意图处理函数。返回值非null，将作为bot的response返回DuerOS |
+| handler | <code>function</code> | 意图处理函数。返回值非null，将作为bot的response返回DuerOS                        函数返回值参考Response.build() 的输入参数 |
 
 **Example**  
 ```javascript
@@ -68,17 +68,17 @@ this.addIntentHandler('#intentName', ()=>{
 ```
 <a name="Bot+addEventListener"></a>
 
-### bot.addEventListener(event, func) ⇒ <code>Object</code>
+### bot.addEventListener(event, handler) ⇒ [<code>Bot</code>](#Bot)
 对一个事件添加处理函数。比如设备端反馈的音频播放开始事件
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
-**Returns**: <code>Object</code> - 返回自己  
+**Returns**: [<code>Bot</code>](#Bot) - 返回自己  
 **Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>string</code> | 事件名 |
-| func | <code>function</code> | 事件处理函数。返回值非null，将作为bot的response返回DuerOS |
+| handler | <code>function</code> | 事件处理函数。返回值非null，将作为bot的response返回DuerOS                        函数返回值参考Response.build() 的输入参数 |
 
 **Example**  
 ```javascript
@@ -105,7 +105,7 @@ this.addEventListener('Audio', (event)=>{
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | field | <code>string</code> | <code>null</code> | 字段名 |
-| def | <code>Mixed</code> | <code></code> | 默认值 |
+| def | <code>Mixed</code> | <code></code> | 默认值  当此字段没有值时，返回def |
 
 <a name="Bot+setSessionAttribute"></a>
 
@@ -119,7 +119,7 @@ this.addEventListener('Audio', (event)=>{
 | --- | --- | --- | --- |
 | field | <code>string</code> |  | 字段名 |
 | value | <code>Mixed</code> |  | 字段对应的值 |
-| def | <code>Mixed</code> | <code></code> | 默认值 |
+| def | <code>Mixed</code> | <code></code> | 默认值  当value为空时，使用def |
 
 <a name="Bot+clearSessionAttribute"></a>
 

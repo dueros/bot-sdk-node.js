@@ -27,7 +27,7 @@
     * [new Session(data)](#new_Session_new)
     * [.clear()](#Session+clear)
     * [.toResponse()](#Session+toResponse) ⇒ <code>Object</code>
-    * [.getData(field, def)](#Session+getData) ⇒ <code>string</code>
+    * [.getData(field, def)](#Session+getData) ⇒ <code>string</code> \| <code>Object</code>
     * [.setData(field, value, def)](#Session+setData) ⇒ <code>null</code>
 
 <a name="new_Session_new"></a>
@@ -36,12 +36,12 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| data | <code>array</code> | 请求bot的session数据 |
+| data | <code>Object</code> | 请求bot的session数据 |
 
 <a name="Session+clear"></a>
 
 ### session.clear()
-清空session的所有attributed
+清空session的所有attributes
 
 **Kind**: instance method of [<code>Session</code>](#Session)  
 **Access**: public  
@@ -53,7 +53,7 @@
 **Kind**: instance method of [<code>Session</code>](#Session)  
 <a name="Session+getData"></a>
 
-### session.getData(field, def) ⇒ <code>string</code>
+### session.getData(field, def) ⇒ <code>string</code> \| <code>Object</code>
 从session中获取一个属性的值
 
 **Kind**: instance method of [<code>Session</code>](#Session)  

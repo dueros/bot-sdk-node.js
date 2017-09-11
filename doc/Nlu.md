@@ -7,7 +7,7 @@
 **Kind**: global class  
 
 * [Nlu](#Nlu)
-    * [new Nlu(data)](#new_Nlu_new)
+    * [new Nlu(intents)](#new_Nlu_new)
     * [._directive](#Nlu+_directive)
     * [.setSlot(field, value, index)](#Nlu+setSlot)
     * [.getSlot(field, index)](#Nlu+getSlot) ⇒ <code>null</code> \| <code>string</code>
@@ -22,13 +22,13 @@
 
 <a name="new_Nlu_new"></a>
 
-### new Nlu(data)
+### new Nlu(intents)
 构造函数
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| data | <code>Object</code> | IntentRequest 中的intents |
+| intents | <code>array</code> | IntentRequest 中的intents |
 
 <a name="Nlu+_directive"></a>
 
