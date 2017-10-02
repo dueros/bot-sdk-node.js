@@ -8,16 +8,18 @@ Bot基类. 请继承此类
 * [Bot](#Bot)
     * [new Bot(postData)](#new_Bot_new)
     * _instance_
+        * [.addLaunchHandler(handler)](#Bot+addLaunchHandler) ⇒ [<code>Bot</code>](#Bot)
+        * [.addSessionEndedHandler(handler)](#Bot+addSessionEndedHandler) ⇒ [<code>Bot</code>](#Bot)
         * [.addIntentHandler(intent, handler)](#Bot+addIntentHandler) ⇒ [<code>Bot</code>](#Bot)
         * [.addEventListener(event, handler)](#Bot+addEventListener) ⇒ [<code>Bot</code>](#Bot)
         * [.getIntentName()](#Bot+getIntentName) ⇒ <code>string</code> \| <code>null</code>
-        * [.getSessionAttribute(field, def)](#Bot+getSessionAttribute) ⇒ <code>Mixied</code>
-        * [.setSessionAttribute(field, value, def)](#Bot+setSessionAttribute) ⇒ <code>null</code>
+        * [.getSessionAttribute(field, defaultValue)](#Bot+getSessionAttribute) ⇒ <code>Mixied</code>
+        * [.setSessionAttribute(field, value, defaultValue)](#Bot+setSessionAttribute) ⇒ <code>null</code>
         * [.clearSessionAttribute()](#Bot+clearSessionAttribute) ⇒ <code>null</code>
-        * [.getSlot(field)](#Bot+getSlot) ⇒ <code>string</code>
-        * [.setSlot(field, value)](#Bot+setSlot) ⇒ <code>null</code>
+        * [.getSlot(field, index)](#Bot+getSlot) ⇒ <code>string</code>
+        * [.setSlot(field, value, index)](#Bot+setSlot) ⇒ <code>null</code>
         * [.waitAnswer()](#Bot+waitAnswer) ⇒ <code>null</code>
-        * [.endDialog()](#Bot+endDialog)
+        * [.endSession()](#Bot+endSession)
         * [.run(build)](#Bot+run) ⇒ <code>string</code>
     * _static_
         * [.Card](#Bot.Card) : <code>object</code>
@@ -46,6 +48,45 @@ class MyBot extends BaseBot {
     }
 }
 ```
+<a name="Bot+addLaunchHandler"></a>
+
+### bot.addLaunchHandler(handler) ⇒ [<code>Bot</code>](#Bot)
+对SessionEnded添加处理函数
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+**Returns**: [<code>Bot</code>](#Bot) - 返回自己  
+**Access**: public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| handler | <code>function</code> | 意图处理函数。返回值非null，将作为bot的response返回DuerOS                        函数返回值参考Response.build() 的输入参数 |
+
+**Example**  
+```javascript
+this.addLaunchHandler(()=>{
+     // 进入bot，提示用户如何操作
+});
+```
+<a name="Bot+addSessionEndedHandler"></a>
+
+### bot.addSessionEndedHandler(handler) ⇒ [<code>Bot</code>](#Bot)
+对SessionEnded添加处理函数
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+**Returns**: [<code>Bot</code>](#Bot) - 返回自己  
+**Access**: public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| handler | <code>function</code> | 意图处理函数。返回值非null，将作为bot的response返回DuerOS                        函数返回值参考Response.build() 的输入参数 |
+
+**Example**  
+```javascript
+this.addSessionEndedHandler(()=>{
+    // todo some clear job
+    // this.clearSession()
+});
+```
 <a name="Bot+addIntentHandler"></a>
 
 ### bot.addIntentHandler(intent, handler) ⇒ [<code>Bot</code>](#Bot)
@@ -57,12 +98,12 @@ class MyBot extends BaseBot {
 
 | Param | Type | Description |
 | --- | --- | --- |
-| intent | <code>string</code> | 意图名：'#intentName'， 以‘#’ 开头 |
+| intent | <code>string</code> | 意图名：'intentName' |
 | handler | <code>function</code> | 意图处理函数。返回值非null，将作为bot的response返回DuerOS                        函数返回值参考Response.build() 的输入参数 |
 
 **Example**  
 ```javascript
-this.addIntentHandler('#intentName', ()=>{
+this.addIntentHandler('intentName', ()=>{
     //this.getSlot('slotName');
 });
 ```
@@ -96,7 +137,7 @@ this.addEventListener('Audio', (event)=>{
 **Access**: public  
 <a name="Bot+getSessionAttribute"></a>
 
-### bot.getSessionAttribute(field, def) ⇒ <code>Mixied</code>
+### bot.getSessionAttribute(field, defaultValue) ⇒ <code>Mixied</code>
 获取session的一个字段对应的值
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
@@ -105,11 +146,11 @@ this.addEventListener('Audio', (event)=>{
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | field | <code>string</code> | <code>null</code> | 字段名 |
-| def | <code>Mixed</code> | <code></code> | 默认值  当此字段没有值时，返回def |
+| defaultValue | <code>Mixed</code> | <code></code> | 默认值  当此字段没有值时，返回defaultValue |
 
 <a name="Bot+setSessionAttribute"></a>
 
-### bot.setSessionAttribute(field, value, def) ⇒ <code>null</code>
+### bot.setSessionAttribute(field, value, defaultValue) ⇒ <code>null</code>
 设置session的一个字段的值
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
@@ -119,7 +160,7 @@ this.addEventListener('Audio', (event)=>{
 | --- | --- | --- | --- |
 | field | <code>string</code> |  | 字段名 |
 | value | <code>Mixed</code> |  | 字段对应的值 |
-| def | <code>Mixed</code> | <code></code> | 默认值  当value为空时，使用def |
+| defaultValue | <code>Mixed</code> | <code></code> | 默认值  当value为空时，使用defaultValue |
 
 <a name="Bot+clearSessionAttribute"></a>
 
@@ -130,28 +171,30 @@ this.addEventListener('Audio', (event)=>{
 **Access**: public  
 <a name="Bot+getSlot"></a>
 
-### bot.getSlot(field) ⇒ <code>string</code>
+### bot.getSlot(field, index) ⇒ <code>string</code>
 根据槽位名获取槽位对应的值
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
 **Access**: public  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| field | <code>string</code> | 槽位名 |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| field | <code>string</code> |  | 槽位名 |
+| index | <code>Integer</code> | <code>0</code> | 第几个intent，默认第一个 |
 
 <a name="Bot+setSlot"></a>
 
-### bot.setSlot(field, value) ⇒ <code>null</code>
+### bot.setSlot(field, value, index) ⇒ <code>null</code>
 设置槽位的值。如果该槽位不存在，新增一个槽位名，并设置对于的值
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
 **Access**: public  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| field | <code>string</code> | 槽位名 |
-| value | <code>string</code> | 值 |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| field | <code>string</code> |  | 槽位名 |
+| value | <code>string</code> |  | 值 |
+| index | <code>Integer</code> | <code>0</code> | 第几个intent，默认第一个 |
 
 <a name="Bot+waitAnswer"></a>
 
@@ -160,9 +203,9 @@ this.addEventListener('Audio', (event)=>{
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
 **Access**: public  
-<a name="Bot+endDialog"></a>
+<a name="Bot+endSession"></a>
 
-### bot.endDialog()
+### bot.endSession()
 设置多轮结束，此时bot结束多轮对话
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  

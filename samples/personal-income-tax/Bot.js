@@ -5,18 +5,19 @@ class Bot extends BaseBot{
     constructor (postData) {
         super(postData);
 
-        this.addIntentHandler('LaunchRequest', ()=>{
+        this.addLaunchHandler(()=>{
             return {
-                "outputSpeech" : "欢迎使用"
+                "outputSpeech" : "欢迎使用!"
             };
         });
 
-        this.addIntentHandler('#personal_income_tax.inquiry', ()=>{
+        this.addIntentHandler('personal_income_tax.inquiry', ()=>{
             let loc = this.getSlot('location');    
             let monthlySalary = this.getSlot('monthlysalary');
 
             if(!monthlySalary) {
                 let card = new Bot.Card.TextCard('你工资多少呢');
+                this.nlu.ask('monthlySalary');
                 return {
                     "card" : card,
                     "outputSpeech" : "你工资多少呢"
@@ -25,6 +26,7 @@ class Bot extends BaseBot{
 
             if(!loc) {
                 let card = new Bot.Card.TextCard('你在哪呢');
+                this.nlu.ask('location');
                 return {
                     "card" : card,
                     "outputSpeech" : "你在哪呢"
