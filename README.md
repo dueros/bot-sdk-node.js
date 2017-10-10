@@ -42,7 +42,7 @@ this.addIntentHandler('LaunchRequest', ()=>{
     };
 });
 
-this.addIntentHandler('#personal_income_tax.inquiry', ()=>{
+this.addIntentHandler('personal_income_tax.inquiry', ()=>{
     let loc = this.getSlot('location');    
     let monthlySalary = this.getSlot('monthlysalary');
 
@@ -81,4 +81,8 @@ this.addIntentHandler('#personal_income_tax.inquiry', ()=>{
     * [StandardCard(标准卡片)](doc/card/StandardCard.md)
     * [ImageCard(图片卡片)](doc/card/ImageCard.md)
     * [ListCard(列表卡片)](doc/card/ListCard.md)
-* 指令(coming soon)
+* 指令
+    * [BaseDirective(所有指令基类)](doc/card/BaseDirective.md)
+    * 音频
+        * [Play(音频播放指令)](doc/card/AudioPlayer/Play.md)
+        * [Stop(音频停止指令)](doc/card/AudioPlayer/Stop.md)
