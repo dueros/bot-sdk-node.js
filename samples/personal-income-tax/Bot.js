@@ -7,7 +7,7 @@ class Bot extends BaseBot{
 
         this.addLaunchHandler(()=>{
             return {
-                "outputSpeech" : "欢迎使用!"
+                outputSpeech : '欢迎使用!'
             };
         });
 
@@ -19,8 +19,8 @@ class Bot extends BaseBot{
                 let card = new Bot.Card.TextCard('你工资多少呢');
                 this.nlu.ask('monthlySalary');
                 return {
-                    "card" : card,
-                    "outputSpeech" : "你工资多少呢"
+                    card : card,
+                    outputSpeech : '你工资多少呢'
                 };
             }
 
@@ -28,8 +28,8 @@ class Bot extends BaseBot{
                 let card = new Bot.Card.TextCard('你在哪呢');
                 this.nlu.ask('location');
                 return {
-                    "card" : card,
-                    "outputSpeech" : "你在哪呢"
+                    card : card,
+                    outputSpeech : '你在哪呢'
                 };
 
             }

@@ -27,6 +27,10 @@ Bot基类. 请继承此类
             * [.ImageCard](#Bot.Card.ImageCard)
             * [.StandardCard](#Bot.Card.StandardCard)
             * [.ListCard](#Bot.Card.ListCard)
+        * [.Directive](#Bot.Directive) : <code>object</code>
+            * [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
+                * [.Play](#Bot.Directive.AudioPlayer.Play)
+                * [.Stop](#Bot.Directive.AudioPlayer.Stop)
 
 <a name="new_Bot_new"></a>
 
@@ -241,18 +245,61 @@ Bot可以返回的卡片
 #### Card.TextCard
 **Kind**: static property of [<code>Card</code>](#Bot.Card)  
 **Access**: public  
+**See**: [TextCard](TextCard)  
 <a name="Bot.Card.ImageCard"></a>
 
 #### Card.ImageCard
 **Kind**: static property of [<code>Card</code>](#Bot.Card)  
 **Access**: public  
+**See**: [ImageCard](ImageCard)  
 <a name="Bot.Card.StandardCard"></a>
 
 #### Card.StandardCard
 **Kind**: static property of [<code>Card</code>](#Bot.Card)  
 **Access**: public  
+**See**: [StandardCard](StandardCard)  
 <a name="Bot.Card.ListCard"></a>
 
 #### Card.ListCard
 **Kind**: static property of [<code>Card</code>](#Bot.Card)  
 **Access**: public  
+**See**: [ListCard](ListCard)  
+<a name="Bot.Directive"></a>
+
+### Bot.Directive : <code>object</code>
+Bot 可以返回指令
+
+**Kind**: static namespace of [<code>Bot</code>](#Bot)  
+
+* [.Directive](#Bot.Directive) : <code>object</code>
+    * [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
+        * [.Play](#Bot.Directive.AudioPlayer.Play)
+        * [.Stop](#Bot.Directive.AudioPlayer.Stop)
+
+<a name="Bot.Directive.AudioPlayer"></a>
+
+#### Directive.AudioPlayer : <code>object</code>
+音频指令
+
+**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
+
+* [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
+    * [.Play](#Bot.Directive.AudioPlayer.Play)
+    * [.Stop](#Bot.Directive.AudioPlayer.Stop)
+
+<a name="Bot.Directive.AudioPlayer.Play"></a>
+
+##### AudioPlayer.Play
+音频播放指令
+
+**Kind**: static property of [<code>AudioPlayer</code>](#Bot.Directive.AudioPlayer)  
+**Access**: public  
+**See**: [Play](Play)  
+<a name="Bot.Directive.AudioPlayer.Stop"></a>
+
+##### AudioPlayer.Stop
+音频停止指令
+
+**Kind**: static property of [<code>AudioPlayer</code>](#Bot.Directive.AudioPlayer)  
+**Access**: public  
+**See**: [Stop](Stop)  

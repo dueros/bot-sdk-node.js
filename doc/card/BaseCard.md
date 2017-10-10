@@ -2,7 +2,7 @@
 
 <dl>
 <dt><a href="#BaseCard.js">BaseCard.js</a></dt>
-<dd><p>抽象类. 卡片基类</p>
+<dd><p>BaseCard 抽象类. 卡片基类</p>
 </dd>
 <dt><a href="#BaseCard">BaseCard</a></dt>
 <dd></dd>
@@ -11,7 +11,7 @@
 <a name="BaseCard.js"></a>
 
 ## BaseCard.js
-抽象类. 卡片基类
+BaseCard 抽象类. 卡片基类
 
 **Kind**: global class  
 **Author**: yuanpeng01@baidu.com  

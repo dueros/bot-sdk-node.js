@@ -1,23 +1,12 @@
-## Classes
-
-<dl>
-<dt><a href="#全图卡片">全图卡片</a> ⇐ <code>BaseCard</code></dt>
-<dd></dd>
-<dt><a href="#ImageCard">ImageCard</a></dt>
-<dd></dd>
-</dl>
-
-<a name="全图卡片"></a>
-
-## 全图卡片 ⇐ <code>BaseCard</code>
-**Kind**: global class  
-**Extends**: <code>BaseCard</code>  
 <a name="ImageCard"></a>
 
-## ImageCard
-**Kind**: global class  
+## ImageCard ⇐ <code>BaseCard</code>
+ImageCard 全图卡片
 
-* [ImageCard](#ImageCard)
+**Kind**: global class  
+**Extends**: <code>BaseCard</code>  
+
+* [ImageCard](#ImageCard) ⇐ <code>BaseCard</code>
     * [new ImageCard()](#new_ImageCard_new)
     * [.addItem(src, thumbnail)](#ImageCard+addItem) ⇒ [<code>ImageCard</code>](#ImageCard)
 

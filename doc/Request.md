@@ -11,6 +11,8 @@
     * [.getSession()](#Request+getSession) ⇒ <code>Session</code>
     * [.getNlu()](#Request+getNlu) ⇒ <code>Nlu</code>
     * [.getType()](#Request+getType) ⇒ <code>string</code>
+    * [.getAudioPlayerContext()](#Request+getAudioPlayerContext) ⇒ <code>Mixed</code>
+    * [.getEventData()](#Request+getEventData) ⇒ <code>Mixed</code>
     * [.getUserId()](#Request+getUserId) ⇒ <code>string</code>
     * [.getQuery()](#Request+getQuery) ⇒ <code>string</code>
     * [.isLaunchRequest()](#Request+isLaunchRequest) ⇒ <code>boolean</code>
@@ -48,6 +50,18 @@
 
 ### request.getType() ⇒ <code>string</code>
 获取请求类型
+
+**Kind**: instance method of [<code>Request</code>](#Request)  
+<a name="Request+getAudioPlayerContext"></a>
+
+### request.getAudioPlayerContext() ⇒ <code>Mixed</code>
+获取设备音频播放的状态
+
+**Kind**: instance method of [<code>Request</code>](#Request)  
+<a name="Request+getEventData"></a>
+
+### request.getEventData() ⇒ <code>Mixed</code>
+返回event request数据
 
 **Kind**: instance method of [<code>Request</code>](#Request)  
 <a name="Request+getUserId"></a>

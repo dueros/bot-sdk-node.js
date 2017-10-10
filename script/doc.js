@@ -33,7 +33,7 @@ let apiDoc = function(dir, docPath) {
             let doc = docPath + '/' + file;
             fs.mkdirSync(doc);
             apiDoc(filename, doc); 
-            return;
+            continue;
         }
 
         let docFile = docPath + '/' + file.replace('.js', '.md');

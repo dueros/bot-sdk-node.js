@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Response</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: Response</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>Response<span class="signature">(request, session, nlu)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">按照Bot协议，打包返回结果</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="Response"><span class="type-signature"></span>new Response<span class="signature">(request, session, nlu)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Requset</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">请求</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>session</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Session.html">Session</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">session</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nlu</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Nlu.html">Nlu</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">query解析对象</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Response.js.html">Response.js</a>, <a href="Response.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="build"><span class="type-signature"></span>build<span class="signature">(data)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    打包返回的结果
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">返回的数据
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>directives</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">返回的指令</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>card</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="BaseCard.html">BaseCard</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">返回的卡片</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>outputSpeech</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">返回的tts文本。可以是纯文本，或者是有SSML标签的文本(TODO:SSML说明文档)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reprompt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">纯文本或者带SSML标签的文本</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Response.js.html">Response.js</a>, <a href="Response.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    JSON String
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>this.build({
+     'outputSpeech' : '你好',
+     'reprompt' : '再请问一次，你是要干嘛呢'
+});
+
+this.build({
+     'card' : new TextCard('欢迎进入')
+});
+
+this.build({
+     // 与 'outputSpeech' : '你好', 效果一样
+     'outputSpeech' : {
+         'type':'PlainText',
+         'text': '你好'
+     }
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setShouldEndSession"><span class="type-signature"></span>setShouldEndSession<span class="signature">(val)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    设置结束对话
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">true: 结束对话   false: 继续对话</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Response.js.html">Response.js</a>, <a href="Response.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BaseCard.html">BaseCard</a></li><li><a href="BaseDirective.html">BaseDirective</a></li><li><a href="Bot.html">Bot</a></li><li><a href="card_BaseCard.js.html">card/BaseCard.js</a></li><li><a href="directive_BaseDirective.js.html">directive/BaseDirective.js</a></li><li><a href="ImageCard.html">ImageCard</a></li><li><a href="ListCard.html">ListCard</a></li><li><a href="ListCardItem.html">ListCardItem</a></li><li><a href="Nlu.html">Nlu</a></li><li><a href="Play.html">Play</a></li><li><a href="Request.html">Request</a></li><li><a href="Response.html">Response</a></li><li><a href="Session.html">Session</a></li><li><a href="StandardCard.html">StandardCard</a></li><li><a href="Stop.html">Stop</a></li><li><a href="TextCard.html">TextCard</a></li></ul><h3>Namespaces</h3><ul><li><a href="Bot.Card.html">Card</a></li><li><a href="Bot.Directive.html">Directive</a></li><li><a href="Bot.Directive.AudioPlayer.html">AudioPlayer</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 18:03:12 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Request.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Request.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Copyright (c) 2017 Baidu, Inc. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+'use strict';
+
+let Session = require('./Session');
+let Nlu = require('./Nlu');
+
+/**
+ * 对DuerOS请求bot的request body进行封装
+ **/
+class Request {
+    /**
+     * @param {Object} data request body
+     **/
+    constructor (data) {
+        if (!data) {
+            throw new Error('data is undefined'); 
+        }
+
+        this._data = data;
+        if (data &amp;&amp; data.request) {
+            this._requestType = data.request.type;
+        }
+
+        this._session = new Session(data.session);
+        if (this._requestType == 'IntentRequest' &amp;&amp; data.request) {
+            this._nlu = new Nlu(data.request.intents); 
+        }
+    }
+
+    /**
+     * 获取Request 的数据
+     *
+     * @return {Object}
+     **/
+    getData () {
+        return this._data;  
+    } 
+
+    /**
+     * 获取session 对象
+     *
+     * @return {Session}
+     **/
+    getSession () {
+        return this._session; 
+    }
+
+    /**
+     * 获取nlu 对象
+     *
+     * @return {Nlu}
+     **/
+    getNlu () {
+        return this._nlu; 
+    }
+
+    /**
+     * 获取请求类型
+     *
+     * @return {string}
+     **/
+    getType () {
+        return this._requestType; 
+    }
+
+    /**
+     * 获取设备音频播放的状态
+     *
+     * @return {Mixed}
+     */
+    getAudioPlayerContext() {
+        if (this._data.context) {
+            return this._data.context.AudioPlayer;
+        }
+    }
+
+    /**
+     * 返回event request数据
+     *
+     * @return {Mixed}
+     */
+    getEventData() {
+        if (this._requestType == 'IntentRequest' 
+                || this.isSessionEndedRequest()
+                || this.isLaunchRequest()) {
+            return;         
+        }
+
+        return this._data.request;
+    }
+
+    /**
+     * 获取用户的user id
+     *
+     * @return {string}
+     **/
+    getUserId () {
+        if (this._data.context &amp;&amp; this._data.context.System &amp;&amp; this._data.context.System.user) {
+            return this._data.context.System.user.userId;  
+        }
+        return '';
+    }
+
+    /**
+     * 获取请求的query
+     *
+     * @return {string}
+     **/
+    getQuery () {
+        if (this._data.request &amp;&amp; this._data.request.query) {
+            return this._data.request.query.original;
+        }
+
+        return '';
+    }
+
+    /**
+     * 判断是否为调起bot的请求
+     *
+     * @return {boolean}
+     **/
+    isLaunchRequest () {
+        if (this._data.request) {
+            return this._data.request.type == 'LaunchRequest';
+        }
+        return false;
+    }
+
+    /**
+     * 判断是否为结束对话的请求
+     *
+     * @return {boolean}
+     **/
+    isSessionEndedRequest () {
+        if (this._data.request) {
+            return this._data.request.type == 'SessionEndedRequest';
+        }
+        return false;
+    }
+
+    /**
+     * 获取bot id
+     *
+     * @return {string}
+     **/
+    getBotId () {
+        if (this._data.context &amp;&amp; this._data.context.System &amp;&amp; this._data.context.System.application) {
+            return this._data.context.System.application.applicationId; 
+        }
+    }
+
+    /**
+     * 判断槽位是否填完。针对于填槽多轮。
+     *
+     * @return {boolean}
+     **/
+    isDialogStateCompleted() {
+        if (this._data.request) {
+            return this._data.request.dialogState == 'COMPLETED';
+        }
+        return false;
+    }
+}
+
+module.exports = Request;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BaseCard.html">BaseCard</a></li><li><a href="BaseDirective.html">BaseDirective</a></li><li><a href="Bot.html">Bot</a></li><li><a href="card_BaseCard.js.html">card/BaseCard.js</a></li><li><a href="directive_BaseDirective.js.html">directive/BaseDirective.js</a></li><li><a href="ImageCard.html">ImageCard</a></li><li><a href="ListCard.html">ListCard</a></li><li><a href="ListCardItem.html">ListCardItem</a></li><li><a href="Nlu.html">Nlu</a></li><li><a href="Play.html">Play</a></li><li><a href="Request.html">Request</a></li><li><a href="Response.html">Response</a></li><li><a href="Session.html">Session</a></li><li><a href="StandardCard.html">StandardCard</a></li><li><a href="Stop.html">Stop</a></li><li><a href="TextCard.html">TextCard</a></li></ul><h3>Namespaces</h3><ul><li><a href="Bot.Card.html">Card</a></li><li><a href="Bot.Directive.html">Directive</a></li><li><a href="Bot.Directive.AudioPlayer.html">AudioPlayer</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 04 2017 18:03:12 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
