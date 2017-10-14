@@ -16,8 +16,9 @@ class Bot extends BaseBot{
             let monthlySalary = this.getSlot('monthlysalary');
 
             if(!monthlySalary) {
-                let card = new Bot.Card.TextCard('你工资多少呢');
                 this.nlu.ask('monthlySalary');
+                let card = new Bot.Card.TextCard('你工资多少呢');
+
                 return {
                     card : card,
                     outputSpeech : '你工资多少呢'
