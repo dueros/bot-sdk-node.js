@@ -82,7 +82,7 @@ this.addIntentHandler('personal_income_tax.inquiry', ()=>{
     * [ImageCard(图片卡片)](doc/card/ImageCard.md)
     * [ListCard(列表卡片)](doc/card/ListCard.md)
 * 指令
-    * [BaseDirective(所有指令基类)](doc/card/BaseDirective.md)
+    * [BaseDirective(所有指令基类)](doc/card/directive/BaseDirective.md)
     * 音频
-        * [Play(音频播放指令)](doc/card/AudioPlayer/Play.md)
-        * [Stop(音频停止指令)](doc/card/AudioPlayer/Stop.md)
+        * [Play(音频播放指令)](doc/card/directive/AudioPlayer/Play.md)
+        * [Stop(音频停止指令)](doc/card/directive/AudioPlayer/Stop.md)
