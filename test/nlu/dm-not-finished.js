@@ -26,8 +26,7 @@ describe('Nlu', () => {
         it('monthlySalary: 1212 setSlot("monthlySalary", 1212)', () => {
             nlu.setSlot('monthlySalary', 1212);
             nlu.getSlot('monthlySalary').should.equal(1212);        
-        });
-    });
+        }); });
 
     describe('#getIntentName()', () => {
         it('getIntentName must be intentName', () => {
@@ -86,6 +85,18 @@ describe('Nlu', () => {
                     slots: intent.slots 
                 }
             });
+        });
+    });
+
+    describe('#getSlotConfirmationStatus()', () => {
+        it('getSlotConfirmationStatus must be NONE', () => {
+            nlu.getSlotConfirmationStatus('city').should.equal('NONE');
+        });
+    });
+
+    describe('#getIntentConfirmationStatus()', () => {
+        it('getIntentConfirmationStatus must be NONE', () => {
+            nlu.getIntentConfirmationStatus().should.equal('NONE');
         });
     });
 });

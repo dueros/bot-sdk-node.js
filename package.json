@@ -1,6 +1,6 @@
 {
   "name": "bot-sdk",
-  "version": "1.0.0",
+  "version": "1.0.2-beta",
   "description": "度秘bot开发的JS SDK",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.5.0",
     "node.extend": "^2.0.0",
+    "request": "^2.83.0",
     "should": "^12.0.0"
   }
 }

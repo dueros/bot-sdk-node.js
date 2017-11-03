@@ -2,20 +2,35 @@
  * NOTICE:
  *      安装依赖
  *      npm install express
- *      npm install body-parser
  **/
 
 const express = require('express');
-const bodyParser = require('body-parser');
 
 const Bot = require('./Bot');
 var app = express();
 
-app.use(bodyParser.json());
+// 探活请求
+app.head('/', (req, res) => {
+    res.sendStatus(204);
+});
+
 app.post('/', (req, res) => {
-    let b = new Bot(req.body);
-    let result = b.run();
-    res.send(result);
+    req.rawBody = '';
+
+    req.setEncoding('utf8');
+    req.on('data', function(chunk) { 
+        req.rawBody += chunk;
+    });
+
+    req.on('end', function() {
+        var b = new Bot(JSON.parse(req.rawBody));
+        // 开启签名认证
+        b.initCertificate(req.headers, req.rawBody).enableVerifyRequestSign();
+
+        b.run().then(function(result){
+            res.send(result);
+        });
+    });
 }).listen(8014);
 
 console.log('listen 8014');
