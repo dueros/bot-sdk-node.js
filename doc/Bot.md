@@ -12,6 +12,7 @@ Bot基类. 请继承此类
         * [.addSessionEndedHandler(handler)](#Bot+addSessionEndedHandler) ⇒ [<code>Bot</code>](#Bot)
         * [.addIntentHandler(intent, handler)](#Bot+addIntentHandler) ⇒ [<code>Bot</code>](#Bot)
         * [.addEventListener(event, handler)](#Bot+addEventListener) ⇒ [<code>Bot</code>](#Bot)
+        * [.initCertificate(headers, body)](#Bot+initCertificate) ⇒ <code>Certificate</code>
         * [.getIntentName()](#Bot+getIntentName) ⇒ <code>string</code> \| <code>null</code>
         * [.getSessionAttribute(field, defaultValue)](#Bot+getSessionAttribute) ⇒ <code>Mixied</code>
         * [.setSessionAttribute(field, value, defaultValue)](#Bot+setSessionAttribute) ⇒ <code>null</code>
@@ -20,7 +21,7 @@ Bot基类. 请继承此类
         * [.setSlot(field, value, index)](#Bot+setSlot) ⇒ <code>null</code>
         * [.waitAnswer()](#Bot+waitAnswer) ⇒ <code>null</code>
         * [.endSession()](#Bot+endSession)
-        * [.run(build)](#Bot+run) ⇒ <code>string</code>
+        * [.run(build)](#Bot+run) ⇒ <code>Promise</code>
     * _static_
         * [.Card](#Bot.Card) : <code>object</code>
             * [.TextCard](#Bot.Card.TextCard)
@@ -132,6 +133,27 @@ this.addEventListener('Audio', (event)=>{
     // 具体数据结构参考[TODO]
 });
 ```
+<a name="Bot+initCertificate"></a>
+
+### bot.initCertificate(headers, body) ⇒ <code>Certificate</code>
+初始化认证校验
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+**Returns**: <code>Certificate</code> - Certificate实例  
+**Access**: public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| headers | <code>Object</code> | http请求的header |
+| body | <code>string</code> | 请求体 |
+
+**Example**  
+```javascript
+this.initCertificate(
+     {signature: '###', signaturecerturl: ''},
+     '{"version":""}'
+ );
+```
 <a name="Bot+getIntentName"></a>
 
 ### bot.getIntentName() ⇒ <code>string</code> \| <code>null</code>
@@ -216,11 +238,10 @@ this.addEventListener('Audio', (event)=>{
 **Access**: public  
 <a name="Bot+run"></a>
 
-### bot.run(build) ⇒ <code>string</code>
+### bot.run(build) ⇒ <code>Promise</code>
 bot执行的入口
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
-**Returns**: <code>string</code> - 返回JSON  
 **Access**: public  
 
 | Param | Type | Default | Description |

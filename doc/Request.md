@@ -18,6 +18,7 @@
     * [.isLaunchRequest()](#Request+isLaunchRequest) ⇒ <code>boolean</code>
     * [.isSessionEndedRequest()](#Request+isSessionEndedRequest) ⇒ <code>boolean</code>
     * [.getBotId()](#Request+getBotId) ⇒ <code>string</code>
+    * [.getLocation()](#Request+getLocation) ⇒
     * [.isDialogStateCompleted()](#Request+isDialogStateCompleted) ⇒ <code>boolean</code>
 
 <a name="new_Request_new"></a>
@@ -94,6 +95,13 @@
 获取bot id
 
 **Kind**: instance method of [<code>Request</code>](#Request)  
+<a name="Request+getLocation"></a>
+
+### request.getLocation() ⇒
+获取地理位置
+
+**Kind**: instance method of [<code>Request</code>](#Request)  
+**Returns**: array  
 <a name="Request+isDialogStateCompleted"></a>
 
 ### request.isDialogStateCompleted() ⇒ <code>boolean</code>

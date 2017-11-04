@@ -8,7 +8,8 @@
 * [Response](#Response)
     * [new Response(request, session, nlu)](#new_Response_new)
     * [.setShouldEndSession(val)](#Response+setShouldEndSession)
-    * [.build(data)](#Response+build) ⇒ <code>string</code>
+    * [.illegalRequest()](#Response+illegalRequest) ⇒ <code>Promise</code>
+    * [.build(data)](#Response+build) ⇒ <code>Promise</code>
 
 <a name="new_Response_new"></a>
 
@@ -31,13 +32,18 @@
 | --- | --- | --- |
 | val | <code>boolean</code> | true: 结束对话   false: 继续对话 |
 
+<a name="Response+illegalRequest"></a>
+
+### response.illegalRequest() ⇒ <code>Promise</code>
+非法请求
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
 <a name="Response+build"></a>
 
-### response.build(data) ⇒ <code>string</code>
+### response.build(data) ⇒ <code>Promise</code>
 打包返回的结果
 
 **Kind**: instance method of [<code>Response</code>](#Response)  
-**Returns**: <code>string</code> - JSON String  
 **Access**: public  
 
 | Param | Type | Description |

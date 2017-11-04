@@ -19,6 +19,8 @@
     * [.setDelegate()](#Nlu+setDelegate)
     * [.setConfirmSlot(field)](#Nlu+setConfirmSlot)
     * [.setConfirmIntent()](#Nlu+setConfirmIntent)
+    * [.getSlotConfirmationStatus(field)](#Nlu+getSlotConfirmationStatus) ⇒ <code>string</code>
+    * [.getIntentConfirmationStatus()](#Nlu+getIntentConfirmationStatus) ⇒
 
 <a name="new_Nlu_new"></a>
 
@@ -139,3 +141,22 @@ this.setConfirmSlot('destination');
 ```javascript
 this.setConfirmIntent();
 ```
+<a name="Nlu+getSlotConfirmationStatus"></a>
+
+### nlu.getSlotConfirmationStatus(field) ⇒ <code>string</code>
+获取一个slot对应的confirmationStatus
+
+**Kind**: instance method of [<code>Nlu</code>](#Nlu)  
+**Returns**: <code>string</code> - 槽位的confirmationStatus  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| field | <code>string</code> | 槽位名 |
+
+<a name="Nlu+getIntentConfirmationStatus"></a>
+
+### nlu.getIntentConfirmationStatus() ⇒
+获取一个intent对应的confirmationStatus
+
+**Kind**: instance method of [<code>Nlu</code>](#Nlu)  
+**Returns**: {string 意图的confirmationStatus  
