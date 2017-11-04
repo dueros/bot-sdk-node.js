@@ -9,9 +9,8 @@
     * [new Certificate(headers, requestBody, privateKeyContent)](#new_Certificate_new)
     * [.enableVerifyRequestSign()](#Certificate+enableVerifyRequestSign) ⇒ <code>boolean</code>
     * [.disableVerifyRequestSign()](#Certificate+disableVerifyRequestSign) ⇒ <code>boolean</code>
-    * [._getRequestPublicKey()](#Certificate+_getRequestPublicKey) ⇒
-    * [.verifyRequest(null)](#Certificate+verifyRequest) ⇒
-    * [.getRequestSig(null)](#Certificate+getRequestSig) ⇒
+    * [.verifyRequest()](#Certificate+verifyRequest) ⇒
+    * [.getRequestSig()](#Certificate+getRequestSig) ⇒
 
 <a name="new_Certificate_new"></a>
 
@@ -37,30 +36,17 @@
 
 **Kind**: instance method of [<code>Certificate</code>](#Certificate)  
 **Access**: public  
-<a name="Certificate+_getRequestPublicKey"></a>
-
-### certificate._getRequestPublicKey() ⇒
-**Kind**: instance method of [<code>Certificate</code>](#Certificate)  
-**Returns**: promise  
 <a name="Certificate+verifyRequest"></a>
 
-### certificate.verifyRequest(null) ⇒
+### certificate.verifyRequest() ⇒
 验证请求者是否合法
 
 **Kind**: instance method of [<code>Certificate</code>](#Certificate)  
 **Returns**: promise  
-
-| Param |
-| --- |
-| null | 
-
+**Access**: public  
 <a name="Certificate+getRequestSig"></a>
 
-### certificate.getRequestSig(null) ⇒
+### certificate.getRequestSig() ⇒
 **Kind**: instance method of [<code>Certificate</code>](#Certificate)  
 **Returns**: string  
-
-| Param |
-| --- |
-| null | 
-
+**Access**: public  
