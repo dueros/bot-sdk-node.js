@@ -26,8 +26,6 @@ var BaseBot = require('bot-sdk');
 class Bot extends BaseBot{
     constructor (postData) {
         super(postData);
-
-        
     }
 }
 
@@ -48,10 +46,14 @@ this.addIntentHandler('personal_income_tax.inquiry', ()=>{
 
     if(!monthlySalary) {
         let card = new Bot.Card.TextCard('你工资多少呢');
-        return {
-            card: card,
-            outputSpeech: '你工资多少呢'
-        };
+
+        // 如果有异步操作，可以返回一个promise
+        return new Promise(function(resolve, reject){
+            resolve({
+                card : card,
+                outputSpeech : '你工资多少呢'
+            });
+        });
     }
 
     if(!loc) {
@@ -67,6 +69,45 @@ this.addIntentHandler('personal_income_tax.inquiry', ()=>{
 这里`addIntentHandler`可以用来建立(intent) => handler的映射，第一个参数是条件，如果满足则执行对应的回调函数(第二个参数)。
 其中，this指向当前的Bot，`getSlot`继承自父类Bot，通过slot名字来获取对应的值。回调函数返回值是一个数组，可以包含多个字段，比如：`card`，`directives`，`outputSpeech`，`reprompt`。
 
+## 搭建Web服务
+
+比如，使用express作为web框架进行开发。下面是一个简单示例
+
+```javascript
+const express = require('express');
+
+const Bot = require('./Bot');
+var app = express();
+
+// 探活请求
+// DuerOS会定期发送探活请求到你的服务，确保你的服务正常运转，[详情请参考](http://TODO)
+app.head('/', (req, res) => {
+    res.sendStatus(204);
+});
+
+// 监听post请求，DuerOS以http POST的方式来请求你的服务，[具体协议请参考](http://TODO)
+app.post('/', (req, res) => {
+    req.rawBody = '';
+
+    req.setEncoding('utf8');
+    req.on('data', function(chunk) { 
+        req.rawBody += chunk;
+    });
+
+    req.on('end', function() {
+        var b = new Bot(JSON.parse(req.rawBody));
+        // 开启签名认证
+        // 为了避免你的服务被非法请求，建议你验证请求是否来自于DuerOS
+        b.initCertificate(req.headers, req.rawBody).enableVerifyRequestSign();
+
+        // b.run() 返回一个Promise的实例
+        b.run().then(function(result){
+            res.send(result);
+        });
+    });
+}).listen(8014);
+```
+
 
 ## API 文档
 
@@ -75,6 +116,7 @@ this.addIntentHandler('personal_income_tax.inquiry', ()=>{
 * [Request(Bot.request)](doc/Request.md)
 * [Response(Bot.response)](doc/Response.md)
 * [Session(Bot.session)](doc/Session.md)
+* [Certificate](doc/Certificate.md)
 * 展现卡片
     * [BaseCard(所有卡片基类)](doc/card/BaseCard.md)
     * [TextCard(文本卡片)](doc/card/TextCard.md)
