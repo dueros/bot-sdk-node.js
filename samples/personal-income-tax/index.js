@@ -23,9 +23,17 @@ app.post('/', (req, res) => {
     });
 
     req.on('end', function() {
-        var b = new Bot(JSON.parse(req.rawBody));
+        var requestBody;
+        try{
+            requestBody = JSON.parse(req.rawBody); 
+        }catch(e){
+            console.error(e); 
+            return res.send(JSON.stringify({status:1}));
+        }
+
+        var bot = new Bot(requestBody);
         // 开启签名认证
-        b.initCertificate(req.headers, req.rawBody).enableVerifyRequestSign();
+        bot.initCertificate(req.headers, req.rawBody).enableVerifyRequestSign();
 
         
         /**
@@ -35,11 +43,11 @@ app.post('/', (req, res) => {
          * 打开此功能，对服务的性能有一定的耗时增加。另外，需要在DBP平台上面上传public key，这里使用私钥签名
          * 文档参考：https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-deploy/authentication_markdown
          */
-        b.setPrivateKey(__dirname + '/rsa_private_key.pem').then(function(key){
+        bot.setPrivateKey(__dirname + '/rsa_private_key.pem').then(function(key){
             // 0: debug  1: online
-            b.botMonitor.setEnvironmentInfo(key, 0);
+            bot.botMonitor.setEnvironmentInfo(key, 0);
 
-            b.run().then(function(result){
+            bot.run().then(function(result){
                 res.send(result);
             });
         }, function(err){
@@ -48,7 +56,7 @@ app.post('/', (req, res) => {
 
         
         // 不需要监控
-        //b.run().then(function(result){
+        //bot.run().then(function(result){
         //    res.send(result);
         //});
     });
