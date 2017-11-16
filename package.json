@@ -1,6 +1,6 @@
 {
   "name": "bot-sdk",
-  "version": "1.0.6-beta",
+  "version": "1.0.9",
   "description": "度秘bot开发的JS SDK",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,15 @@
   "author": "yuanpeng01@baidu.com",
   "license": "ISC",
   "dependencies": {
+    "bot-monitor-sdk": "^1.2.2",
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.5.0",
     "node.extend": "^2.0.0",
     "request": "^2.83.0",
     "should": "^12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dueros/bot-sdk-node.js.git"
   }
 }
