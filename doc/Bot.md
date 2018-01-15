@@ -21,6 +21,7 @@ Bot基类. 请继承此类
         * [.setSlot(field, value, index)](#Bot+setSlot) ⇒ <code>null</code>
         * [.waitAnswer()](#Bot+waitAnswer) ⇒ <code>null</code>
         * [.endSession()](#Bot+endSession)
+        * [.setPrivateKey(filename)](#Bot+setPrivateKey) ⇒ <code>Promise</code>
         * [.run(build)](#Bot+run) ⇒ <code>Promise</code>
     * _static_
         * [.Card](#Bot.Card) : <code>object</code>
@@ -28,6 +29,7 @@ Bot基类. 请继承此类
             * [.ImageCard](#Bot.Card.ImageCard)
             * [.StandardCard](#Bot.Card.StandardCard)
             * [.ListCard](#Bot.Card.ListCard)
+            * [.LinkAccountCard](#Bot.Card.LinkAccountCard)
         * [.Directive](#Bot.Directive) : <code>object</code>
             * [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
                 * [.Play](#Bot.Directive.AudioPlayer.Play)
@@ -236,6 +238,17 @@ this.initCertificate(
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
 **Access**: public  
+<a name="Bot+setPrivateKey"></a>
+
+### bot.setPrivateKey(filename) ⇒ <code>Promise</code>
+设置私钥
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| filename | <code>string</code> | 私钥路径 |
+
 <a name="Bot+run"></a>
 
 ### bot.run(build) ⇒ <code>Promise</code>
@@ -260,6 +273,7 @@ Bot可以返回的卡片
     * [.ImageCard](#Bot.Card.ImageCard)
     * [.StandardCard](#Bot.Card.StandardCard)
     * [.ListCard](#Bot.Card.ListCard)
+    * [.LinkAccountCard](#Bot.Card.LinkAccountCard)
 
 <a name="Bot.Card.TextCard"></a>
 
@@ -285,6 +299,12 @@ Bot可以返回的卡片
 **Kind**: static property of [<code>Card</code>](#Bot.Card)  
 **Access**: public  
 **See**: [ListCard](ListCard)  
+<a name="Bot.Card.LinkAccountCard"></a>
+
+#### Card.LinkAccountCard
+**Kind**: static property of [<code>Card</code>](#Bot.Card)  
+**Access**: public  
+**See**: [LinkAccountCard](LinkAccountCard)  
 <a name="Bot.Directive"></a>
 
 ### Bot.Directive : <code>object</code>
