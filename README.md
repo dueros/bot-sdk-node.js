@@ -148,3 +148,24 @@ app.post('/', (req, res) => {
     * 音频
         * [Play(音频播放指令)](doc/directive/AudioPlayer/Play.md)
         * [Stop(音频停止指令)](doc/directive/AudioPlayer/Stop.md)
+
+
+## 示例代码
+
+* 音频示例代码
+```
+//播放音频
+const { Play, Stop } = Bot.Directive.AudioPlayer;
+const directive = new Play('http://music.com/demo.mp3', 'REPLACE_ALL');
+return Promise.resolve({
+  directives: [ directive ],
+  outputSpeech: '开始播放',
+});
+
+//停止播放音频
+const directive = new Stop();
+return Promise.resolve({
+  directives: [ directive ], 
+  outputSpeech: '',
+});
+```
