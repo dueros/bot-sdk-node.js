@@ -1,5 +1,5 @@
 /**
- * @file 测试json文件
+ * @file 启动入口文件
  * @author yelvye@baidu.com
  * NOTICE:
  *      安装依赖

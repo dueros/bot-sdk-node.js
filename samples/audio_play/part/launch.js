@@ -1,5 +1,5 @@
 /**
- * @file 唤醒意图
+ * @file 测试json文件
  * @author yelvye@baidu.com
  */
 

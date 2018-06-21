@@ -1,0 +1,16 @@
+{
+  "name": "personal-income-tax",
+  "version": "1.0.0",
+  "description": "这是一个简单的查个税示例",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bot-sdk": "^1.1.1",
+    "express": "^4.16.3",
+    "request": "^2.87.0"
+  }
+}

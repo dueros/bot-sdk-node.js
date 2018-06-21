@@ -1,0 +1,24 @@
+{
+    "version":"2.0",
+    "session": {
+        "new": true,
+        "sessionId": "",
+        "attributes":{}
+    },
+    "context":{
+        "System": {
+            "user": {
+                "userId": "",
+                "userInfo": {
+                    "account": []
+                }
+            },
+            "application": {
+                "applicationId": ""
+            }
+        }
+    },
+    "request": {
+    
+    }
+}

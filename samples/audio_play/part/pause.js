@@ -1,5 +1,5 @@
 /**
- * @file 唤醒意图
+ * @file 测试json文件
  * @author yelvye@baidu.com
  */
 
@@ -18,10 +18,16 @@ let data = {
         }
     },
     request: {
-        type: 'LaunchRequest'
+        type: 'IntentRequest',
+        intents: [
+            {
+                name: 'ai.dueros.common.pause_intent',
+                confirmationStatus: 'NONE',
+                slots: []
+            }
+        ]
     }
 };
 
-console.log(JSON.stringify(data));
 
 

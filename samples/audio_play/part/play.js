@@ -1,5 +1,5 @@
 /**
- * @file 月薪填槽
+ * @file 测试json文件
  * @author yelvye@baidu.com
  */
 
@@ -21,16 +21,8 @@ let data = {
         type: 'IntentRequest',
         intents: [
             {
-                name: 'personal_income_tax.inquiry',
+                name: 'audio_play_intent',
                 slots: {
-                    monthlysalary: {
-                        name: 'monthlysalary',
-                        value: ''
-                    },
-                    location: {
-                        name: 'location',
-                        value: '北京'
-                    }
                 }
             }
         ]

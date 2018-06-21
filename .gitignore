@@ -1,3 +1,5 @@
 node_modules/*
 samples/inquiry-iphone/*
 samples/personal-income-tax/nohup.out
+.idea/
+.DS_Store
