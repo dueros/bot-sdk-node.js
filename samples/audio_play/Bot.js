@@ -140,6 +140,7 @@ class Bot extends BaseBot {
             if (music.token === token) {
                 this.curIndex = parseInt(i, 10);
             }
+            return null;
         });
     }
 
