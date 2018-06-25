@@ -112,6 +112,7 @@ class Bot extends BaseBot {
             if (music.token === token) {
                 this.curIndex = parseInt(i, 10) + 1 <= musics.length - 1 ? parseInt(i, 10) + 1 : musics.length - 1;
             }
+            return null;
         });
     }
 
@@ -125,6 +126,7 @@ class Bot extends BaseBot {
             if (music.token === token) {
                 this.curIndex = parseInt(i, 10) - 1 >= 0 ? parseInt(i, 10) - 1 : 0;
             }
+            return null;
         });
     }
 
