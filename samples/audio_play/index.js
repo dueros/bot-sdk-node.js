@@ -1,14 +1,15 @@
 /**
+ * @file 测试json文件
+ * @author yelvye@baidu.com
  * NOTICE:
  *      安装依赖
- *      npm install express
- *      npm install body-parser
- **/
+ *      npm install
+ */
 
 const express = require('express');
 
 const Bot = require('./Bot');
-var app = express();
+let app = express();
 
 // 探活请求
 app.head('/', (req, res) => {
@@ -19,17 +20,17 @@ app.post('/', (req, res) => {
     req.rawBody = '';
 
     req.setEncoding('utf8');
-    req.on('data', function(chunk) { 
+    req.on('data', chunk => {
         req.rawBody += chunk;
     });
 
-    req.on('end', function() {
-        var b = new Bot(JSON.parse(req.rawBody));
+    req.on('end', () => {
+        let b = new Bot(JSON.parse(req.rawBody));
         // 开启签名认证
         // 本地运行可以先注释
-        //b.initCertificate(req.headers, req.rawBody).enableVerifyRequestSign();
+        // b.initCertificate(req.headers, req.rawBody).enableVerifyRequestSign();
 
-        b.run().then(function(result){
+        b.run().then(result => {
             res.send(result);
         });
     });

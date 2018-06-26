@@ -1,30 +1,35 @@
-var data = {
-    "version": "2.0",
-    "session": {
-        "new": true,
-        "sessionId": "sessionId",
-        "attributes": []
+/**
+ * @file 城市填槽
+ * @author yelvye@baidu.com
+ */
+
+let data = {
+    version: '2.0',
+    session: {
+        new: true,
+        sessionId: 'sessionId',
+        attributes: []
     },
-    "context": {
-        "System": {
-            "application": {
-                "applicationId": "sample_personal_tax"
+    context: {
+        System: {
+            application: {
+                applicationId: 'sample_personal_tax'
             }
         }
     },
-    "request": {
-        "type": "IntentRequest",
-        "intents": [
+    request: {
+        type: 'IntentRequest',
+        intents: [
             {
-                "name": "personal_income_tax.inquiry",
-                "slots": {
-                    "monthlysalary": {
-                        "name": "monthlysalary",
-                        "value": "1111"
+                name: 'personal_income_tax.inquiry',
+                slots: {
+                    monthlysalary: {
+                        name: 'monthlysalary',
+                        value: '1111'
                     },
-                    "location": {
-                        "name": "location",
-                        "value": ""
+                    location: {
+                        name: 'location',
+                        value: ''
                     }
                 }
             }

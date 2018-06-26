@@ -1,13 +1,15 @@
 /**
+ * @file Bot入口文件
+ * @author yelvye@baidu.com
  * NOTICE:
  *      安装依赖
- *      npm install express
- **/
+ *      npm install
+ */
 
 const express = require('express');
 
 const Bot = require('./Bot');
-var app = express();
+let app = express();
 
 // 探活请求
 app.head('/', (req, res) => {
@@ -18,47 +20,45 @@ app.post('/', (req, res) => {
     req.rawBody = '';
 
     req.setEncoding('utf8');
-    req.on('data', function(chunk) { 
+    req.on('data', function (chunk) {
         req.rawBody += chunk;
     });
 
-    req.on('end', function() {
-        var requestBody;
-        try{
-            requestBody = JSON.parse(req.rawBody); 
-        }catch(e){
-            console.error(e); 
-            return res.send(JSON.stringify({status:1}));
+    req.on('end', function () {
+        let requestBody;
+        try {
+            requestBody = JSON.parse(req.rawBody);
+        }
+        catch (e) {
+            console.error(e);
+            return res.send(JSON.stringify({status: 1}));
         }
 
-        var bot = new Bot(requestBody);
+        let bot = new Bot(requestBody);
         // 开启签名认证
         bot.initCertificate(req.headers, req.rawBody).enableVerifyRequestSign();
 
-        
         /**
          * 需要监控功能
-         * 
+         *
          * bot-sdk 集成了监控sdk，参考：https://www.npmjs.com/package/bot-monitor-sdk
          * 打开此功能，对服务的性能有一定的耗时增加。另外，需要在DBP平台上面上传public key，这里使用私钥签名
          * 文档参考：https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-deploy/authentication_markdown
          */
-        bot.setPrivateKey(__dirname + '/rsa_private_key.pem').then(function(key){
-            // 0: debug  1: online
+        bot.setPrivateKey(__dirname + '/rsa_private_key.pem').then(function (key) {
+            //  0: debug  1: online
             bot.botMonitor.setEnvironmentInfo(key, 0);
 
-            bot.run().then(function(result){
+            bot.run().then(function (result) {
                 res.send(result);
             });
-        }, function(err){
-            console.error('error'); 
+        }, function (err) {
+            console.error(err);
         });
-
-        
-        // 不需要监控
-        //bot.run().then(function(result){
-        //    res.send(result);
-        //});
+        //  不需要监控
+        //  bot.run().then(function(result){
+        //      res.send(result);
+        //  });
     });
 }).listen(8014);
 
