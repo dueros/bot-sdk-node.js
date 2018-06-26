@@ -1,0 +1,19 @@
+{
+  "name": "score_keeper",
+  "version": "1.0.0",
+  "description": "帮助记分员记分，支持负分（可用于比赛，游戏等）",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "asyncawait": "^1.0.7",
+    "bot-monitor-sdk": "^1.2.4",
+    "express": "^4.16.3",
+    "ioredis": "^3.2.2",
+    "node.extend": "^2.0.0",
+    "request": "^2.87.0"
+  }
+}
