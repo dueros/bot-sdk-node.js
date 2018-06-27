@@ -145,6 +145,8 @@ app.post('/', (req, res) => {
     * [ListCard(列表卡片)](doc/card/ListCard.md)
 * 指令
     * [BaseDirective(所有指令基类)](doc/directive/BaseDirective.md)
+    * app启动指令
+        * [LaunchApp(app启动指令)](doc/directive/AppLuncher/LaunchApp.md)
     * 音频
         * [Play(音频播放指令)](doc/directive/AudioPlayer/Play.md)
         * [Stop(音频停止指令)](doc/directive/AudioPlayer/Stop.md)
@@ -185,3 +187,5 @@ app.post('/', (req, res) => {
            * 模版渲染
                * [RenderTemplate(模版渲染)](doc/directive/Dispay/RenderTemplate.md)
 
+    * 支付
+        * [Charge(支付指令)](doc/directive/Pay/Charge.md)

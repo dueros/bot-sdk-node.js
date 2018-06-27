@@ -12,6 +12,8 @@
     * [.getNlu()](#Request+getNlu) ⇒ <code>Nlu</code>
     * [.getType()](#Request+getType) ⇒ <code>string</code>
     * [.getAudioPlayerContext()](#Request+getAudioPlayerContext) ⇒ <code>Mixed</code>
+    * [.getVideoPlayerContext()](#Request+getVideoPlayerContext) ⇒ <code>Mixed</code>
+    * [.getScreenContext()](#Request+getScreenContext) ⇒ <code>Object</code>
     * [.getEventData()](#Request+getEventData) ⇒ <code>Mixed</code>
     * [.getUserId()](#Request+getUserId) ⇒ <code>string</code>
     * [.getQuery()](#Request+getQuery) ⇒ <code>string</code>
@@ -57,6 +59,18 @@
 
 ### request.getAudioPlayerContext() ⇒ <code>Mixed</code>
 获取设备音频播放的状态
+
+**Kind**: instance method of [<code>Request</code>](#Request)  
+<a name="Request+getVideoPlayerContext"></a>
+
+### request.getVideoPlayerContext() ⇒ <code>Mixed</code>
+获取设备视频播放的状态
+
+**Kind**: instance method of [<code>Request</code>](#Request)  
+<a name="Request+getScreenContext"></a>
+
+### request.getScreenContext() ⇒ <code>Object</code>
+获取screen context
 
 **Kind**: instance method of [<code>Request</code>](#Request)  
 <a name="Request+getEventData"></a>

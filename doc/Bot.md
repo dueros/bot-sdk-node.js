@@ -12,6 +12,7 @@ Bot基类. 请继承此类
         * [.addSessionEndedHandler(handler)](#Bot+addSessionEndedHandler) ⇒ [<code>Bot</code>](#Bot)
         * [.addIntentHandler(intent, handler)](#Bot+addIntentHandler) ⇒ [<code>Bot</code>](#Bot)
         * [.addEventListener(event, handler)](#Bot+addEventListener) ⇒ [<code>Bot</code>](#Bot)
+        * [.addDefaultEventListener(handler)](#Bot+addDefaultEventListener) ⇒ [<code>Bot</code>](#Bot)
         * [.initCertificate(headers, body)](#Bot+initCertificate) ⇒ <code>Certificate</code>
         * [.getIntentName()](#Bot+getIntentName) ⇒ <code>string</code> \| <code>null</code>
         * [.getSessionAttribute(field, defaultValue)](#Bot+getSessionAttribute) ⇒ <code>Mixied</code>
@@ -22,6 +23,8 @@ Bot基类. 请继承此类
         * [.waitAnswer()](#Bot+waitAnswer) ⇒ <code>null</code>
         * [.endSession()](#Bot+endSession)
         * [.setPrivateKey(filename)](#Bot+setPrivateKey) ⇒ <code>Promise</code>
+        * [.setExpectSpeech(expectSpeech)](#Bot+setExpectSpeech)
+        * [.endDialog()](#Bot+endDialog)
         * [.run(build)](#Bot+run) ⇒ <code>Promise</code>
     * _static_
         * [.Card](#Bot.Card) : <code>object</code>
@@ -34,6 +37,37 @@ Bot基类. 请继承此类
             * [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
                 * [.Play](#Bot.Directive.AudioPlayer.Play)
                 * [.Stop](#Bot.Directive.AudioPlayer.Stop)
+                * [.PlayerInfo](#Bot.Directive.AudioPlayer.PlayerInfo)
+                * [.Control](#Bot.Directive.AudioPlayer.Control) : <code>object</code>
+                    * [.FavoriteButton](#Bot.Directive.AudioPlayer.Control.FavoriteButton)
+                    * [.LyricButton](#Bot.Directive.AudioPlayer.Control.LyricButton)
+                    * [.NextButton](#Bot.Directive.AudioPlayer.Control.NextButton)
+                    * [.PlayPauseButton](#Bot.Directive.AudioPlayer.Control.PlayPauseButton)
+                    * [.PreviousButton](#Bot.Directive.AudioPlayer.Control.PreviousButton)
+                    * [.RadioButton](#Bot.Directive.AudioPlayer.Control.RadioButton)
+                    * [.RecommendButton](#Bot.Directive.AudioPlayer.Control.RecommendButton)
+                    * [.RefreshButton](#Bot.Directive.AudioPlayer.Control.RefreshButton)
+                    * [.RepeatButton](#Bot.Directive.AudioPlayer.Control.RepeatButton)
+                    * [.ShowFavoriteListButton](#Bot.Directive.AudioPlayer.Control.ShowFavoriteListButton)
+                    * [.ShowPlayListButton](#Bot.Directive.AudioPlayer.Control.ShowPlayListButton)
+                    * [.ThumbsUpDownButton](#Bot.Directive.AudioPlayer.Control.ThumbsUpDownButton)
+            * [.VideoPlayer](#Bot.Directive.VideoPlayer) : <code>object</code>
+                * [.Play](#Bot.Directive.VideoPlayer.Play)
+                * [.Stop](#Bot.Directive.VideoPlayer.Stop)
+            * [.Display](#Bot.Directive.Display) : <code>object</code>
+                * [.Hint](#Bot.Directive.Display.Hint)
+                * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
+                * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
+                    * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
+                    * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
+                    * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
+                    * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
+                    * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+                    * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
+                    * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+                    * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+            * [.Pay](#Bot.Directive.Pay) : <code>object</code>
+                * [.Charge](#Bot.Directive.Pay.Charge)
 
 <a name="new_Bot_new"></a>
 
@@ -135,6 +169,19 @@ this.addEventListener('Audio', (event)=>{
     // 具体数据结构参考[TODO]
 });
 ```
+<a name="Bot+addDefaultEventListener"></a>
+
+### bot.addDefaultEventListener(handler) ⇒ [<code>Bot</code>](#Bot)
+默认兜底事件的处理回调。
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+**Returns**: [<code>Bot</code>](#Bot) - 返回自己  
+**Access**: public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| handler | <code>function</code> | 处理函数，传入参数为事件的request，返回值做完response给DuerOS |
+
 <a name="Bot+initCertificate"></a>
 
 ### bot.initCertificate(headers, body) ⇒ <code>Certificate</code>
@@ -249,6 +296,23 @@ this.initCertificate(
 | --- | --- | --- |
 | filename | <code>string</code> | 私钥路径 |
 
+<a name="Bot+setExpectSpeech"></a>
+
+### bot.setExpectSpeech(expectSpeech)
+通过控制expectSpeech来控制麦克风开
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| expectSpeech | <code>boolean</code> | 是否开启麦克风 |
+
+<a name="Bot+endDialog"></a>
+
+### bot.endDialog()
+告诉DuerOS，需要结束对话
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
 <a name="Bot+run"></a>
 
 ### bot.run(build) ⇒ <code>Promise</code>
@@ -316,6 +380,37 @@ Bot 可以返回指令
     * [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
         * [.Play](#Bot.Directive.AudioPlayer.Play)
         * [.Stop](#Bot.Directive.AudioPlayer.Stop)
+        * [.PlayerInfo](#Bot.Directive.AudioPlayer.PlayerInfo)
+        * [.Control](#Bot.Directive.AudioPlayer.Control) : <code>object</code>
+            * [.FavoriteButton](#Bot.Directive.AudioPlayer.Control.FavoriteButton)
+            * [.LyricButton](#Bot.Directive.AudioPlayer.Control.LyricButton)
+            * [.NextButton](#Bot.Directive.AudioPlayer.Control.NextButton)
+            * [.PlayPauseButton](#Bot.Directive.AudioPlayer.Control.PlayPauseButton)
+            * [.PreviousButton](#Bot.Directive.AudioPlayer.Control.PreviousButton)
+            * [.RadioButton](#Bot.Directive.AudioPlayer.Control.RadioButton)
+            * [.RecommendButton](#Bot.Directive.AudioPlayer.Control.RecommendButton)
+            * [.RefreshButton](#Bot.Directive.AudioPlayer.Control.RefreshButton)
+            * [.RepeatButton](#Bot.Directive.AudioPlayer.Control.RepeatButton)
+            * [.ShowFavoriteListButton](#Bot.Directive.AudioPlayer.Control.ShowFavoriteListButton)
+            * [.ShowPlayListButton](#Bot.Directive.AudioPlayer.Control.ShowPlayListButton)
+            * [.ThumbsUpDownButton](#Bot.Directive.AudioPlayer.Control.ThumbsUpDownButton)
+    * [.VideoPlayer](#Bot.Directive.VideoPlayer) : <code>object</code>
+        * [.Play](#Bot.Directive.VideoPlayer.Play)
+        * [.Stop](#Bot.Directive.VideoPlayer.Stop)
+    * [.Display](#Bot.Directive.Display) : <code>object</code>
+        * [.Hint](#Bot.Directive.Display.Hint)
+        * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
+        * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
+            * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
+            * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
+            * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
+            * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
+            * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+            * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
+            * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+            * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+    * [.Pay](#Bot.Directive.Pay) : <code>object</code>
+        * [.Charge](#Bot.Directive.Pay.Charge)
 
 <a name="Bot.Directive.AudioPlayer"></a>
 
@@ -327,6 +422,20 @@ Bot 可以返回指令
 * [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
     * [.Play](#Bot.Directive.AudioPlayer.Play)
     * [.Stop](#Bot.Directive.AudioPlayer.Stop)
+    * [.PlayerInfo](#Bot.Directive.AudioPlayer.PlayerInfo)
+    * [.Control](#Bot.Directive.AudioPlayer.Control) : <code>object</code>
+        * [.FavoriteButton](#Bot.Directive.AudioPlayer.Control.FavoriteButton)
+        * [.LyricButton](#Bot.Directive.AudioPlayer.Control.LyricButton)
+        * [.NextButton](#Bot.Directive.AudioPlayer.Control.NextButton)
+        * [.PlayPauseButton](#Bot.Directive.AudioPlayer.Control.PlayPauseButton)
+        * [.PreviousButton](#Bot.Directive.AudioPlayer.Control.PreviousButton)
+        * [.RadioButton](#Bot.Directive.AudioPlayer.Control.RadioButton)
+        * [.RecommendButton](#Bot.Directive.AudioPlayer.Control.RecommendButton)
+        * [.RefreshButton](#Bot.Directive.AudioPlayer.Control.RefreshButton)
+        * [.RepeatButton](#Bot.Directive.AudioPlayer.Control.RepeatButton)
+        * [.ShowFavoriteListButton](#Bot.Directive.AudioPlayer.Control.ShowFavoriteListButton)
+        * [.ShowPlayListButton](#Bot.Directive.AudioPlayer.Control.ShowPlayListButton)
+        * [.ThumbsUpDownButton](#Bot.Directive.AudioPlayer.Control.ThumbsUpDownButton)
 
 <a name="Bot.Directive.AudioPlayer.Play"></a>
 
@@ -344,3 +453,286 @@ Bot 可以返回指令
 **Kind**: static property of [<code>AudioPlayer</code>](#Bot.Directive.AudioPlayer)  
 **Access**: public  
 **See**: [Stop](Stop)  
+<a name="Bot.Directive.AudioPlayer.PlayerInfo"></a>
+
+##### AudioPlayer.PlayerInfo
+音频播放信息类
+
+**Kind**: static property of [<code>AudioPlayer</code>](#Bot.Directive.AudioPlayer)  
+**Access**: public  
+**See**: [PlayerInfo](PlayerInfo)  
+<a name="Bot.Directive.AudioPlayer.Control"></a>
+
+##### AudioPlayer.Control : <code>object</code>
+音频控制按钮
+
+**Kind**: static namespace of [<code>AudioPlayer</code>](#Bot.Directive.AudioPlayer)  
+
+* [.Control](#Bot.Directive.AudioPlayer.Control) : <code>object</code>
+    * [.FavoriteButton](#Bot.Directive.AudioPlayer.Control.FavoriteButton)
+    * [.LyricButton](#Bot.Directive.AudioPlayer.Control.LyricButton)
+    * [.NextButton](#Bot.Directive.AudioPlayer.Control.NextButton)
+    * [.PlayPauseButton](#Bot.Directive.AudioPlayer.Control.PlayPauseButton)
+    * [.PreviousButton](#Bot.Directive.AudioPlayer.Control.PreviousButton)
+    * [.RadioButton](#Bot.Directive.AudioPlayer.Control.RadioButton)
+    * [.RecommendButton](#Bot.Directive.AudioPlayer.Control.RecommendButton)
+    * [.RefreshButton](#Bot.Directive.AudioPlayer.Control.RefreshButton)
+    * [.RepeatButton](#Bot.Directive.AudioPlayer.Control.RepeatButton)
+    * [.ShowFavoriteListButton](#Bot.Directive.AudioPlayer.Control.ShowFavoriteListButton)
+    * [.ShowPlayListButton](#Bot.Directive.AudioPlayer.Control.ShowPlayListButton)
+    * [.ThumbsUpDownButton](#Bot.Directive.AudioPlayer.Control.ThumbsUpDownButton)
+
+<a name="Bot.Directive.AudioPlayer.Control.FavoriteButton"></a>
+
+###### Control.FavoriteButton
+喜欢按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [FavoriteButton](FavoriteButton)  
+<a name="Bot.Directive.AudioPlayer.Control.LyricButton"></a>
+
+###### Control.LyricButton
+歌词按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [LyricButton](LyricButton)  
+<a name="Bot.Directive.AudioPlayer.Control.NextButton"></a>
+
+###### Control.NextButton
+下一曲按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [NextButton](NextButton)  
+<a name="Bot.Directive.AudioPlayer.Control.PlayPauseButton"></a>
+
+###### Control.PlayPauseButton
+暂停播放按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [PlayPauseButton](PlayPauseButton)  
+<a name="Bot.Directive.AudioPlayer.Control.PreviousButton"></a>
+
+###### Control.PreviousButton
+上一曲按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [PreviousButton](PreviousButton)  
+<a name="Bot.Directive.AudioPlayer.Control.RadioButton"></a>
+
+###### Control.RadioButton
+单选按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [RadioButton](RadioButton)  
+<a name="Bot.Directive.AudioPlayer.Control.RecommendButton"></a>
+
+###### Control.RecommendButton
+推荐按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [RecommendButton](RecommendButton)  
+<a name="Bot.Directive.AudioPlayer.Control.RefreshButton"></a>
+
+###### Control.RefreshButton
+刷新按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [RefreshButton](RefreshButton)  
+<a name="Bot.Directive.AudioPlayer.Control.RepeatButton"></a>
+
+###### Control.RepeatButton
+单曲循环按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [RepeatButton](RepeatButton)  
+<a name="Bot.Directive.AudioPlayer.Control.ShowFavoriteListButton"></a>
+
+###### Control.ShowFavoriteListButton
+展现收藏歌曲列表按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [ShowFavoriteListButton](ShowFavoriteListButton)  
+<a name="Bot.Directive.AudioPlayer.Control.ShowPlayListButton"></a>
+
+###### Control.ShowPlayListButton
+展现歌曲列表按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [ShowPlayListButton](ShowPlayListButton)  
+<a name="Bot.Directive.AudioPlayer.Control.ThumbsUpDownButton"></a>
+
+###### Control.ThumbsUpDownButton
+封面按钮控件
+
+**Kind**: static property of [<code>Control</code>](#Bot.Directive.AudioPlayer.Control)  
+**Access**: public  
+**See**: [ThumbsUpDownButton](ThumbsUpDownButton)  
+<a name="Bot.Directive.VideoPlayer"></a>
+
+#### Directive.VideoPlayer : <code>object</code>
+视频指令
+
+**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
+
+* [.VideoPlayer](#Bot.Directive.VideoPlayer) : <code>object</code>
+    * [.Play](#Bot.Directive.VideoPlayer.Play)
+    * [.Stop](#Bot.Directive.VideoPlayer.Stop)
+
+<a name="Bot.Directive.VideoPlayer.Play"></a>
+
+##### VideoPlayer.Play
+视频播放指令
+
+**Kind**: static property of [<code>VideoPlayer</code>](#Bot.Directive.VideoPlayer)  
+**Access**: public  
+**See**: [Play](Play)  
+<a name="Bot.Directive.VideoPlayer.Stop"></a>
+
+##### VideoPlayer.Stop
+视频停止播放指令
+
+**Kind**: static property of [<code>VideoPlayer</code>](#Bot.Directive.VideoPlayer)  
+**Access**: public  
+**See**: [Stop](Stop)  
+<a name="Bot.Directive.Display"></a>
+
+#### Directive.Display : <code>object</code>
+模版渲染和用户提示指令
+
+**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
+
+* [.Display](#Bot.Directive.Display) : <code>object</code>
+    * [.Hint](#Bot.Directive.Display.Hint)
+    * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
+    * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
+        * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
+        * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
+        * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
+        * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
+        * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+        * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
+        * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+        * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+
+<a name="Bot.Directive.Display.Hint"></a>
+
+##### Display.Hint
+用户提示指令
+
+**Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
+**Access**: public  
+**See**: [Hint](Hint)  
+<a name="Bot.Directive.Display.RenderTemplate"></a>
+
+##### Display.RenderTemplate
+模版渲染指令
+
+**Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
+**Access**: public  
+**See**: [RenderTemplate](RenderTemplate)  
+<a name="Bot.Directive.Display.Template"></a>
+
+##### Display.Template : <code>object</code>
+展示模版
+
+**Kind**: static namespace of [<code>Display</code>](#Bot.Directive.Display)  
+
+* [.Template](#Bot.Directive.Display.Template) : <code>object</code>
+    * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
+    * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
+    * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
+    * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
+    * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+    * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
+    * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+    * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+
+<a name="Bot.Directive.Display.Template.BodyTemplate1"></a>
+
+###### Template.BodyTemplate1
+文本展现模板
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [BodyTemplate1](BodyTemplate1)  
+<a name="Bot.Directive.Display.Template.BodyTemplate2"></a>
+
+###### Template.BodyTemplate2
+上图下文模版
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [BodyTemplate2](BodyTemplate2)  
+<a name="Bot.Directive.Display.Template.BodyTemplate3"></a>
+
+###### Template.BodyTemplate3
+左图右文模版
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [BodyTemplate3](BodyTemplate3)  
+<a name="Bot.Directive.Display.Template.BodyTemplate4"></a>
+
+###### Template.BodyTemplate4
+右图左文模版
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [BodyTemplate4](BodyTemplate4)  
+<a name="Bot.Directive.Display.Template.BodyTemplate5"></a>
+
+###### Template.BodyTemplate5
+图片模板
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [BodyTemplate5](BodyTemplate5)  
+<a name="Bot.Directive.Display.Template.ListTemplate1"></a>
+
+###### Template.ListTemplate1
+横向列表模板
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [ListTemplate1](ListTemplate1)  
+<a name="Bot.Directive.Display.Template.ListTemplate2"></a>
+
+###### Template.ListTemplate2
+纵向列表模板
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [ListTemplate2](ListTemplate2)  
+<a name="Bot.Directive.Display.Template.ListTemplateItem"></a>
+
+###### Template.ListTemplateItem
+模版列表项
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [ListTemplateItem](ListTemplateItem)  
+<a name="Bot.Directive.Pay"></a>
+
+#### Directive.Pay : <code>object</code>
+支付
+
+**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
+<a name="Bot.Directive.Pay.Charge"></a>
+
+##### Pay.Charge
+支付指令
+
+**Kind**: static property of [<code>Pay</code>](#Bot.Directive.Pay)  
+**Access**: public  
+**See**: [Charge](Charge)  
