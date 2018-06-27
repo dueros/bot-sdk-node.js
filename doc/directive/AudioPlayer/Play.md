@@ -12,7 +12,8 @@ Play 音频播放指令
     * [.getToken()](#Play+getToken) ⇒ <code>string</code>
     * [.setUrl(url)](#Play+setUrl)
     * [.setOffsetInMilliSeconds(milliSeconds)](#Play+setOffsetInMilliSeconds)
-    * [.setStreamFormat($streamFormat)](#Play+setStreamFormat)
+    * [.setStreamFormat(streamFormat)](#Play+setStreamFormat)
+    * [.setPlayerInfo(playerInfo)](#Play+setPlayerInfo)
 
 <a name="new_Play_new"></a>
 
@@ -60,16 +61,28 @@ Play 音频播放指令
 
 | Param | Type | Description |
 | --- | --- | --- |
-| milliSeconds | <code>integer</code> | 毫秒数。比如5分钟的歌曲，播放的长度是5*60*1000毫秒，选择起始的播放位置 |
+| milliSeconds | <code>number</code> | 毫秒数。比如5分钟的歌曲，播放的长度是5*60*1000毫秒，选择起始的播放位置 |
 
 <a name="Play+setStreamFormat"></a>
 
-### play.setStreamFormat($streamFormat)
+### play.setStreamFormat(streamFormat)
 设置directive的属性。音频流格式，streamFormat 默认STREAM_FORMAT_MP3
 
 **Kind**: instance method of [<code>Play</code>](#Play)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| $streamFormat | <code>string</code> | 取值: STREAM_FORMAT_MP3、STREAM_FORMAT_M3U8、STREAM_FORMAT_M4A |
+| streamFormat | <code>string</code> | 取值: STREAM_FORMAT_MP3、STREAM_FORMAT_M3U8、STREAM_FORMAT_M4A |
+
+<a name="Play+setPlayerInfo"></a>
+
+### play.setPlayerInfo(playerInfo)
+设置PlayerInfo信息
+
+**Kind**: instance method of [<code>Play</code>](#Play)  
+**Access**: public  
+
+| Param | Type |
+| --- | --- |
+| playerInfo | <code>PlayerInfo</code> | 
 

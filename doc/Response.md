@@ -8,12 +8,15 @@
 * [Response](#Response)
     * [new Response(request, session, nlu)](#new_Response_new)
     * [.setShouldEndSession(val)](#Response+setShouldEndSession)
+    * [.setExpectSpeech(expectSpeech)](#Response+setExpectSpeech)
     * [.illegalRequest()](#Response+illegalRequest) ⇒ <code>Promise</code>
     * [.build(data)](#Response+build) ⇒ <code>Promise</code>
 
 <a name="new_Response_new"></a>
 
 ### new Response(request, session, nlu)
+构造方法
+
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -30,7 +33,18 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| val | <code>boolean</code> | true: 结束对话   false: 继续对话 |
+| val | <code>boolean</code> | true: 结束对话,false: 继续对话 |
+
+<a name="Response+setExpectSpeech"></a>
+
+### response.setExpectSpeech(expectSpeech)
+通过控制expectSpeech来控制麦克风开关
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| expectSpeech | <code>boolean</code> | 麦克风是否开启 |
 
 <a name="Response+illegalRequest"></a>
 
