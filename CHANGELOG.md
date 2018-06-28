@@ -14,6 +14,12 @@
 
 * 增加支付指令
 
-# 1.2.1
+# 1.2.5
 
 * 修复BaseTemplate、BodyTemplate1静态变量声明
+* 修复添加上报时间的变量覆盖
+* 添加Audio/PlayerInfo媒体类型校验
+* 添加Video/Play的播放行为类型校验
+* 添加支付类型校验
+
+
