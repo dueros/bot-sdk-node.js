@@ -1,5 +1,5 @@
-require("should"); 
-
+let describe = require("should");
+require('describe')
 let assert = require('assert');
 
 let Request = require('../../lib/Request');

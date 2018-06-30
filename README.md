@@ -171,21 +171,21 @@ app.post('/', (req, res) => {
         * [Stop(视频停止指令)](doc/directive/VideoPlayer/Stop.md)
     * 展现
         * 模版
-           * [BaseTemplate(基础模版类)](doc/directive/Dispay/Template/BaseTemplate.md)
-           * [BodyTemplate1(文本展现模板)](doc/directive/Dispay/Template/BodyTemplate1.md)
-           * [BodyTemplate2(上图下文模版)](doc/directive/Dispay/Template/BaseTemplate2.md)
-           * [BodyTemplate3(左图右文模版)](doc/directive/Dispay/Template/BodyTemplate3.md)
-           * [BodyTemplate4(右图左文模版)](doc/directive/Dispay/Template/BodyTemplate4.md)
-           * [BodyTemplate5(图片模板)](doc/directive/Dispay/Template/BodyTemplate5.md)
-           * [ListTemplate(列表模版基础类)](doc/directive/Dispay/Template/ListTemplate.md)
-           * [ListTemplate1(横向列表模板)](doc/directive/Dispay/Template/ListTemplate1.md)
-           * [ListTemplate2(纵向列表模板)](doc/directive/Dispay/Template/ListTemplate2.md)
-           * [ListTemplateItem(模版列表项)](doc/directive/Dispay/Template/ListTemplateItem.md)
-           * [TextImageTemplate(图文模版)](doc/directive/Dispay/Template/TextImageTemplate.md)
+           * [BaseTemplate(基础模版类)](doc/directive/Display/Template/BaseTemplate.md)
+           * [BodyTemplate1(文本展现模板)](doc/directive/Display/Template/BodyTemplate1.md)
+           * [BodyTemplate2(上图下文模版)](doc/directive/Display/Template/BaseTemplate2.md)
+           * [BodyTemplate3(左图右文模版)](doc/directive/Display/Template/BodyTemplate3.md)
+           * [BodyTemplate4(右图左文模版)](doc/directive/Display/Template/BodyTemplate4.md)
+           * [BodyTemplate5(图片模板)](doc/directive/Display/Template/BodyTemplate5.md)
+           * [ListTemplate(列表模版基础类)](doc/directive/Display/Template/ListTemplate.md)
+           * [ListTemplate1(横向列表模板)](doc/directive/Display/Template/ListTemplate1.md)
+           * [ListTemplate2(纵向列表模板)](doc/directive/Display/Template/ListTemplate2.md)
+           * [ListTemplateItem(模版列表项)](doc/directive/Display/Template/ListTemplateItem.md)
+           * [TextImageTemplate(图文模版)](doc/directive/Display/Template/TextImageTemplate.md)
            * 用户提示指令
-               * [Hint(用户提示指令)](doc/directive/Dispay/Hint.md)
+               * [Hint(用户提示指令)](doc/directive/Display/Hint.md)
            * 模版渲染
-               * [RenderTemplate(模版渲染)](doc/directive/Dispay/RenderTemplate.md)
+               * [RenderTemplate(模版渲染)](doc/directive/Display/RenderTemplate.md)
 
     * 支付
         * [Charge(支付指令)](doc/directive/Pay/Charge.md)
