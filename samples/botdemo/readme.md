@@ -205,7 +205,7 @@ listTemplate.addItem(listTemplateItem);
 //定义RenderTemplate指令
 let directive = new RenderTemplate(listTemplate);
 return {
-    directives: directive,
+    directives: [directive],
     outputSpeech: '这是ListTemplate1模板'
 };
 ```
