@@ -1,3 +1,8 @@
+/**
+ * @file NextButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const NextButton = Bot.Directive.AudioPlayer.Control.NextButton;

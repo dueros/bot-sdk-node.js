@@ -1,3 +1,8 @@
+/**
+ * @file RenderTemplate test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../lib/Bot');
 const RenderTemplate = Bot.Directive.Display.RenderTemplate;

@@ -1,3 +1,8 @@
+/**
+ * @file ListTemplate2 test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const ListTemplate2 = Bot.Directive.Display.Template.ListTemplate2;
@@ -43,7 +48,7 @@ describe('Test Display/Template/ListTemplate1.js', () => {
                         widthPixels: '123',
                         heightPixels: '345'
                     },
-                    textContent:{
+                    textContent: {
                         primaryText: {
                             type: 'PlainText',
                             text: 'Plain Primary Text'

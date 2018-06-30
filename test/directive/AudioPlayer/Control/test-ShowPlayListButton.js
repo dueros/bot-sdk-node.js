@@ -1,3 +1,8 @@
+/**
+ * @file ShowPlayListButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const ShowPlayListButton = Bot.Directive.AudioPlayer.Control.ShowPlayListButton;

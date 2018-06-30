@@ -1,3 +1,8 @@
+/**
+ * @file LaunchApp test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const LaunchApp = require('../../../lib/directive/AppLuncher/LaunchApp');
 

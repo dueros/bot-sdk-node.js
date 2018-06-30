@@ -1,3 +1,8 @@
+/**
+ * @file RadioButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const RadioButton = Bot.Directive.AudioPlayer.Control.RadioButton;

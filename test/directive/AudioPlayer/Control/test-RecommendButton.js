@@ -1,3 +1,8 @@
+/**
+ * @file RecommendButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const RecommendButton = Bot.Directive.AudioPlayer.Control.RecommendButton;

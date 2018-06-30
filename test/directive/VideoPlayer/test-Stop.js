@@ -1,3 +1,8 @@
+/**
+ * @file VideoPlayer/Stop test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 
 const Bot = require('../../../lib/Bot');
@@ -11,3 +16,4 @@ describe('Test ViderPlayer/Stop.js', () => {
         });
    });
 });
+

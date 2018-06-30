@@ -1,3 +1,8 @@
+/**
+ * @file Charge test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../lib/Bot');
 
@@ -22,7 +27,7 @@ describe('Test Pay/Charge.js', () => {
             type: 'Connections.SendRequest',
             name: 'Charge',
             token: 'token by set',
-            payload:{
+            payload: {
                 chargeBaiduPay: {
                     authorizeAttributes: {
                         authorizationAmount: {

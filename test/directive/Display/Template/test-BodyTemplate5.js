@@ -1,3 +1,8 @@
+/**
+ * @file BodyTemplate5 test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const BodyTemplate5 = Bot.Directive.Display.Template.BodyTemplate5;
@@ -18,7 +23,7 @@ describe('Test Display/Template/BodyTemplate5.js', () => {
             backgroundImage: {
                 url: 'http://uri-img.com'
             },
-            images:[
+            images: [
                 {
                     url: 'http://uri-img1.com',
                     widthPixels: '1332',

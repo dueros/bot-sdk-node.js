@@ -1,3 +1,8 @@
+/**
+ * @file FavoriteButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const FavoriteButton = Bot.Directive.AudioPlayer.Control.FavoriteButton;

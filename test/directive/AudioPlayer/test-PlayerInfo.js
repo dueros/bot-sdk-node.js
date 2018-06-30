@@ -1,3 +1,8 @@
+/**
+ * @file PlayerInfo test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../lib/Bot');
 const PlayerInfo = Bot.Directive.AudioPlayer.PlayerInfo;

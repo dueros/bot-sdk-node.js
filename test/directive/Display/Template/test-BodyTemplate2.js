@@ -1,3 +1,8 @@
+/**
+ * @file BodyTemplate2 test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 
 const Bot = require('../../../../lib/Bot');

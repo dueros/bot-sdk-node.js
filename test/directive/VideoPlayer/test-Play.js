@@ -1,3 +1,8 @@
+/**
+ * @file VideoPlayer/Play test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../lib/Bot');
 const Play = Bot.Directive.VideoPlayer.Play;
@@ -52,3 +57,4 @@ describe('Test VideoPlayer/Play.js', () => {
         });
     });
 });
+

@@ -1,3 +1,8 @@
+/**
+ * @file ThumbsUpDownButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const ThumbsUpDownButton = Bot.Directive.AudioPlayer.Control.ThumbsUpDownButton;

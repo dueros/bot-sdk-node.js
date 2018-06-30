@@ -1,3 +1,8 @@
+/**
+ * @file PlayPauseButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const PlayPauseButton = Bot.Directive.AudioPlayer.Control.PlayPauseButton;

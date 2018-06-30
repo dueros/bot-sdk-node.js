@@ -1,3 +1,8 @@
+/**
+ * @file RefreshButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const RefreshButton = Bot.Directive.AudioPlayer.Control.RefreshButton;

@@ -1,3 +1,8 @@
+/**
+ * @file Hint test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../lib/Bot');
 const Hint = Bot.Directive.Display.Hint;
@@ -31,6 +36,6 @@ describe('Test Display/Hint.js', () => {
                     text: 'text3'
                 }
             ]
-        })
+        });
     });
 });

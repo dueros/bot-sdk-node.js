@@ -1,3 +1,8 @@
+/**
+ * @file RepeatButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const RepeatButton = Bot.Directive.AudioPlayer.Control.RepeatButton;

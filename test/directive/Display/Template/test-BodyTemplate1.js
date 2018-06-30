@@ -1,3 +1,8 @@
+/**
+ * @file BodyTemplate1 test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const BodyTemplate1 = Bot.Directive.Display.Template.BodyTemplate1;

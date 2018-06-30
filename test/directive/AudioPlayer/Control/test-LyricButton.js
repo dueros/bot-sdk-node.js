@@ -1,3 +1,8 @@
+/**
+ * @file LyricButton test
+ * @author yelvye@baidu.com
+ */
+
 require('should');
 const Bot = require('../../../../lib/Bot');
 const LyricButton = Bot.Directive.AudioPlayer.Control.LyricButton;
