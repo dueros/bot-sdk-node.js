@@ -1,0 +1,68 @@
+[
+  {
+    "comment": "/**\n@class\n@classdesc has a chainable method\n*/",
+    "meta": {
+      "range": [
+        48,
+        145
+      ],
+      "filename": "0-src.js",
+      "lineno": 5,
+      "path": "/Users/lloyd/Documents/75lb/testbed/build/global/chainable",
+      "code": {
+        "id": "astnode100000001",
+        "name": "Chainable",
+        "type": "FunctionDeclaration",
+        "paramnames": []
+      },
+      "vars": {
+        "this.method": "Chainable#method",
+        "": null
+      }
+    },
+    "kind": "class",
+    "classdesc": "has a chainable method",
+    "name": "Chainable",
+    "longname": "Chainable",
+    "scope": "global",
+    "params": []
+  },
+  {
+    "comment": "/**\n  returns itself\n  @chainable\n  */",
+    "meta": {
+      "range": [
+        115,
+        143
+      ],
+      "filename": "0-src.js",
+      "lineno": 10,
+      "path": "/Users/lloyd/Documents/75lb/testbed/build/global/chainable",
+      "code": {
+        "id": "astnode100000005",
+        "name": "this.method",
+        "type": "FunctionExpression",
+        "paramnames": []
+      }
+    },
+    "description": "returns itself",
+    "tags": [
+      {
+        "originalTitle": "chainable",
+        "title": "chainable",
+        "text": ""
+      }
+    ],
+    "name": "method",
+    "longname": "Chainable#method",
+    "kind": "function",
+    "memberof": "Chainable",
+    "scope": "instance"
+  },
+  {
+    "kind": "package",
+    "longname": "package:undefined",
+    "files": [
+      "/Users/lloyd/Documents/75lb/testbed/build/global/chainable/0-src.js"
+    ]
+  }
+]

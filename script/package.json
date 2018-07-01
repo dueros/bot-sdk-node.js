@@ -1,0 +1,14 @@
+{
+  "name": "script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "doc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdoc-to-markdown": "^4.0.1"
+  }
+}

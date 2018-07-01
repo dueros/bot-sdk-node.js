@@ -20,7 +20,7 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| request | <code>Requset</code> | 请求 |
+| request | <code>Request</code> | 请求 |
 | session | <code>Session</code> | session |
 | nlu | <code>Nlu</code> | query解析对象 |
 

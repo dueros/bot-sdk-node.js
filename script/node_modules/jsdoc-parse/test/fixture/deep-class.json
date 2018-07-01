@@ -1,0 +1,48 @@
+[
+  {
+    "id": "module:farm"
+  },
+  {
+    "id": "module:farm--Farm",
+    "parentId": "module:farm"
+  },
+  {
+    "id": "module:farm--Farm()",
+    "parentId": "module:farm--Farm"
+  },
+  {
+    "id": "module:farm--Farm.Farm#equipment",
+    "parentId": "module:farm--Farm",
+    "scope": "instance"
+  },
+  {
+    "id": "module:farm--Farm~Equipment.Equipment#tractor",
+    "parentId": "module:farm--Farm~Equipment",
+    "scope": "instance"
+  },
+  {
+    "id": "module:farm--Farm~Tractor.Tractor#engine",
+    "parentId": "module:farm--Farm~Tractor",
+    "scope": "instance"
+  },
+  {
+    "id": "module:farm--Farm~Tractor.Tractor#engine.manufacturer",
+    "parentId": "module:farm--Farm~Tractor.Tractor#engine",
+    "scope": "static"
+  },
+  {
+    "id": "module:farm--Farm~Tractor.Tractor#engine.size",
+    "parentId": "module:farm--Farm~Tractor.Tractor#engine",
+    "scope": "static"
+  },
+  {
+    "id": "module:farm--Farm~Equipment",
+    "parentId": "module:farm--Farm",
+    "scope": "inner"
+  },
+  {
+    "id": "module:farm--Farm~Tractor",
+    "parentId": "module:farm--Farm",
+    "scope": "inner"
+  }
+]

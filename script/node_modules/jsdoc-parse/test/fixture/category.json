@@ -1,0 +1,82 @@
+[
+  {
+    "id": "module:category",
+    "longname": "module:category",
+    "name": "category",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "0-src.js",
+      "path": "/Users/lloyd/Documents/jsdoc2md/testbed/build-v2/jsdoc2md/tags/category"
+    },
+    "order": 0
+  },
+  {
+    "id": "module:category.one",
+    "parentId": "module:category",
+    "longname": "module:category.one",
+    "name": "one",
+    "scope": "static",
+    "kind": "member",
+    "description": "one",
+    "memberof": "module:category",
+    "category": "first",
+    "meta": {
+      "lineno": 9,
+      "filename": "0-src.js",
+      "path": "/Users/lloyd/Documents/jsdoc2md/testbed/build-v2/jsdoc2md/tags/category"
+    },
+    "order": 1
+  },
+  {
+    "id": "module:category.two",
+    "parentId": "module:category",
+    "longname": "module:category.two",
+    "name": "two",
+    "scope": "static",
+    "kind": "member",
+    "description": "two",
+    "memberof": "module:category",
+    "category": "first",
+    "meta": {
+      "lineno": 14,
+      "filename": "0-src.js",
+      "path": "/Users/lloyd/Documents/jsdoc2md/testbed/build-v2/jsdoc2md/tags/category"
+    },
+    "order": 2
+  },
+  {
+    "id": "module:category.three",
+    "parentId": "module:category",
+    "longname": "module:category.three",
+    "name": "three",
+    "scope": "static",
+    "kind": "member",
+    "description": "three",
+    "memberof": "module:category",
+    "category": "second",
+    "meta": {
+      "lineno": 19,
+      "filename": "0-src.js",
+      "path": "/Users/lloyd/Documents/jsdoc2md/testbed/build-v2/jsdoc2md/tags/category"
+    },
+    "order": 3
+  },
+  {
+    "id": "module:category.four",
+    "parentId": "module:category",
+    "longname": "module:category.four",
+    "name": "four",
+    "scope": "static",
+    "kind": "member",
+    "description": "four",
+    "memberof": "module:category",
+    "category": "second",
+    "meta": {
+      "lineno": 24,
+      "filename": "0-src.js",
+      "path": "/Users/lloyd/Documents/jsdoc2md/testbed/build-v2/jsdoc2md/tags/category"
+    },
+    "order": 4
+  }
+]
