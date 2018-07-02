@@ -10,6 +10,7 @@
  *  @param {number} salary 工资
  *  @return {Object} 对应类型的个税计算结果
  */
+
 let getMockData = function getMockData(computeType, salary) {
     let mockData = {};
     switch (computeType) {

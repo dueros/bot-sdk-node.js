@@ -1,5 +1,9 @@
-require("should"); 
+/**
+ * @file VideoPlayer/Play test
+ * @author yelvye@baidu.com
+ */
 
+require('should');
 let assert = require('assert');
 
 let Request = require('../../lib/Request');
@@ -18,19 +22,20 @@ describe('Nlu', () => {
 
     describe('#getSlot()', () => {
         it('city: 北京 getSlot("city") be 北京', () => {
-            nlu.getSlot('city').should.equal('北京');        
+            nlu.getSlot('city').should.equal('北京');
         });
     });
 
     describe('#setSlot()', () => {
         it('monthlySalary: 1212 setSlot("monthlySalary", 1212)', () => {
             nlu.setSlot('monthlySalary', 1212);
-            nlu.getSlot('monthlySalary').should.equal(1212);        
-        }); });
+            nlu.getSlot('monthlySalary').should.equal(1212);
+        });
+    });
 
     describe('#getIntentName()', () => {
         it('getIntentName must be intentName', () => {
-            nlu.getIntentName().should.equal('intentName');        
+            nlu.getIntentName().should.equal('intentName');
         });
     });
 
@@ -42,7 +47,7 @@ describe('Nlu', () => {
                 slotToElicit: 'destination',
                 updatedIntent: {
                     name: intent.name,
-                    slots: intent.slots 
+                    slots: intent.slots
                 }
             });
         });
@@ -55,7 +60,7 @@ describe('Nlu', () => {
                 type: 'Dialog.Delegate',
                 updatedIntent: {
                     name: intent.name,
-                    slots: intent.slots 
+                    slots: intent.slots
                 }
             });
         });
@@ -69,7 +74,7 @@ describe('Nlu', () => {
                 slotToConfirm: 'city',
                 updatedIntent: {
                     name: intent.name,
-                    slots: intent.slots 
+                    slots: intent.slots
                 }
             });
         });
@@ -82,7 +87,7 @@ describe('Nlu', () => {
                 type: 'Dialog.ConfirmIntent',
                 updatedIntent: {
                     name: intent.name,
-                    slots: intent.slots 
+                    slots: intent.slots
                 }
             });
         });

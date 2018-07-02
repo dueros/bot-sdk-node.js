@@ -25,6 +25,9 @@ Bot基类. 请继承此类
         * [.setPrivateKey(filename)](#Bot+setPrivateKey) ⇒ <code>Promise</code>
         * [.setExpectSpeech(expectSpeech)](#Bot+setExpectSpeech)
         * [.endDialog()](#Bot+endDialog)
+        * [.isSupportDisplay()](#Bot+isSupportDisplay) ⇒ <code>boolean</code>
+        * [.isSupportAudioPlayer()](#Bot+isSupportAudioPlayer) ⇒ <code>boolean</code>
+        * [.isSupportVideoPlayer()](#Bot+isSupportVideoPlayer) ⇒ <code>boolean</code>
         * [.run(build)](#Bot+run) ⇒ <code>Promise</code>
     * _static_
         * [.Card](#Bot.Card) : <code>object</code>
@@ -313,6 +316,27 @@ this.initCertificate(
 告诉DuerOS，需要结束对话
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
+<a name="Bot+isSupportDisplay"></a>
+
+### bot.isSupportDisplay() ⇒ <code>boolean</code>
+检测Display的数据是否存在
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+**Access**: public  
+<a name="Bot+isSupportAudioPlayer"></a>
+
+### bot.isSupportAudioPlayer() ⇒ <code>boolean</code>
+检测AudioPlayer对象是否存在
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+**Access**: public  
+<a name="Bot+isSupportVideoPlayer"></a>
+
+### bot.isSupportVideoPlayer() ⇒ <code>boolean</code>
+检测VideoPlayer对象是否存在
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+**Access**: public  
 <a name="Bot+run"></a>
 
 ### bot.run(build) ⇒ <code>Promise</code>
