@@ -26,4 +26,6 @@
 * 添加单元测试
 * doc 404
 
+# 1.2.4
 
+* fix addDefaultIntentHandler
