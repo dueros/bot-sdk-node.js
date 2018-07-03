@@ -28,4 +28,4 @@
 
 # 1.2.4
 
-* fix addDefaultIntentHandler
+* fix addDefaultEventHandler
