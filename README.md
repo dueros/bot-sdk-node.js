@@ -825,7 +825,7 @@ this.botMonitor.setEnvironmentInfo(privateKey, 0);
 //环境信息配置完成后，你需要打开BotMonitor数据采集上报开关(默认是开启的,你可以根据自己需求打开或者关闭),true代表打开，false代表关闭
 this.botMonitor.setMonitorEnabled(true);
 ```
-具体数据统计的说明和使用可以参考BotMonitor文档
+具体数据统计的说明和使用可以参考BotMonitor文档:
 https://www.npmjs.com/package/bot-monitor-sdk
 
 ## 如何调试
