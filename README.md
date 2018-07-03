@@ -21,8 +21,12 @@ npm install bot-sdk --save
 ### 下面通过一个例子来完整的说明如何使用js的 bot-sdk 来完成一个Bot技能的开发：
  1.新建文件目录安装相关依赖
 ```shell
-cd /to/your/path && mkdir js-bot-demo && cd js-bot-demo && npm init && npm install express --save
-&& npm install bot-sdk --save
+cd /to/your/path
+mkdir js-bot-demo
+cd js-bot-demo
+npm init
+npm install express --save
+npm install bot-sdk --save
 ```
 
  2.创建index.js入口文件
@@ -126,8 +130,7 @@ Bot.js是技能的逻辑处理模块，`this.addLaunchHandler`是添加技能唤
 
 4. 运行Bot
 ```shell
-调试: node index.js
-生产环境： pm2 start index.js --name 'your-bot-name' 或者 加入supervisor管理
+node index.js
 ```
 
 
