@@ -566,7 +566,7 @@ this.addEventListener('AudioPlayer.PlaybackNearlyFinished', function(event) {
 ```
 
 ### 视频播放
-VideoPlayer视频播放提供了VideoPlayer指令接口和VideoPlayer事件接口。VideoPlayer指令是技能向DuerOS发送的，对视频进行控制的指令，如播放指令、停止播放指令等。DuerOS收到指令后会转化成端上能识别的播放指令，对视频进行相应的控制。VideoPlayer事件是指在视频播放过程中触发一系列事件，DuerOS会将这些事件上报给技能，请求技能进行处理。具体协议内容可以参考视频协议文档，https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/videoplayer_markdown。
+VideoPlayer视频播放提供了VideoPlayer指令接口和VideoPlayer事件接口。VideoPlayer指令是技能向DuerOS发送的，对视频进行控制的指令，如播放指令、停止播放指令等。DuerOS收到指令后会转化成端上能识别的播放指令，对视频进行相应的控制。VideoPlayer事件是指在视频播放过程中触发一系列事件，DuerOS会将这些事件上报给技能，请求技能进行处理。具体协议内容可以参考视频协议文档，https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/videoplayer_markdown
 
 ### 视频播放指令
 `VideoPlayer.Play`
