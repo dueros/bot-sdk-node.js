@@ -135,7 +135,7 @@ node index.js
 
 
 `template`展现模版
-为了更好的在有屏设备端上展现技能，DuerOS提供了多种展现模板供开发者使用。展现模板分body template和list template两种类型。其中body template由图片和文字组成，list template由一系列list item组成，每个list item由图片和文字组成。不同的展现模板适合不同的场景，开发者可以根据技能展现的需求选择合适的模板。关于模板的详细功能和展现效果可以参考DuerOS模板文档，https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/display-template_markdown。
+为了更好的在有屏设备端上展现技能，DuerOS提供了多种展现模板供开发者使用。展现模板分body template和list template两种类型。其中body template由图片和文字组成，list template由一系列list item组成，每个list item由图片和文字组成。不同的展现模板适合不同的场景，开发者可以根据技能展现的需求选择合适的模板。关于模板的详细功能和展现效果可以参考DuerOS模板文档，[模板文档](https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/display-template_markdown)
 
 ### 文本展现模板
 `BodyTemplate1`
@@ -379,7 +379,8 @@ this.addEventListener('Display.ElementSelected', function(event) {
 
 
 `card`展现卡片
-在有屏设备上，您的技能在回复用户时，可以通过使用卡片展现更生动、丰富的内容。常用的展现卡片类型有文本卡片、标准卡片、标准列表卡片、图片卡片。展现卡片随Response消息一起发送给DuerOS。具体展现卡片的功能和展示效果可以参考DuerOS展现卡片文档，https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/cards_markdown。
+在有屏设备上，您的技能在回复用户时，可以通过使用卡片展现更生动、丰富的内容。常用的展现卡片类型有文本卡片、标准卡片、标准列表卡片、图片卡片。展现卡片随Response消息一起发送给DuerOS。具体展现卡片的功能和展示效果可以参考DuerOS展现卡片文档:
+[卡片文档](https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/cards_markdown)
 ### 文本卡片
 `TextCard`
 ```javascript
@@ -566,7 +567,7 @@ this.addEventListener('AudioPlayer.PlaybackNearlyFinished', function(event) {
 ```
 
 ### 视频播放
-VideoPlayer视频播放提供了VideoPlayer指令接口和VideoPlayer事件接口。VideoPlayer指令是技能向DuerOS发送的，对视频进行控制的指令，如播放指令、停止播放指令等。DuerOS收到指令后会转化成端上能识别的播放指令，对视频进行相应的控制。VideoPlayer事件是指在视频播放过程中触发一系列事件，DuerOS会将这些事件上报给技能，请求技能进行处理。具体协议内容可以参考视频协议文档，https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/videoplayer_markdown
+VideoPlayer视频播放提供了VideoPlayer指令接口和VideoPlayer事件接口。VideoPlayer指令是技能向DuerOS发送的，对视频进行控制的指令，如播放指令、停止播放指令等。DuerOS收到指令后会转化成端上能识别的播放指令，对视频进行相应的控制。VideoPlayer事件是指在视频播放过程中触发一系列事件，DuerOS会将这些事件上报给技能，请求技能进行处理。具体协议内容可以参考视频协议文档，[视频协议文档](https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-custom/videoplayer_markdown)
 
 ### 视频播放指令
 `VideoPlayer.Play`
@@ -829,7 +830,7 @@ this.botMonitor.setEnvironmentInfo(privateKey, 0);
 this.botMonitor.setMonitorEnabled(true);
 ```
 具体数据统计的说明和使用可以参考BotMonitor文档:
-https://www.npmjs.com/package/bot-monitor-sdk
+[BotMonitor文档](https://www.npmjs.com/package/bot-monitor-sdk)
 
 ## 如何调试
 ### 本地测试
