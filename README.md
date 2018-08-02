@@ -217,7 +217,7 @@ bodyTemplate.setPlainContent('拖尔斯泰-理想的书籍是智慧的钥匙');
 let directive = new RenderTemplate(bodyTemplate);
 return {
     directives: [directive],
-    outputSpeech: 这是BodyTemplate3模板'
+    outputSpeech: '这是BodyTemplate3模板'
 };
 
 ```
@@ -247,7 +247,7 @@ bodyTemplate.setPlainContent('拖尔斯泰-理想的书籍是智慧的钥匙');
 let directive = new RenderTemplate(bodyTemplate);
 return {
     directives: [directive],
-    outputSpeech: 这是BodyTemplate4模板'
+    outputSpeech: '这是BodyTemplate4模板'
 };
 
 ```
