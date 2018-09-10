@@ -16,7 +16,7 @@
 * [RenderAudioList](#RenderAudioList) ⇐ <code>BaseDirective</code>
     * [new RenderAudioList(title, behavior)](#new_RenderAudioList_new)
     * [.setToken(token)](#RenderAudioList+setToken)
-    * [.addAudioItem(audioItem)](#RenderAudioList+addAudioItem)
+    * [.addAudioItem(audioListItem)](#RenderAudioList+addAudioItem)
     * [.getData()](#RenderAudioList+getData) ⇒ <code>Object</code>
 
 <a name="new_RenderAudioList_new"></a>
@@ -43,14 +43,14 @@
 
 <a name="RenderAudioList+addAudioItem"></a>
 
-### renderAudioList.addAudioItem(audioItem)
-增加audioItem
+### renderAudioList.addAudioItem(audioListItem)
+增加audioListItem
 
 **Kind**: instance method of [<code>RenderAudioList</code>](#RenderAudioList)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| audioItem | <code>AudioItem</code> | 音频项 |
+| audioListItem | <code>AudioListItem</code> | 音频项 |
 
 <a name="RenderAudioList+getData"></a>
 
@@ -66,7 +66,7 @@
 * [RenderAudioList](#RenderAudioList)
     * [new RenderAudioList(title, behavior)](#new_RenderAudioList_new)
     * [.setToken(token)](#RenderAudioList+setToken)
-    * [.addAudioItem(audioItem)](#RenderAudioList+addAudioItem)
+    * [.addAudioItem(audioListItem)](#RenderAudioList+addAudioItem)
     * [.getData()](#RenderAudioList+getData) ⇒ <code>Object</code>
 
 <a name="new_RenderAudioList_new"></a>
@@ -93,14 +93,14 @@
 
 <a name="RenderAudioList+addAudioItem"></a>
 
-### renderAudioList.addAudioItem(audioItem)
-增加audioItem
+### renderAudioList.addAudioItem(audioListItem)
+增加audioListItem
 
 **Kind**: instance method of [<code>RenderAudioList</code>](#RenderAudioList)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| audioItem | <code>AudioItem</code> | 音频项 |
+| audioListItem | <code>AudioListItem</code> | 音频项 |
 
 <a name="RenderAudioList+getData"></a>
 

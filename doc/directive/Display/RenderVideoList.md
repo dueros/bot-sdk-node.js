@@ -16,7 +16,7 @@
 * [RenderVideoList](#RenderVideoList) ⇐ <code>BaseDirective</code>
     * [new RenderVideoList(title, behavior)](#new_RenderVideoList_new)
     * [.setToken(token)](#RenderVideoList+setToken)
-    * [.addVideoItem(videoItem)](#RenderVideoList+addVideoItem)
+    * [.addVideoItem(videoListItem)](#RenderVideoList+addVideoItem)
     * [.getData()](#RenderVideoList+getData) ⇒ <code>Object</code>
 
 <a name="new_RenderVideoList_new"></a>
@@ -43,14 +43,14 @@
 
 <a name="RenderVideoList+addVideoItem"></a>
 
-### renderVideoList.addVideoItem(videoItem)
+### renderVideoList.addVideoItem(videoListItem)
 增加audioItem
 
 **Kind**: instance method of [<code>RenderVideoList</code>](#RenderVideoList)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| videoItem | <code>VideoItem</code> | 视频项 |
+| videoListItem | <code>VideoListItem</code> | 视频项 |
 
 <a name="RenderVideoList+getData"></a>
 
@@ -66,7 +66,7 @@
 * [RenderVideoList](#RenderVideoList)
     * [new RenderVideoList(title, behavior)](#new_RenderVideoList_new)
     * [.setToken(token)](#RenderVideoList+setToken)
-    * [.addVideoItem(videoItem)](#RenderVideoList+addVideoItem)
+    * [.addVideoItem(videoListItem)](#RenderVideoList+addVideoItem)
     * [.getData()](#RenderVideoList+getData) ⇒ <code>Object</code>
 
 <a name="new_RenderVideoList_new"></a>
@@ -93,14 +93,14 @@
 
 <a name="RenderVideoList+addVideoItem"></a>
 
-### renderVideoList.addVideoItem(videoItem)
+### renderVideoList.addVideoItem(videoListItem)
 增加audioItem
 
 **Kind**: instance method of [<code>RenderVideoList</code>](#RenderVideoList)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| videoItem | <code>VideoItem</code> | 视频项 |
+| videoListItem | <code>VideoListItem</code> | 视频项 |
 
 <a name="RenderVideoList+getData"></a>
 

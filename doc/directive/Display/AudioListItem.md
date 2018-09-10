@@ -4,7 +4,7 @@
 <dt><a href="#BaseMediaListItem">BaseMediaListItem</a> ⇐ <code><a href="#BaseMediaListItem">BaseMediaListItem</a></code></dt>
 <dd><p>AudioItem 音频item</p>
 </dd>
-<dt><a href="#AudioItem">AudioItem</a></dt>
+<dt><a href="#AudioListItem">AudioListItem</a></dt>
 <dd></dd>
 </dl>
 
@@ -15,18 +15,18 @@ AudioItem 音频item
 
 **Kind**: global class  
 **Extends**: [<code>BaseMediaListItem</code>](#BaseMediaListItem)  
-<a name="AudioItem"></a>
+<a name="AudioListItem"></a>
 
-## AudioItem
+## AudioListItem
 **Kind**: global class  
 
-* [AudioItem](#AudioItem)
-    * [new AudioItem(title, titleSubtext1)](#new_AudioItem_new)
-    * [.setMusicVideoTag(bool)](#AudioItem+setMusicVideoTag)
+* [AudioListItem](#AudioListItem)
+    * [new AudioListItem(title, titleSubtext1)](#new_AudioListItem_new)
+    * [.setMusicVideoTag(bool)](#AudioListItem+setMusicVideoTag)
 
-<a name="new_AudioItem_new"></a>
+<a name="new_AudioListItem_new"></a>
 
-### new AudioItem(title, titleSubtext1)
+### new AudioListItem(title, titleSubtext1)
 构造方法
 
 
@@ -35,12 +35,12 @@ AudioItem 音频item
 | title | <code>string</code> | 音频类型 |
 | titleSubtext1 | <code>string</code> | 音频类型 |
 
-<a name="AudioItem+setMusicVideoTag"></a>
+<a name="AudioListItem+setMusicVideoTag"></a>
 
-### audioItem.setMusicVideoTag(bool)
+### audioListItem.setMusicVideoTag(bool)
 设置isMusicVideo
 
-**Kind**: instance method of [<code>AudioItem</code>](#AudioItem)  
+**Kind**: instance method of [<code>AudioListItem</code>](#AudioListItem)  
 
 | Param | Type | Description |
 | --- | --- | --- |
