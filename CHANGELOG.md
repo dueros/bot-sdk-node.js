@@ -23,9 +23,16 @@
 * 添加支付类型校验
 
 # 1.2.3
+
 * 添加单元测试
 * doc 404
 
 # 1.2.4
 
 * fix addDefaultEventHandler
+
+# 1.2.5
+
+* 增加RenderAudioList
+* 增加RenderVideoList
+

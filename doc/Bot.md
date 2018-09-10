@@ -60,6 +60,8 @@ Bot基类. 请继承此类
             * [.Display](#Bot.Directive.Display) : <code>object</code>
                 * [.Hint](#Bot.Directive.Display.Hint)
                 * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
+                * [.RenderAudioList](#Bot.Directive.Display.RenderAudioList)
+                * [.RenderVideoList](#Bot.Directive.Display.RenderVideoList)
                 * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
                     * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
                     * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
@@ -424,6 +426,8 @@ Bot 可以返回指令
     * [.Display](#Bot.Directive.Display) : <code>object</code>
         * [.Hint](#Bot.Directive.Display.Hint)
         * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
+        * [.RenderAudioList](#Bot.Directive.Display.RenderAudioList)
+        * [.RenderVideoList](#Bot.Directive.Display.RenderVideoList)
         * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
             * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
             * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
@@ -639,6 +643,8 @@ Bot 可以返回指令
 * [.Display](#Bot.Directive.Display) : <code>object</code>
     * [.Hint](#Bot.Directive.Display.Hint)
     * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
+    * [.RenderAudioList](#Bot.Directive.Display.RenderAudioList)
+    * [.RenderVideoList](#Bot.Directive.Display.RenderVideoList)
     * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
         * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
         * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
@@ -665,6 +671,22 @@ Bot 可以返回指令
 **Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
 **Access**: public  
 **See**: [RenderTemplate](RenderTemplate)  
+<a name="Bot.Directive.Display.RenderAudioList"></a>
+
+##### Display.RenderAudioList
+模版音频列表指令
+
+**Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
+**Access**: public  
+**See**: [RenderAudioList](RenderAudioList)  
+<a name="Bot.Directive.Display.RenderVideoList"></a>
+
+##### Display.RenderVideoList
+模版视频列表指令
+
+**Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
+**Access**: public  
+**See**: [RenderVideoList](RenderVideoList)  
 <a name="Bot.Directive.Display.Template"></a>
 
 ##### Display.Template : <code>object</code>

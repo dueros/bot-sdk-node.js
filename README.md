@@ -776,7 +776,7 @@ this.addIntentHandler('rent_car.book', () => {
 this.addIntentHandler('your intent name', () => {
     if(!this.request.isDialogStateCompleted()) {
         // 如果使用了delegate 就不再需要使用setConfirmSlot/setConfirmIntent，否则返回的directive会被后set的覆盖。
-        return this.setDelegate();
+        return this.nlu.setDelegate();
     }
     //do sth else
 });
@@ -789,7 +789,7 @@ this.addIntentHandler('your intent name', () => {
 ```javascript
 this.addIntentHandler('your intent name', () => {
     if(this.getSlot('money') > 10000000000) {
-        this.setConfirmSlot('money');
+        this.nlu.setConfirmSlot('money');
         return {
             outputSpeech: '你确认充话费：10000000000'
         };
@@ -809,7 +809,7 @@ this.addIntentHandler('your intent name', () => {
     let money = this.getSlot('money');
     let phone = this.getSlot('phone');
     if(money && phone) {
-        this.setConfirmIntent();
+        this.nlu.setConfirmIntent();
         return {
             outputSpeech: `你确认充话费：${money}，充值手机：${phone}`,
         };
@@ -894,10 +894,21 @@ this.botMonitor.setMonitorEnabled(true);
            * [ListTemplate2(纵向列表模板)](doc/directive/Display/Template/ListTemplate2.md)
            * [ListTemplateItem(模版列表项)](doc/directive/Display/Template/ListTemplateItem.md)
            * [TextImageTemplate(图文模版)](doc/directive/Display/Template/TextImageTemplate.md)
-           * 用户提示指令
-               * [Hint(用户提示指令)](doc/directive/Display/Hint.md)
-           * 模版渲染
-               * [RenderTemplate(模版渲染)](doc/directive/Display/RenderTemplate.md)
+        * 用户提示指令
+           * [Hint(用户提示指令)](doc/directive/Display/Hint.md)
+        * 模版渲染
+           * [RenderTemplate(模版渲染)](doc/directive/Display/RenderTemplate.md)
+        * 音频项
+           * [AudioItem(音频项)](doc/directive/Display/AudioItem.md)
+        * 视频项
+           * [VideoItem(视频项)](doc/directive/Display/VideoItem.md)
+        * 媒体基础类
+           * [BaseMediaListItem(媒体基础类)](doc/directive/Display/BaseMediaListItem.md)
+        * 音频列表渲染指令
+           * [RenderAudioList(音频列表渲染)](doc/directive/Display/RenderAudioList.md)
+        * 视频列表渲染指令
+           * [RenderVideoList(视频列表渲染)](doc/directive/Display/RenderVideoList.md)
+
     * 支付
         * [Charge(支付指令)](doc/directive/Pay/Charge.md)
  

@@ -20,7 +20,7 @@ PlayerInfo 播放信息类
 **Kind**: global class  
 
 * [PlayerInfo](#PlayerInfo)
-    * [new PlayerInfo(type, mediaLengthInMilliseconds)](#new_PlayerInfo_new)
+    * [new PlayerInfo()](#new_PlayerInfo_new)
     * [.setAudioItemType(type)](#PlayerInfo+setAudioItemType)
     * [.setTitle(title)](#PlayerInfo+setTitle)
     * [.setTitleSubtext1(titleSubtext1)](#PlayerInfo+setTitleSubtext1)
@@ -35,14 +35,8 @@ PlayerInfo 播放信息类
 
 <a name="new_PlayerInfo_new"></a>
 
-### new PlayerInfo(type, mediaLengthInMilliseconds)
+### new PlayerInfo()
 构造方法
-
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| type | <code>string</code> |  | 音频类型 |
-| mediaLengthInMilliseconds | <code>number</code> | <code>0</code> | 音频长度 |
 
 <a name="PlayerInfo+setAudioItemType"></a>
 

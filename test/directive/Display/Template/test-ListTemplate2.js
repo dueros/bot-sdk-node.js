@@ -42,7 +42,6 @@ describe('Test Display/Template/ListTemplate1.js', () => {
             listItems: [
                 {
                     token: 'token',
-                    type: 'ListTemplateItem',
                     image: {
                         url: 'http://item-img1.com',
                         widthPixels: '123',
@@ -65,7 +64,6 @@ describe('Test Display/Template/ListTemplate1.js', () => {
                 },
                 {
                     token: 'token',
-                    type: 'ListTemplateItem',
                     image: {
                         url: 'http://item-img2.com',
                         widthPixels: '12',

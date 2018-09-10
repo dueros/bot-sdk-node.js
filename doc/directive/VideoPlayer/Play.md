@@ -31,6 +31,7 @@ Play 用于生成Play指令的类
     * [.setReportDelayInMs(reportDelayMs)](#Play+setReportDelayInMs)
     * [.setReportIntervalInMs(intervalMs)](#Play+setReportIntervalInMs)
     * [.setExpectedPreviousToken(previousToken)](#Play+setExpectedPreviousToken)
+    * [.setStopPointsInMilliseconds(stopPoints)](#Play+setStopPointsInMilliseconds)
 
 <a name="new_Play_new"></a>
 
@@ -133,4 +134,16 @@ stream过期时间
 | Param | Type | Description |
 | --- | --- | --- |
 | previousToken | <code>string</code> | 上一首的token。 |
+
+<a name="Play+setStopPointsInMilliseconds"></a>
+
+### play.setStopPointsInMilliseconds(stopPoints)
+播放到指定的offset后停止播放，并且会上报PlaybackScheduledStopReached事件
+
+**Kind**: instance method of [<code>Play</code>](#Play)  
+**Access**: public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| stopPoints | <code>number</code> \| <code>Array</code> | 停止点。 |
 
