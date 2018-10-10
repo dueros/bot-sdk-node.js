@@ -1,7 +1,8 @@
 /* 
 * 如果需要使用监控统计功能，请将PUBLIC KEY 复制到DuerOS DBP平台
 * 文档参考：https://dueros.baidu.com/didp/doc/dueros-bot-platform/dbp-deploy/authentication_markdown
-	
+
+
 -----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5jzTy4zbullXnNBz/HT4SXVL0
 7kMoLLCXPONqnVoaqPD7cKo92SqxS/mZ/a03rKWKtCVirSnnZF6fxod7Y+FdmEvq
