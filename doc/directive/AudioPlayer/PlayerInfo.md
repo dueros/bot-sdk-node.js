@@ -20,7 +20,7 @@ PlayerInfo 播放信息类
 **Kind**: global class  
 
 * [PlayerInfo](#PlayerInfo)
-    * [new PlayerInfo()](#new_PlayerInfo_new)
+    * [new PlayerInfo(content, controls)](#new_PlayerInfo_new)
     * [.setAudioItemType(type)](#PlayerInfo+setAudioItemType)
     * [.setTitle(title)](#PlayerInfo+setTitle)
     * [.setTitleSubtext1(titleSubtext1)](#PlayerInfo+setTitleSubtext1)
@@ -31,12 +31,19 @@ PlayerInfo 播放信息类
     * [.setProvider(name, logo)](#PlayerInfo+setProvider)
     * [.setControls(controls)](#PlayerInfo+setControls)
     * [.addControl(control)](#PlayerInfo+addControl)
+    * [.setContent(content)](#PlayerInfo+setContent)
     * [.getData()](#PlayerInfo+getData) ⇒ <code>Object</code>
 
 <a name="new_PlayerInfo_new"></a>
 
-### new PlayerInfo()
+### new PlayerInfo(content, controls)
 构造方法
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| content | <code>BasePlayerInfoContent</code> | <code></code> | 播放信息基础类 |
+| controls | [<code>BaseButton</code>](#BaseButton) \| <code>Array</code> |  | 控制按钮 |
 
 <a name="PlayerInfo+setAudioItemType"></a>
 
@@ -158,6 +165,17 @@ PlayerInfo 播放信息类
 | Param | Type | Description |
 | --- | --- | --- |
 | control | <code>Control</code> | 控件 |
+
+<a name="PlayerInfo+setContent"></a>
+
+### playerInfo.setContent(content)
+设置content
+
+**Kind**: instance method of [<code>PlayerInfo</code>](#PlayerInfo)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| content | <code>BasePlayerInfoContent</code> | 内容体 |
 
 <a name="PlayerInfo+getData"></a>
 

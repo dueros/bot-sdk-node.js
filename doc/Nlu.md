@@ -34,7 +34,7 @@
 
 <a name="Nlu+_directive"></a>
 
-### nlu._directive
+### nlu.\_directive
 记录返回的指令
 
 **Kind**: instance property of [<code>Nlu</code>](#Nlu)  

@@ -36,6 +36,9 @@ Bot基类. 请继承此类
             * [.StandardCard](#Bot.Card.StandardCard)
             * [.ListCard](#Bot.Card.ListCard)
             * [.LinkAccountCard](#Bot.Card.LinkAccountCard)
+        * [.Extensions](#Bot.Extensions) : <code>object</code>
+            * [.TTSTemplate](#Bot.Extensions.TTSTemplate)
+                * [.TTSTemplateItem](#Bot.Extensions.TTSTemplate.TTSTemplateItem)
         * [.Directive](#Bot.Directive) : <code>object</code>
             * [.AudioPlayer](#Bot.Directive.AudioPlayer) : <code>object</code>
                 * [.Play](#Bot.Directive.AudioPlayer.Play)
@@ -57,20 +60,45 @@ Bot基类. 请继承此类
             * [.VideoPlayer](#Bot.Directive.VideoPlayer) : <code>object</code>
                 * [.Play](#Bot.Directive.VideoPlayer.Play)
                 * [.Stop](#Bot.Directive.VideoPlayer.Stop)
+                * [.VideoPlayerInfo](#Bot.Directive.VideoPlayer.VideoPlayerInfo)
+                * [.VideoPlayerInfoContent](#Bot.Directive.VideoPlayer.VideoPlayerInfoContent)
+            * [.Permission](#Bot.Directive.Permission) : <code>object</code>
+                * [.AskForPermissionsConsent](#Bot.Directive.Permission.AskForPermissionsConsent)
+            * [.Record](#Bot.Directive.Record) : <code>object</code>
+                * [.RecordSpeech](#Bot.Directive.Record.RecordSpeech)
+            * [.WebBrowser](#Bot.Directive.WebBrowser) : <code>object</code>
+                * [.LaunchBrowser](#Bot.Directive.WebBrowser.LaunchBrowser)
             * [.Display](#Bot.Directive.Display) : <code>object</code>
                 * [.Hint](#Bot.Directive.Display.Hint)
                 * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
                 * [.RenderAudioList](#Bot.Directive.Display.RenderAudioList)
                 * [.RenderVideoList](#Bot.Directive.Display.RenderVideoList)
+                * [.PushStack](#Bot.Directive.Display.PushStack)
+                * [.RenderAudioPlayerInfo](#Bot.Directive.Display.RenderAudioPlayerInfo)
+                * [.RenderVideoPlayerInfo](#Bot.Directive.Display.RenderVideoPlayerInfo)
                 * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
                     * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
                     * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
                     * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
                     * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
                     * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+                    * [.BodyTemplate6](#Bot.Directive.Display.Template.BodyTemplate6)
                     * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
                     * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+                    * [.ListTemplate3](#Bot.Directive.Display.Template.ListTemplate3)
+                    * [.ListTemplate4](#Bot.Directive.Display.Template.ListTemplate4)
                     * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+                    * [.Tag](#Bot.Directive.Display.Template.Tag) : <code>object</code>
+                        * [.AmountTag](#Bot.Directive.Display.Template.Tag.AmountTag)
+                        * [.AuditionTag](#Bot.Directive.Display.Template.Tag.AuditionTag)
+                        * [.HotTag](#Bot.Directive.Display.Template.Tag.HotTag)
+                        * [.NewTag](#Bot.Directive.Display.Template.Tag.NewTag)
+                        * [.CustomTag](#Bot.Directive.Display.Template.Tag.CustomTag)
+                        * [.FreeTag](#Bot.Directive.Display.Template.Tag.FreeTag)
+                        * [.PayTag](#Bot.Directive.Display.Template.Tag.PayTag)
+                        * [.PurchasedTag](#Bot.Directive.Display.Template.Tag.PurchasedTag)
+                        * [.TimeTag](#Bot.Directive.Display.Template.Tag.TimeTag)
+                        * [.VipTag](#Bot.Directive.Display.Template.Tag.VipTag)
             * [.Pay](#Bot.Directive.Pay) : <code>object</code>
                 * [.Charge](#Bot.Directive.Pay.Charge)
 
@@ -395,6 +423,33 @@ Bot可以返回的卡片
 **Kind**: static property of [<code>Card</code>](#Bot.Card)  
 **Access**: public  
 **See**: [LinkAccountCard](LinkAccountCard)  
+<a name="Bot.Extensions"></a>
+
+### Bot.Extensions : <code>object</code>
+扩展
+
+**Kind**: static namespace of [<code>Bot</code>](#Bot)  
+
+* [.Extensions](#Bot.Extensions) : <code>object</code>
+    * [.TTSTemplate](#Bot.Extensions.TTSTemplate)
+        * [.TTSTemplateItem](#Bot.Extensions.TTSTemplate.TTSTemplateItem)
+
+<a name="Bot.Extensions.TTSTemplate"></a>
+
+#### Extensions.TTSTemplate
+扩展tts模版
+
+**Kind**: static property of [<code>Extensions</code>](#Bot.Extensions)  
+**Access**: public  
+**See**: [TTSTemplate](TTSTemplate)  
+<a name="Bot.Extensions.TTSTemplate.TTSTemplateItem"></a>
+
+##### TTSTemplate.TTSTemplateItem
+扩展tts模版项
+
+**Kind**: static property of [<code>TTSTemplate</code>](#Bot.Extensions.TTSTemplate)  
+**Access**: public  
+**See**: [TTSTemplateItem](TTSTemplateItem)  
 <a name="Bot.Directive"></a>
 
 ### Bot.Directive : <code>object</code>
@@ -423,20 +478,45 @@ Bot 可以返回指令
     * [.VideoPlayer](#Bot.Directive.VideoPlayer) : <code>object</code>
         * [.Play](#Bot.Directive.VideoPlayer.Play)
         * [.Stop](#Bot.Directive.VideoPlayer.Stop)
+        * [.VideoPlayerInfo](#Bot.Directive.VideoPlayer.VideoPlayerInfo)
+        * [.VideoPlayerInfoContent](#Bot.Directive.VideoPlayer.VideoPlayerInfoContent)
+    * [.Permission](#Bot.Directive.Permission) : <code>object</code>
+        * [.AskForPermissionsConsent](#Bot.Directive.Permission.AskForPermissionsConsent)
+    * [.Record](#Bot.Directive.Record) : <code>object</code>
+        * [.RecordSpeech](#Bot.Directive.Record.RecordSpeech)
+    * [.WebBrowser](#Bot.Directive.WebBrowser) : <code>object</code>
+        * [.LaunchBrowser](#Bot.Directive.WebBrowser.LaunchBrowser)
     * [.Display](#Bot.Directive.Display) : <code>object</code>
         * [.Hint](#Bot.Directive.Display.Hint)
         * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
         * [.RenderAudioList](#Bot.Directive.Display.RenderAudioList)
         * [.RenderVideoList](#Bot.Directive.Display.RenderVideoList)
+        * [.PushStack](#Bot.Directive.Display.PushStack)
+        * [.RenderAudioPlayerInfo](#Bot.Directive.Display.RenderAudioPlayerInfo)
+        * [.RenderVideoPlayerInfo](#Bot.Directive.Display.RenderVideoPlayerInfo)
         * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
             * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
             * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
             * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
             * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
             * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+            * [.BodyTemplate6](#Bot.Directive.Display.Template.BodyTemplate6)
             * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
             * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+            * [.ListTemplate3](#Bot.Directive.Display.Template.ListTemplate3)
+            * [.ListTemplate4](#Bot.Directive.Display.Template.ListTemplate4)
             * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+            * [.Tag](#Bot.Directive.Display.Template.Tag) : <code>object</code>
+                * [.AmountTag](#Bot.Directive.Display.Template.Tag.AmountTag)
+                * [.AuditionTag](#Bot.Directive.Display.Template.Tag.AuditionTag)
+                * [.HotTag](#Bot.Directive.Display.Template.Tag.HotTag)
+                * [.NewTag](#Bot.Directive.Display.Template.Tag.NewTag)
+                * [.CustomTag](#Bot.Directive.Display.Template.Tag.CustomTag)
+                * [.FreeTag](#Bot.Directive.Display.Template.Tag.FreeTag)
+                * [.PayTag](#Bot.Directive.Display.Template.Tag.PayTag)
+                * [.PurchasedTag](#Bot.Directive.Display.Template.Tag.PurchasedTag)
+                * [.TimeTag](#Bot.Directive.Display.Template.Tag.TimeTag)
+                * [.VipTag](#Bot.Directive.Display.Template.Tag.VipTag)
     * [.Pay](#Bot.Directive.Pay) : <code>object</code>
         * [.Charge](#Bot.Directive.Pay.Charge)
 
@@ -616,6 +696,8 @@ Bot 可以返回指令
 * [.VideoPlayer](#Bot.Directive.VideoPlayer) : <code>object</code>
     * [.Play](#Bot.Directive.VideoPlayer.Play)
     * [.Stop](#Bot.Directive.VideoPlayer.Stop)
+    * [.VideoPlayerInfo](#Bot.Directive.VideoPlayer.VideoPlayerInfo)
+    * [.VideoPlayerInfoContent](#Bot.Directive.VideoPlayer.VideoPlayerInfoContent)
 
 <a name="Bot.Directive.VideoPlayer.Play"></a>
 
@@ -633,6 +715,64 @@ Bot 可以返回指令
 **Kind**: static property of [<code>VideoPlayer</code>](#Bot.Directive.VideoPlayer)  
 **Access**: public  
 **See**: [Stop](Stop)  
+<a name="Bot.Directive.VideoPlayer.VideoPlayerInfo"></a>
+
+##### VideoPlayer.VideoPlayerInfo
+视频播放信息
+
+**Kind**: static property of [<code>VideoPlayer</code>](#Bot.Directive.VideoPlayer)  
+**Access**: public  
+**See**: [VideoPlayerInfo](VideoPlayerInfo)  
+<a name="Bot.Directive.VideoPlayer.VideoPlayerInfoContent"></a>
+
+##### VideoPlayer.VideoPlayerInfoContent
+视频播放信息内容
+
+**Kind**: static property of [<code>VideoPlayer</code>](#Bot.Directive.VideoPlayer)  
+**Access**: public  
+**See**: [VideoPlayerInfoContent](VideoPlayerInfoContent)  
+<a name="Bot.Directive.Permission"></a>
+
+#### Directive.Permission : <code>object</code>
+用户权限
+
+**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
+<a name="Bot.Directive.Permission.AskForPermissionsConsent"></a>
+
+##### Permission.AskForPermissionsConsent
+用户授权指令
+
+**Kind**: static property of [<code>Permission</code>](#Bot.Directive.Permission)  
+**Access**: public  
+**See**: [AskForPermissionsConsent](AskForPermissionsConsent)  
+<a name="Bot.Directive.Record"></a>
+
+#### Directive.Record : <code>object</code>
+录音
+
+**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
+<a name="Bot.Directive.Record.RecordSpeech"></a>
+
+##### Record.RecordSpeech
+录音指令
+
+**Kind**: static property of [<code>Record</code>](#Bot.Directive.Record)  
+**Access**: public  
+**See**: [RecordSpeech](RecordSpeech)  
+<a name="Bot.Directive.WebBrowser"></a>
+
+#### Directive.WebBrowser : <code>object</code>
+浏览器访问
+
+**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
+<a name="Bot.Directive.WebBrowser.LaunchBrowser"></a>
+
+##### WebBrowser.LaunchBrowser
+浏览器访问指令
+
+**Kind**: static property of [<code>WebBrowser</code>](#Bot.Directive.WebBrowser)  
+**Access**: public  
+**See**: [LaunchBrowser](LaunchBrowser)  
 <a name="Bot.Directive.Display"></a>
 
 #### Directive.Display : <code>object</code>
@@ -645,15 +785,32 @@ Bot 可以返回指令
     * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
     * [.RenderAudioList](#Bot.Directive.Display.RenderAudioList)
     * [.RenderVideoList](#Bot.Directive.Display.RenderVideoList)
+    * [.PushStack](#Bot.Directive.Display.PushStack)
+    * [.RenderAudioPlayerInfo](#Bot.Directive.Display.RenderAudioPlayerInfo)
+    * [.RenderVideoPlayerInfo](#Bot.Directive.Display.RenderVideoPlayerInfo)
     * [.Template](#Bot.Directive.Display.Template) : <code>object</code>
         * [.BodyTemplate1](#Bot.Directive.Display.Template.BodyTemplate1)
         * [.BodyTemplate2](#Bot.Directive.Display.Template.BodyTemplate2)
         * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
         * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
         * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+        * [.BodyTemplate6](#Bot.Directive.Display.Template.BodyTemplate6)
         * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
         * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+        * [.ListTemplate3](#Bot.Directive.Display.Template.ListTemplate3)
+        * [.ListTemplate4](#Bot.Directive.Display.Template.ListTemplate4)
         * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+        * [.Tag](#Bot.Directive.Display.Template.Tag) : <code>object</code>
+            * [.AmountTag](#Bot.Directive.Display.Template.Tag.AmountTag)
+            * [.AuditionTag](#Bot.Directive.Display.Template.Tag.AuditionTag)
+            * [.HotTag](#Bot.Directive.Display.Template.Tag.HotTag)
+            * [.NewTag](#Bot.Directive.Display.Template.Tag.NewTag)
+            * [.CustomTag](#Bot.Directive.Display.Template.Tag.CustomTag)
+            * [.FreeTag](#Bot.Directive.Display.Template.Tag.FreeTag)
+            * [.PayTag](#Bot.Directive.Display.Template.Tag.PayTag)
+            * [.PurchasedTag](#Bot.Directive.Display.Template.Tag.PurchasedTag)
+            * [.TimeTag](#Bot.Directive.Display.Template.Tag.TimeTag)
+            * [.VipTag](#Bot.Directive.Display.Template.Tag.VipTag)
 
 <a name="Bot.Directive.Display.Hint"></a>
 
@@ -687,6 +844,30 @@ Bot 可以返回指令
 **Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
 **Access**: public  
 **See**: [RenderVideoList](RenderVideoList)  
+<a name="Bot.Directive.Display.PushStack"></a>
+
+##### Display.PushStack
+端入栈指令
+
+**Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
+**Access**: public  
+**See**: [RenderVideoList](RenderVideoList)  
+<a name="Bot.Directive.Display.RenderAudioPlayerInfo"></a>
+
+##### Display.RenderAudioPlayerInfo
+渲染音频播放信息指令
+
+**Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
+**Access**: public  
+**See**: [RenderAudioPlayerInfo](RenderAudioPlayerInfo)  
+<a name="Bot.Directive.Display.RenderVideoPlayerInfo"></a>
+
+##### Display.RenderVideoPlayerInfo
+渲染视频播放信息指令
+
+**Kind**: static property of [<code>Display</code>](#Bot.Directive.Display)  
+**Access**: public  
+**See**: [RenderVideoPlayerInfo](RenderVideoPlayerInfo)  
 <a name="Bot.Directive.Display.Template"></a>
 
 ##### Display.Template : <code>object</code>
@@ -700,9 +881,23 @@ Bot 可以返回指令
     * [.BodyTemplate3](#Bot.Directive.Display.Template.BodyTemplate3)
     * [.BodyTemplate4](#Bot.Directive.Display.Template.BodyTemplate4)
     * [.BodyTemplate5](#Bot.Directive.Display.Template.BodyTemplate5)
+    * [.BodyTemplate6](#Bot.Directive.Display.Template.BodyTemplate6)
     * [.ListTemplate1](#Bot.Directive.Display.Template.ListTemplate1)
     * [.ListTemplate2](#Bot.Directive.Display.Template.ListTemplate2)
+    * [.ListTemplate3](#Bot.Directive.Display.Template.ListTemplate3)
+    * [.ListTemplate4](#Bot.Directive.Display.Template.ListTemplate4)
     * [.ListTemplateItem](#Bot.Directive.Display.Template.ListTemplateItem)
+    * [.Tag](#Bot.Directive.Display.Template.Tag) : <code>object</code>
+        * [.AmountTag](#Bot.Directive.Display.Template.Tag.AmountTag)
+        * [.AuditionTag](#Bot.Directive.Display.Template.Tag.AuditionTag)
+        * [.HotTag](#Bot.Directive.Display.Template.Tag.HotTag)
+        * [.NewTag](#Bot.Directive.Display.Template.Tag.NewTag)
+        * [.CustomTag](#Bot.Directive.Display.Template.Tag.CustomTag)
+        * [.FreeTag](#Bot.Directive.Display.Template.Tag.FreeTag)
+        * [.PayTag](#Bot.Directive.Display.Template.Tag.PayTag)
+        * [.PurchasedTag](#Bot.Directive.Display.Template.Tag.PurchasedTag)
+        * [.TimeTag](#Bot.Directive.Display.Template.Tag.TimeTag)
+        * [.VipTag](#Bot.Directive.Display.Template.Tag.VipTag)
 
 <a name="Bot.Directive.Display.Template.BodyTemplate1"></a>
 
@@ -744,6 +939,14 @@ Bot 可以返回指令
 **Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
 **Access**: public  
 **See**: [BodyTemplate5](BodyTemplate5)  
+<a name="Bot.Directive.Display.Template.BodyTemplate6"></a>
+
+###### Template.BodyTemplate6
+上图下文模版类
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [BodyTemplate6](BodyTemplate6)  
 <a name="Bot.Directive.Display.Template.ListTemplate1"></a>
 
 ###### Template.ListTemplate1
@@ -760,6 +963,22 @@ Bot 可以返回指令
 **Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
 **Access**: public  
 **See**: [ListTemplate2](ListTemplate2)  
+<a name="Bot.Directive.Display.Template.ListTemplate3"></a>
+
+###### Template.ListTemplate3
+横向列表模板
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [ListTemplate3](ListTemplate3)  
+<a name="Bot.Directive.Display.Template.ListTemplate4"></a>
+
+###### Template.ListTemplate4
+纵向列表模板类
+
+**Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
+**Access**: public  
+**See**: [ListTemplate4](ListTemplate4)  
 <a name="Bot.Directive.Display.Template.ListTemplateItem"></a>
 
 ###### Template.ListTemplateItem
@@ -768,6 +987,105 @@ Bot 可以返回指令
 **Kind**: static property of [<code>Template</code>](#Bot.Directive.Display.Template)  
 **Access**: public  
 **See**: [ListTemplateItem](ListTemplateItem)  
+<a name="Bot.Directive.Display.Template.Tag"></a>
+
+###### Template.Tag : <code>object</code>
+标签
+
+**Kind**: static namespace of [<code>Template</code>](#Bot.Directive.Display.Template)  
+
+* [.Tag](#Bot.Directive.Display.Template.Tag) : <code>object</code>
+    * [.AmountTag](#Bot.Directive.Display.Template.Tag.AmountTag)
+    * [.AuditionTag](#Bot.Directive.Display.Template.Tag.AuditionTag)
+    * [.HotTag](#Bot.Directive.Display.Template.Tag.HotTag)
+    * [.NewTag](#Bot.Directive.Display.Template.Tag.NewTag)
+    * [.CustomTag](#Bot.Directive.Display.Template.Tag.CustomTag)
+    * [.FreeTag](#Bot.Directive.Display.Template.Tag.FreeTag)
+    * [.PayTag](#Bot.Directive.Display.Template.Tag.PayTag)
+    * [.PurchasedTag](#Bot.Directive.Display.Template.Tag.PurchasedTag)
+    * [.TimeTag](#Bot.Directive.Display.Template.Tag.TimeTag)
+    * [.VipTag](#Bot.Directive.Display.Template.Tag.VipTag)
+
+<a name="Bot.Directive.Display.Template.Tag.AmountTag"></a>
+
+####### Tag.AmountTag
+数量标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [AmountTag](AmountTag)  
+<a name="Bot.Directive.Display.Template.Tag.AuditionTag"></a>
+
+####### Tag.AuditionTag
+试听标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [AuditionTag](AuditionTag)  
+<a name="Bot.Directive.Display.Template.Tag.HotTag"></a>
+
+####### Tag.HotTag
+热门标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [HotTag](HotTag)  
+<a name="Bot.Directive.Display.Template.Tag.NewTag"></a>
+
+####### Tag.NewTag
+最新标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [NewTag](NewTag)  
+<a name="Bot.Directive.Display.Template.Tag.CustomTag"></a>
+
+####### Tag.CustomTag
+自定义标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [CustomTag](CustomTag)  
+<a name="Bot.Directive.Display.Template.Tag.FreeTag"></a>
+
+####### Tag.FreeTag
+免费标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [FreeTag](FreeTag)  
+<a name="Bot.Directive.Display.Template.Tag.PayTag"></a>
+
+####### Tag.PayTag
+支付标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [PayTag](PayTag)  
+<a name="Bot.Directive.Display.Template.Tag.PurchasedTag"></a>
+
+####### Tag.PurchasedTag
+购买标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [PurchasedTag](PurchasedTag)  
+<a name="Bot.Directive.Display.Template.Tag.TimeTag"></a>
+
+####### Tag.TimeTag
+时间标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [TimeTag](TimeTag)  
+<a name="Bot.Directive.Display.Template.Tag.VipTag"></a>
+
+####### Tag.VipTag
+VIP标签
+
+**Kind**: static property of [<code>Tag</code>](#Bot.Directive.Display.Template.Tag)  
+**Access**: public  
+**See**: [VipTag](VipTag)  
 <a name="Bot.Directive.Pay"></a>
 
 #### Directive.Pay : <code>object</code>

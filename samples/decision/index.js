@@ -15,7 +15,7 @@ const privateKey = require("./rsaKeys.js").privateKey;
 
 
 const welcomeStr = '欢迎使用职业推荐!我会问你四个问题，然后根据你的回答像你推荐适合你的职业。现在跟我说开始测试吧！';
-const welcomeStr = '抱歉我没有理解你的意思。请跟我说开始测试来重新进行测试吧。';
+const helpStr = '抱歉我没有理解你的意思。请跟我说开始测试来重新进行测试吧。';
 const defaultBkg = 'http://dbp-resource.gz.bcebos.com/92bb7de1-5d92-dab4-9c39-84c1998470a3/default.jpg?authorization=bce-auth-v1%2Fa4d81bbd930c41e6857b989362415714%2F2018-10-17T14%3A47%3A46Z%2F-1%2F%2Fcf2a0f8ff98250a2a00e592bb42b5f1d2d001e6ff96e24320548e5932615d0b0';
 const titleStr = '职业推荐';
 

@@ -276,6 +276,34 @@ return {
 };
 
 ```
+
+```
+### 上图下文模版2
+`BodyTemplate6`
+
+```javascript
+const BaseBot = require('bot-sdk');
+const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
+const BodyTemplate5 = BaseBot.Directive.Display.BodyTemplate6;
+
+let bodyTemplate = new BodyTemplate6();
+//设置模版token
+bodyTemplate.setToken('token');
+//模版图片数组添加一张图片
+bodyTemplate.addImages('https://skillstore.cdn.bcebos.com/icon/100/c709eed1-c07a-be4a-b242-0b0d8b777041.jpg');
+//设置模版背景图片
+bodyTemplate.setBackGroundImage('https://skillstore.cdn.bcebos.com/icon/100/c709eed1-c07a-be4a-b242-0b0d8b777041.jpg');
+/设置模版标题
+bodyTemplate.setTitle('托尔斯泰的格言');
+//定义RenderTemplate指令
+let directive = new RenderTemplate(bodyTemplate);
+return {
+    directives: [directive],
+    outputSpeech: '这是BodyTemplate6模板'
+};
+
+```
+
 ### 横向列表模板
 `ListTemplate1`
 
@@ -348,6 +376,79 @@ return {
 };
 
 ```
+### 横向列表模板2
+`ListTemplate3`
+
+```javascript
+const BaseBot = require('bot-sdk');
+const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
+const ListTemplate1 = BaseBot.Directive.Display.Template.ListTemplate3
+const ListTemplateItem = BaseBot.Directive.Display.Template.ListTemplateItem
+
+let listTemplate = new ListTemplate3();
+//设置模板token
+listTemplate.setToken('token');
+//设置模板背景图
+listTemplate.setBackGroundImage('https://skillstore.cdn.bcebos.com/icon/100/c709eed1-c07a-be4a-b242-0b0d8b777041.jpg');
+//设置模版标题
+listTemplate.setTitle('托尔斯泰的格言');
+
+//设置列表数组listItems其中一项，即列表的一个元素
+let listTemplateItem = new ListTemplateItem();
+listTemplateItem.setToken('token');
+listTemplateItem.setImage('https://skillstore.cdn.bcebos.com/icon/100/c709eed1-c07a-be4a-b242-0b0d8b777041.jpg');
+listTemplateItem.setPlainPrimaryText('一级标题');  
+listTemplateItem.setPlainSecondaryText('二级标题'); 
+listTemplateItem.setPlainTertiaryText('三级标题');
+
+//把listTemplateItem添加到模版listItems
+listTemplate.addItem(listTemplateItem);
+//定义RenderTemplate指令
+let directive = new RenderTemplate(listTemplate);
+return {
+    directives: [directive],
+    outputSpeech: '这是ListTemplate3模板'
+};
+
+```
+
+```
+### 纵向列表模版2
+`ListTemplate4`
+
+```javascript
+const BaseBot = require('bot-sdk');
+const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
+const ListTemplate1 = BaseBot.Directive.Display.Template.ListTemplate4
+const ListTemplateItem = BaseBot.Directive.Display.Template.ListTemplateItem
+
+let listTemplate = new ListTemplate4();
+//设置模板token
+listTemplate.setToken('token');
+//设置模板背景图
+listTemplate.setBackGroundImage('https://skillstore.cdn.bcebos.com/icon/100/c709eed1-c07a-be4a-b242-0b0d8b777041.jpg');
+//设置模版标题
+listTemplate.setTitle('托尔斯泰的格言');
+
+//设置列表数组listItems其中一项，即列表的一个元素
+let listTemplateItem = new ListTemplateItem();
+listTemplateItem.setToken('token');
+listTemplateItem.setImage('https://skillstore.cdn.bcebos.com/icon/100/c709eed1-c07a-be4a-b242-0b0d8b777041.jpg');
+listTemplateItem.setPlainPrimaryText('一级标题');  
+listTemplateItem.setPlainSecondaryText('二级标题'); 
+listTemplateItem.setPlainTertiaryText('三级标题');
+
+//把listTemplateItem添加到模版listItems
+listTemplate.addItem(listTemplateItem);
+//定义RenderTemplate指令
+let directive = new RenderTemplate(listTemplate);
+return {
+    directives: [directive],
+    outputSpeech: '这是ListTemplate4模板'
+};
+
+```
+
 ### Display.ElementSelected事件
 当点击模板列表中的卡片时，DuerOS会向技能发送Display.ElementSelected事件，请求技能进行相应的处理。
 
@@ -429,10 +530,10 @@ return {
 
 ```javascript
 const BaseBot = require('bot-sdk');
-const StandardCard = BaseBot.Card.StandardCard;
-const ListCardItem = BaseBot.Card.Item;
+const ListCard = BaseBot.Card.ListCard;
+const ListCardItem = BaseBot.Card.ListCard.Item;
 
-let card = new StandardCard();
+let card = new ListCard();
 
 let item = new ListCardItem();
 item.setTitle('title')
@@ -883,25 +984,48 @@ this.botMonitor.setMonitorEnabled(true);
         * [Stop(视频停止指令)](doc/directive/VideoPlayer/Stop.md)
     * 展现
         * 模版
+           * 标签
+             * [AmountTag(数量标签)](doc/directive/Display/Template/Tag/AmountTag.md)
+             * [AuditionTag(试听标签)](doc/directive/Display/Template/Tag/AuditionTag.md)
+             * [BaseTag(标签基础类)](doc/directive/Display/Template/Tag/BaseTag.md)
+             * [CustomTag(自定义标签)](doc/directive/Display/Template/Tag/CustomTag.md)
+             * [FreeTag(免费标签)](doc/directive/Display/Template/Tag/FreeTag.md)
+             * [HotTag(热门标签)](doc/directive/Display/Template/Tag/HotTag.md)
+             * [NewTag(最新标签)](doc/directive/Display/Template/Tag/NewTag.md)
+             * [PayTag(支付标签)](doc/directive/Display/Template/Tag/PayTag.md)
+             * [PurchasedTag(购买标签)](doc/directive/Display/Template/Tag/PurchasedTag.md)
+             * [TimeTag(时间标签)](doc/directive/Display/Template/Tag/TimeTag.md)
+             * [VIPTag(VIP标签)](doc/directive/Display/Template/Tag/VIPTag.md)
            * [BaseTemplate(基础模版类)](doc/directive/Display/Template/BaseTemplate.md)
            * [BodyTemplate1(文本展现模板)](doc/directive/Display/Template/BodyTemplate1.md)
            * [BodyTemplate2(上图下文模版)](doc/directive/Display/Template/BaseTemplate2.md)
            * [BodyTemplate3(左图右文模版)](doc/directive/Display/Template/BodyTemplate3.md)
            * [BodyTemplate4(右图左文模版)](doc/directive/Display/Template/BodyTemplate4.md)
            * [BodyTemplate5(图片模板)](doc/directive/Display/Template/BodyTemplate5.md)
+           * [BodyTemplate6(上图下文模版类)](doc/directive/Display/Template/BodyTemplate6.md)
            * [ListTemplate(列表模版基础类)](doc/directive/Display/Template/ListTemplate.md)
            * [ListTemplate1(横向列表模板)](doc/directive/Display/Template/ListTemplate1.md)
            * [ListTemplate2(纵向列表模板)](doc/directive/Display/Template/ListTemplate2.md)
+           * [ListTemplate3(横向列表模板2)](doc/directive/Display/Template/ListTemplate3.md)
+           * [ListTemplate4(纵向列表模版2)](doc/directive/Display/Template/ListTemplate4.md)
            * [ListTemplateItem(模版列表项)](doc/directive/Display/Template/ListTemplateItem.md)
            * [TextImageTemplate(图文模版)](doc/directive/Display/Template/TextImageTemplate.md)
         * 用户提示指令
            * [Hint(用户提示指令)](doc/directive/Display/Hint.md)
+        * 端入栈
+           * [PushStack(端入栈)](doc/directive/Display/PushStack.md)
         * 模版渲染
            * [RenderTemplate(模版渲染)](doc/directive/Display/RenderTemplate.md)
+           * [RenderAudioPlayerInfo(渲染音频播放信息)](doc/directive/Display/RenderAudioPlayerInfo.md)
+           * [RenderVideoPlayerInfo(渲染视频播放信息)](doc/directive/Display/RenderVideoPlayerInfo.md)
         * 音频项
            * [AudioItem(音频项)](doc/directive/Display/AudioItem.md)
+           * [AudioPlayerInfo(音频播放信息)](doc/directive/Display/AudioPlayer/AudioPlayerInfo.md)
+           * [AudioPlayerInfoContent(音频播放信息Content)](doc/directive/Display/AudioPlayer/AudioPlayerInfoContent.md)
         * 视频项
            * [VideoItem(视频项)](doc/directive/Display/VideoItem.md)
+           * [VideoPlayerInfo(视频播放信息)](doc/directive/Display/VideoPlayer/VideoPlayerInfo.md)
+           * [VideoPlayerInfoContent(视频播放信息Content)](doc/directive/Display/VideoPlayer/VideoPlayerInfoContent.md)
         * 媒体基础类
            * [BaseMediaListItem(媒体基础类)](doc/directive/Display/BaseMediaListItem.md)
         * 音频列表渲染指令
@@ -911,5 +1035,13 @@ this.botMonitor.setMonitorEnabled(true);
 
     * 支付
         * [Charge(支付指令)](doc/directive/Pay/Charge.md)
- 
-
+    * 授权
+        * [AskForPermissionsConsent(授权指令)](doc/directive/Permission/AskForPermissionsConsent.md)
+    * 录音
+        * [RecordSpeech(录音指令)](doc/directive/Record/RecordSpeech.md)
+    * 打开浏览器
+        * [LaunchBrowser(浏览器指令)](doc/directive/WebBrowser/LaunchBrowser.md)
+    * TTS模版
+        * [TTSTemplate(TTS模版)](doc/Extensions/TTSTemplate.md)
+        * TTS模版项
+          * [TTSTemplateItem(TTS模版项)](doc/Extensions/TTSTemplateItem.md)
