@@ -284,7 +284,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate5 = BaseBot.Directive.Display.BodyTemplate6;
+const BodyTemplate6 = BaseBot.Directive.Display.BodyTemplate6;
 
 let bodyTemplate = new BodyTemplate6();
 //设置模版token
@@ -382,7 +382,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const ListTemplate1 = BaseBot.Directive.Display.Template.ListTemplate3
+const ListTemplate3 = BaseBot.Directive.Display.Template.ListTemplate3
 const ListTemplateItem = BaseBot.Directive.Display.Template.ListTemplateItem
 
 let listTemplate = new ListTemplate3();
@@ -419,7 +419,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const ListTemplate1 = BaseBot.Directive.Display.Template.ListTemplate4
+const ListTemplate4 = BaseBot.Directive.Display.Template.ListTemplate4
 const ListTemplateItem = BaseBot.Directive.Display.Template.ListTemplateItem
 
 let listTemplate = new ListTemplate4();
