@@ -1039,8 +1039,6 @@ this.botMonitor.setMonitorEnabled(true);
         * [AskForPermissionsConsent(授权指令)](doc/directive/Permission/AskForPermissionsConsent.md)
     * 录音
         * [RecordSpeech(录音指令)](doc/directive/Record/RecordSpeech.md)
-    * 打开浏览器
-        * [LaunchBrowser(浏览器指令)](doc/directive/WebBrowser/LaunchBrowser.md)
     * TTS模版
         * [TTSTemplate(TTS模版)](doc/Extensions/TTSTemplate.md)
         * TTS模版项

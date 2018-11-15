@@ -43,5 +43,4 @@
 * 增加端入栈指令 PushStack
 * 增加用户授权指令 AskForPermissionsConsent
 * 增加录音指令 RecordSpeech
-* 增加浏览器访问指令 LaunchBrowser
 * 增加TTS模版 TTSTemplate
