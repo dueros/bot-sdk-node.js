@@ -1,6 +1,6 @@
 {
   "name": "bot-sdk",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "度秘bot开发的JS SDK",
   "main": "index.js",
   "scripts": {

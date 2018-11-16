@@ -44,3 +44,6 @@
 * 增加用户授权指令 AskForPermissionsConsent
 * 增加录音指令 RecordSpeech
 * 增加TTS模版 TTSTemplate
+
+# 1.2.8
+* 升级bot-monitor-sdk版本
