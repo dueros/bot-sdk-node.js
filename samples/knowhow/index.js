@@ -39,7 +39,7 @@ class InquiryBot extends Bot {
             this.endSession();
             return {
                 outputSpeech: '多谢使用鸡尾酒大全!'
-            };request
+            };
         });
 
         this.addIntentHandler('inquiry', () => {

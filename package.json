@@ -9,10 +9,9 @@
   "author": "yuanpeng01@baidu.com",
   "license": "ISC",
   "dependencies": {
-    "bot-monitor-sdk": "^1.2.2",
+    "bot-monitor-sdk": "^1.2.4",
     "node.extend": "^2.0.0",
-    "request": "^2.83.0",
-    "should": "^12.0.0"
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^3.0.0",
