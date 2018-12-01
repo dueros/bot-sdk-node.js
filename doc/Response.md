@@ -11,6 +11,12 @@
     * [.setExpectSpeech(expectSpeech)](#Response+setExpectSpeech)
     * [.illegalRequest()](#Response+illegalRequest) ⇒ <code>Promise</code>
     * [.build(data)](#Response+build) ⇒ <code>Promise</code>
+    * [.setNeedDetermine()](#Response+setNeedDetermine)
+    * [.setFallBack()](#Response+setFallBack)
+    * [.setAutoDirectivesArrangement()](#Response+setAutoDirectivesArrangement)
+    * [.setStrictDirectivesArrangement()](#Response+setStrictDirectivesArrangement)
+    * [.addExpectTextResponse(text)](#Response+addExpectTextResponse)
+    * [.addExpectSlotResponse(slot)](#Response+addExpectSlotResponse)
 
 <a name="new_Response_new"></a>
 
@@ -87,3 +93,49 @@ this.build({
      }
 });
 ```
+<a name="Response+setNeedDetermine"></a>
+
+### response.setNeedDetermine()
+设置needDetermine为true
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
+<a name="Response+setFallBack"></a>
+
+### response.setFallBack()
+表示本次返回的结果是否为兜底结果
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
+<a name="Response+setAutoDirectivesArrangement"></a>
+
+### response.setAutoDirectivesArrangement()
+表示directives中指令顺序随机
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
+<a name="Response+setStrictDirectivesArrangement"></a>
+
+### response.setStrictDirectivesArrangement()
+表示directives中指令保持相对顺序不变 (directives中指令可能会被过滤)
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
+<a name="Response+addExpectTextResponse"></a>
+
+### response.addExpectTextResponse(text)
+技能所期待的用户回复，技能将该信息反馈给DuerOS，有助于DuerOS在语音识别以及识别纠错时向该信息提权。
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| text | <code>string</code> | 普通文本内容类型回复表达的回复内容。 |
+
+<a name="Response+addExpectSlotResponse"></a>
+
+### response.addExpectSlotResponse(slot)
+技能所期待的用户回复，技能将该信息反馈给DuerOS，有助于DuerOS在语音识别以及识别纠错时向该信息提权。
+
+**Kind**: instance method of [<code>Response</code>](#Response)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| slot | <code>string</code> | 槽位类型回复表达的槽位名称。 |
+

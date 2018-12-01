@@ -12,15 +12,17 @@
     * [.setSlot(field, value, index)](#Nlu+setSlot)
     * [.getSlot(field, index)](#Nlu+getSlot) ⇒ <code>null</code> \| <code>string</code>
     * [.getIntentName()](#Nlu+getIntentName) ⇒ <code>string</code> \| <code>null</code>
-    * [.hasAsked()](#Nlu+hasAsked) ⇒ <code>Boolean</code>
-    * [.ask(slot)](#Nlu+ask) ⇒ <code>null</code>
-    * [.toDirective()](#Nlu+toDirective) ⇒ <code>array</code>
+    * [.hasAsked()](#Nlu+hasAsked) ⇒ <code>boolean</code>
+    * [.ask(slot)](#Nlu+ask)
+    * [.toDirective()](#Nlu+toDirective) ⇒ <code>Object</code>
     * [.toUpdateIntent()](#Nlu+toUpdateIntent) ⇒ <code>Object</code>
     * [.setDelegate()](#Nlu+setDelegate)
     * [.setConfirmSlot(field)](#Nlu+setConfirmSlot)
     * [.setConfirmIntent()](#Nlu+setConfirmIntent)
-    * [.getSlotConfirmationStatus(field)](#Nlu+getSlotConfirmationStatus) ⇒ <code>string</code>
-    * [.getIntentConfirmationStatus()](#Nlu+getIntentConfirmationStatus) ⇒
+    * [.getSlotConfirmationStatus(field, index)](#Nlu+getSlotConfirmationStatus) ⇒ <code>string</code>
+    * [.getIntentConfirmationStatus(index)](#Nlu+getIntentConfirmationStatus) ⇒ <code>string</code>
+    * [.setAfterSearchScore(score)](#Nlu+setAfterSearchScore)
+    * [.getAfterSearchScore()](#Nlu+getAfterSearchScore) ⇒ <code>number</code>
 
 <a name="new_Nlu_new"></a>
 
@@ -30,7 +32,7 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| intents | <code>array</code> | IntentRequest 中的intents |
+| intents | <code>Object</code> | IntentRequest 中的intents |
 
 <a name="Nlu+_directive"></a>
 
@@ -63,7 +65,7 @@
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | field | <code>string</code> |  | 槽位名 |
-| index | <code>Integer</code> | <code>0</code> | 第几个intent，默认第一个 |
+| index | <code>number</code> | <code>0</code> | 第几个intent，默认第一个 |
 
 <a name="Nlu+getIntentName"></a>
 
@@ -74,13 +76,13 @@
 **Access**: public  
 <a name="Nlu+hasAsked"></a>
 
-### nlu.hasAsked() ⇒ <code>Boolean</code>
+### nlu.hasAsked() ⇒ <code>boolean</code>
 Bot是否在询问用户，等待用户的回复
 
 **Kind**: instance method of [<code>Nlu</code>](#Nlu)  
 <a name="Nlu+ask"></a>
 
-### nlu.ask(slot) ⇒ <code>null</code>
+### nlu.ask(slot)
 Bot主动发起对一个槽位的询问。比如：打车时询问用户目的地
 
 **Kind**: instance method of [<code>Nlu</code>](#Nlu)  
@@ -96,11 +98,15 @@ this.ask('destination');
 ```
 <a name="Nlu+toDirective"></a>
 
-### nlu.toDirective() ⇒ <code>array</code>
+### nlu.toDirective() ⇒ <code>Object</code>
+获取 _directive
+
 **Kind**: instance method of [<code>Nlu</code>](#Nlu)  
 <a name="Nlu+toUpdateIntent"></a>
 
 ### nlu.toUpdateIntent() ⇒ <code>Object</code>
+toUpdateIntent
+
 **Kind**: instance method of [<code>Nlu</code>](#Nlu)  
 <a name="Nlu+setDelegate"></a>
 
@@ -131,9 +137,7 @@ this.setConfirmSlot('destination');
 <a name="Nlu+setConfirmIntent"></a>
 
 ### nlu.setConfirmIntent()
-主动发起对一个意图的确认，此时还需同时返回询问的outputSpeach。
-主动发起的确认，DM不会使用默认配置的话术。
-一般当槽位填槽完毕，在进行下一步操作之前，一次性的询问各个槽位，是否符合用户预期。
+主动发起对一个意图的确认，此时还需同时返回询问的outputSpeach。主动发起的确认，DM不会使用默认配置的话术。一般当槽位填槽完毕，在进行下一步操作之前，一次性的询问各个槽位，是否符合用户预期。
 
 **Kind**: instance method of [<code>Nlu</code>](#Nlu)  
 **Access**: public  
@@ -143,20 +147,43 @@ this.setConfirmIntent();
 ```
 <a name="Nlu+getSlotConfirmationStatus"></a>
 
-### nlu.getSlotConfirmationStatus(field) ⇒ <code>string</code>
+### nlu.getSlotConfirmationStatus(field, index) ⇒ <code>string</code>
 获取一个slot对应的confirmationStatus
 
 **Kind**: instance method of [<code>Nlu</code>](#Nlu)  
 **Returns**: <code>string</code> - 槽位的confirmationStatus  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| field | <code>string</code> | 槽位名 |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| field | <code>string</code> |  | 槽位名 |
+| index | <code>number</code> | <code>0</code> | index |
 
 <a name="Nlu+getIntentConfirmationStatus"></a>
 
-### nlu.getIntentConfirmationStatus() ⇒
-获取一个intent对应的confirmationStatus
+### nlu.getIntentConfirmationStatus(index) ⇒ <code>string</code>
+获取意图的确认状态 获取一个intent对应的confirmationStatus
 
 **Kind**: instance method of [<code>Nlu</code>](#Nlu)  
-**Returns**: {string 意图的confirmationStatus  
+**Returns**: <code>string</code> - 意图的confirmationStatus  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| index | <code>number</code> | <code>0</code> | index |
+
+<a name="Nlu+setAfterSearchScore"></a>
+
+### nlu.setAfterSearchScore(score)
+设置afterSearchScore
+
+**Kind**: instance method of [<code>Nlu</code>](#Nlu)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| score | <code>number</code> | score |
+
+<a name="Nlu+getAfterSearchScore"></a>
+
+### nlu.getAfterSearchScore() ⇒ <code>number</code>
+获取afterSearchScore
+
+**Kind**: instance method of [<code>Nlu</code>](#Nlu)  

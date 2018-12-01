@@ -29,6 +29,14 @@ Bot基类. 请继承此类
         * [.isSupportAudioPlayer()](#Bot+isSupportAudioPlayer) ⇒ <code>boolean</code>
         * [.isSupportVideoPlayer()](#Bot+isSupportVideoPlayer) ⇒ <code>boolean</code>
         * [.run(build)](#Bot+run) ⇒ <code>Promise</code>
+        * [.addExpectSlotResponse(slot)](#Bot+addExpectSlotResponse)
+        * [.getApiAccessToken()](#Bot+getApiAccessToken) ⇒ <code>string</code>
+        * [.getApiEndPoint()](#Bot+getApiEndPoint) ⇒ <code>string</code>
+        * [.getUserProfile()](#Bot+getUserProfile) ⇒ <code>Promise</code>
+        * [.getRecordSpeech(audioToken)](#Bot+getRecordSpeech) ⇒ <code>Promise</code>
+        * [.getDeviceLocation()](#Bot+getDeviceLocation) ⇒ <code>Promise</code>
+        * [.smarthomePrinter(data)](#Bot+smarthomePrinter) ⇒ <code>Promise</code>
+        * [.mateappNotification(data)](#Bot+mateappNotification) ⇒ <code>Promise</code>
     * _static_
         * [.Card](#Bot.Card) : <code>object</code>
             * [.TextCard](#Bot.Card.TextCard)
@@ -66,8 +74,6 @@ Bot基类. 请继承此类
                 * [.AskForPermissionsConsent](#Bot.Directive.Permission.AskForPermissionsConsent)
             * [.Record](#Bot.Directive.Record) : <code>object</code>
                 * [.RecordSpeech](#Bot.Directive.Record.RecordSpeech)
-            * [.WebBrowser](#Bot.Directive.WebBrowser) : <code>object</code>
-                * [.LaunchBrowser](#Bot.Directive.WebBrowser.LaunchBrowser)
             * [.Display](#Bot.Directive.Display) : <code>object</code>
                 * [.Hint](#Bot.Directive.Display.Hint)
                 * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
@@ -379,6 +385,74 @@ bot执行的入口
 | --- | --- | --- | --- |
 | build | <code>boolean</code> | <code>true</code> | 是否需要打包response，输出JSON String |
 
+<a name="Bot+addExpectSlotResponse"></a>
+
+### bot.addExpectSlotResponse(slot)
+技能所期待的用户回复，技能将该信息反馈给DuerOS，有助于DuerOS在语音识别以及识别纠错时向该信息提权
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| slot | <code>string</code> | 槽位类型回复表达的槽位名称。 |
+
+<a name="Bot+getApiAccessToken"></a>
+
+### bot.getApiAccessToken() ⇒ <code>string</code>
+获取apiAccessToken
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+<a name="Bot+getApiEndPoint"></a>
+
+### bot.getApiEndPoint() ⇒ <code>string</code>
+获取apiEndPoint
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+<a name="Bot+getUserProfile"></a>
+
+### bot.getUserProfile() ⇒ <code>Promise</code>
+获取用户百度账号信息
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+<a name="Bot+getRecordSpeech"></a>
+
+### bot.getRecordSpeech(audioToken) ⇒ <code>Promise</code>
+获取用户录音数据
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| audioToken | <code>string</code> | RecordSpeechFinished事件中的audioToken |
+
+<a name="Bot+getDeviceLocation"></a>
+
+### bot.getDeviceLocation() ⇒ <code>Promise</code>
+获取用户地理位置信息
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+<a name="Bot+smarthomePrinter"></a>
+
+### bot.smarthomePrinter(data) ⇒ <code>Promise</code>
+调用智能家居打印机服务
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+
+| Param | Type |
+| --- | --- |
+| data | <code>object</code> | 
+
+<a name="Bot+mateappNotification"></a>
+
+### bot.mateappNotification(data) ⇒ <code>Promise</code>
+小度音箱app通知接口
+
+**Kind**: instance method of [<code>Bot</code>](#Bot)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Object</code> | 参数对象 |
+
 <a name="Bot.Card"></a>
 
 ### Bot.Card : <code>object</code>
@@ -484,8 +558,6 @@ Bot 可以返回指令
         * [.AskForPermissionsConsent](#Bot.Directive.Permission.AskForPermissionsConsent)
     * [.Record](#Bot.Directive.Record) : <code>object</code>
         * [.RecordSpeech](#Bot.Directive.Record.RecordSpeech)
-    * [.WebBrowser](#Bot.Directive.WebBrowser) : <code>object</code>
-        * [.LaunchBrowser](#Bot.Directive.WebBrowser.LaunchBrowser)
     * [.Display](#Bot.Directive.Display) : <code>object</code>
         * [.Hint](#Bot.Directive.Display.Hint)
         * [.RenderTemplate](#Bot.Directive.Display.RenderTemplate)
@@ -759,20 +831,6 @@ Bot 可以返回指令
 **Kind**: static property of [<code>Record</code>](#Bot.Directive.Record)  
 **Access**: public  
 **See**: [RecordSpeech](RecordSpeech)  
-<a name="Bot.Directive.WebBrowser"></a>
-
-#### Directive.WebBrowser : <code>object</code>
-浏览器访问
-
-**Kind**: static namespace of [<code>Directive</code>](#Bot.Directive)  
-<a name="Bot.Directive.WebBrowser.LaunchBrowser"></a>
-
-##### WebBrowser.LaunchBrowser
-浏览器访问指令
-
-**Kind**: static property of [<code>WebBrowser</code>](#Bot.Directive.WebBrowser)  
-**Access**: public  
-**See**: [LaunchBrowser](LaunchBrowser)  
 <a name="Bot.Directive.Display"></a>
 
 #### Directive.Display : <code>object</code>
