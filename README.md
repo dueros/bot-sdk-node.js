@@ -918,6 +918,79 @@ this.addIntentHandler('your intent name', () => {
     //do sth else
 });
 ```
+## API接口权限调用(返回Promise)
+### 获取地理位置API
+通过getDeviceLocation方法获取用户的地理位置：
+```javascript
+this.getDeviceLocation().then(locationInfo => {
+    //开发者根据返回结果参数处理逻辑
+	//console.log(JSON.stringify(locationInfo));
+    //do sth else
+});
+```
+
+### 获取用户百度账号信息API
+通过getUserProfile方法获取百度账号信息：
+```javascript
+this.getUserProfile().then(profileInfo => {
+    //开发者根据返回结果参数处理逻辑
+    //console.log(JSON.stringify(profileInfo));
+    //do sth else
+});
+```
+
+### 录音后获取录音结果API(在RecordSpeech指令的结束事件中调用)
+通过getRecordSpeech方法获取录音的结果Url：
+```javascript
+audioToken包含在下发事件参数中：
+let audioToken = event[0]['audioToken'];
+this.getRecordSpeech(audioToken).then(locationRes => {
+    //开发者根据返回结果参数处理逻辑
+    //console.log(JSON.stringify(locationRes));
+    //do sth else
+});
+```
+
+### 调用智能家居打印机服务API
+通过smarthomePrinter方法调用智能家居打印机：
+```javascript
+let data = {
+    "fileSourceUrl": "http://www.234.cn/uploadfile/image/20140410111022_9402.jpg", //资源路径
+    "fileName": "20140410111022_9402.jpg",  //文件名
+    "mediaSize": "100",  //文件大小
+    "color": "red", //打印的颜色
+    "copies": 2 //要打印几份
+};
+
+this.smarthomePrinter(data).then(printerRes => {
+	//开发者根据返回结果参数处理逻辑
+	//console.log(JSON.stringify(printerRes);
+    //do sth else
+});
+```
+
+### 调用小度音箱app消息推送接口API
+通过mateappNotification方法向小度app推送消息：
+```javascript
+let data = {
+    "timeout":3, //超时时间
+    "message":{
+        "type":"Standard", //推送类型
+        "content":{
+            "title":"推送内容标题", //推送内容标题
+            "description": "description",  // 描述
+            "url": "http://.." //url链接
+        }
+    }
+};
+
+this.mateappNotification(data).then(notificationRes => {
+    //开发者根据返回结果参数处理逻辑
+	//console.log(JSON.stringify(notificationRes)); 
+    //do sth else
+});
+```
+
 ## 数据统计
 ### BotMonitor是什么
 它可以帮助您收集和分析您开发的bot运行中产生的数据，帮助您实时查看应用运行状态，及时发现应用中存在的问题，提升>用户体验。目前，BotMonitor提供应用性能分析、用户行为统计。使用BotMonitor，您可以方便的在自己的DBP平台查看Bot的用户量、会话量、请求量、QPS以及Session的相关统计数据指标。
