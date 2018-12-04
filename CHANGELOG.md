@@ -54,3 +54,6 @@
 * 增加AccessToken获取接口
 * 增加获取录音url接口
 * 增加获取用户百度账号信息接口
+
+# 1.2.10
+* ListTemplateItem增加image标签方法
