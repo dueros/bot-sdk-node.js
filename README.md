@@ -952,7 +952,7 @@ this.getRecordSpeech(audioToken).then(locationRes => {
 ```
 
 ### 调用智能家居打印机服务API
-通过smarthomePrinter方法调用智能家居打印机：
+通过callSmarthomePrinter方法调用智能家居打印机：
 ```javascript
 let data = {
     "fileSourceUrl": "http://www.234.cn/uploadfile/image/20140410111022_9402.jpg", //资源路径
@@ -962,7 +962,7 @@ let data = {
     "copies": 2 //要打印几份
 };
 
-this.smarthomePrinter(data).then(printerRes => {
+this.callSmarthomePrinter(data).then(printerRes => {
 	//开发者根据返回结果参数处理逻辑
 	//console.log(JSON.stringify(printerRes);
     //do sth else
@@ -970,7 +970,7 @@ this.smarthomePrinter(data).then(printerRes => {
 ```
 
 ### 调用小度音箱app消息推送接口API
-通过mateappNotification方法向小度app推送消息：
+通过sendMateappNotification方法向小度app推送消息：
 ```javascript
 let data = {
     "timeout":3, //超时时间
@@ -984,7 +984,7 @@ let data = {
     }
 };
 
-this.mateappNotification(data).then(notificationRes => {
+this.sendMateappNotification(data).then(notificationRes => {
     //开发者根据返回结果参数处理逻辑
 	//console.log(JSON.stringify(notificationRes)); 
     //do sth else

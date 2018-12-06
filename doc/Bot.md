@@ -35,8 +35,8 @@ Bot基类. 请继承此类
         * [.getUserProfile()](#Bot+getUserProfile) ⇒ <code>Promise</code>
         * [.getRecordSpeech(audioToken)](#Bot+getRecordSpeech) ⇒ <code>Promise</code>
         * [.getDeviceLocation()](#Bot+getDeviceLocation) ⇒ <code>Promise</code>
-        * [.smarthomePrinter(data)](#Bot+smarthomePrinter) ⇒ <code>Promise</code>
-        * [.mateappNotification(data)](#Bot+mateappNotification) ⇒ <code>Promise</code>
+        * [.callSmarthomePrinter(data)](#Bot+callSmarthomePrinter) ⇒ <code>Promise</code>
+        * [.sendMateappNotification(data)](#Bot+sendMateappNotification) ⇒ <code>Promise</code>
     * _static_
         * [.Card](#Bot.Card) : <code>object</code>
             * [.TextCard](#Bot.Card.TextCard)
@@ -431,9 +431,9 @@ bot执行的入口
 获取用户地理位置信息
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
-<a name="Bot+smarthomePrinter"></a>
+<a name="Bot+callSmarthomePrinter"></a>
 
-### bot.smarthomePrinter(data) ⇒ <code>Promise</code>
+### bot.callSmarthomePrinter(data) ⇒ <code>Promise</code>
 调用智能家居打印机服务
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
@@ -442,9 +442,9 @@ bot执行的入口
 | --- | --- |
 | data | <code>object</code> | 
 
-<a name="Bot+mateappNotification"></a>
+<a name="Bot+sendMateappNotification"></a>
 
-### bot.mateappNotification(data) ⇒ <code>Promise</code>
+### bot.sendMateappNotification(data) ⇒ <code>Promise</code>
 小度音箱app通知接口
 
 **Kind**: instance method of [<code>Bot</code>](#Bot)  
