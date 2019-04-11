@@ -57,3 +57,6 @@
 
 # 1.2.10
 * ListTemplateItem增加image标签方法
+
+# 1.2.11
+* fix context structure
