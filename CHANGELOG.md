@@ -60,3 +60,6 @@
 
 # 1.2.11
 * fix context structure
+
+# 1.2.12
+* 增加DPL相关API

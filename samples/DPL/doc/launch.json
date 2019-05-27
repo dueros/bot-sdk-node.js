@@ -1,0 +1,41 @@
+{
+    "type":"DPL",
+    "version":"1.0",
+    "mainTemplate":{
+        "parameters":[
+            "payload"
+        ],
+        "items":[
+            {
+                "type":"Image",
+                "position":"absolute",
+                "top":"0dp",
+                "left":"0dp",
+                "src":"https://d2o906d8ln7ui1.cloudfront.net/images/BT7_Background.png",
+                "height":"100%",
+                "width":"100%"
+            },
+            {
+                "type":"Container",
+                "width":"100%",
+                "height":"100%",
+                "items":[
+                    {
+                        "type":"Header",
+                        "headerTitle":"DPL示例",
+                        "headerImage":"https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+                        "hasBackIcon":true
+                    },
+                    {
+                        "type":"Text",
+                        "line-height": "100dp",
+                        "font-size": "30dp",
+                        "text-align": "center",
+                        "margin-top": "200dp",
+                        "text": "DPL演示"
+                    }
+                ]
+            }
+        ]
+    }
+}
