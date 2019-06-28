@@ -252,7 +252,6 @@ class Bot extends BaseBot {
             this.waitAnswer();
             this.setExpectSpeech(false);
             let index = this.getSlot('index');
-            console.log("===index===="+index);
             index = index - 1 >= 0 ? index - 1 : 0;
             let executeCommands = new ExecuteCommands();
             let updateComponentCommand = new UpdateComponentCommand();
