@@ -4,6 +4,7 @@
  */
 
 //const BaseBot = require('../../lib/Bot');
+const path = require('path');
 const BaseBot = require('bot-sdk');
 const Document = BaseBot.Directive.DPL.Document;
 const RenderDocument = BaseBot.Directive.DPL.RenderDocument;
@@ -361,16 +362,6 @@ class Bot extends BaseBot {
             };
         });
 
-        //全屏播放
-        this.addIntentHandler('full_screen', () => {
-
-        });
-
-        //取消全屏
-        this.addIntentHandler('cancle_full_screen', () => {
-
-        });
-
         //收藏
         this.addIntentHandler('favourite_video', () => {
             this.waitAnswer();
@@ -408,13 +399,14 @@ class Bot extends BaseBot {
     /**
      * 生成DPL.RenderDocument指令
      *
-     * @param {string} path 文档路径
+     * @param {string} pathUrl 文档路径
      * @return {Promise}
      */
-    genDPLDirective(path) {
+    genDPLDirective(pathUrl) {
+        pathUrl = path.join(__dirname, pathUrl);
         let document = new Document();
         let renderDocument = new RenderDocument();
-        return document.getDocumentFromPath(path).then(doc => {
+        return document.getDocumentFromPath(pathUrl).then(doc => {
             if (doc) {
                 document.initDocument(doc);
                 renderDocument.setDocument(document);

@@ -12,7 +12,7 @@
   "author": "yelvye@baidu.com",
   "license": "ISC",
   "dependencies": {
-    "bot-sdk": "^1.2.14",
+    "bot-sdk": "^1.2.15",
     "express": "^4.17.1"
   }
 }
