@@ -1,0 +1,584 @@
+{
+    "type":"DPL",
+    "version":"2.0",
+    "dataSource": {
+        "pageData": [
+            {
+                "english": "Let life be beautiful like summer flowers and death like autumn leaves.",
+                "chinese": "使生如夏花之绚烂，死如秋叶之静美。",
+                "src": "https://iknow-pic.cdn.bcebos.com/fcfaaf51f3deb48fdac0bbb9fd1f3a292df5782f?x-bce-process=image/resize,m_lfit,w_600,h_800,limit_1"
+            },
+            {
+                "english": "If you shed tears when you miss the sun, you also miss the stars.",
+                "chinese": "如果你因失去了太阳而流泪，那么你也失去了群星。",
+                "src": "https://iknow-pic.cdn.bcebos.com/fcfaaf51f3deb48fdac0bbb9fd1f3a292df5782f?x-bce-process=image/resize,m_lfit,w_600,h_800,limit_1"
+            }
+        ]
+    },
+    "stylesheet": [{
+		"bubble_Hint": {
+			"height": "44dp",
+            "padding-left": "24dp",
+            "padding-right": "24dp",
+            "min-width": "120dp",
+            "max-width": "600dp",
+            "justify-content": "center",
+            "align-items": "center",
+            "background-color": "rgba(255, 255, 255, 0.1)",
+            "border-radius": "18dp 20dp 20dp 0dp"
+		}
+	}],
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "styles": {
+                    "flex": 1,
+                    "justify-content":"space-between"
+                },
+                "items": [
+                    {
+                        "type": "Image",
+                        "styles": {
+                            "position": "absolute",
+                            "left": "0dp",
+                            "top": "0dp",
+                            "scale-type": "centerCrop",
+                            "height": "100%",
+                            "width": "100%"
+                        },
+                        "props": {
+                            "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                        }
+                    },
+                    {
+                        "type": "Header",
+                        "props": {
+                            "title": "翻页组件测试（Pager）",
+                            "sideIcon": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+                            "sideText": "demo2.0"
+                        }
+                    },
+                    {
+                        "type": "Pager",
+                        "componentId":"demo_pager_1",
+                        "styles": {
+                            "flex":"1",
+                            "margin":"0dp 48dp"
+                        },
+                        "props":{
+                            "initialPage":0,
+                            "direction": "horizontal",
+                            "userInteraction": false
+                        },
+                        "items":[
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试1：左图右文展示"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type":"Container",
+                                        "styles": {
+                                            "width":"100%",
+                                            "flex-direction": "row",
+                                            "justify-content":"space-between"
+                                        },
+                                        "items":[
+                                            {
+                                                "type": "Image",
+                                                "componentId":"demo_image_id",
+                                                "styles": {
+                                                    "height": "320dp",
+                                                    "width": "280dp",
+                                                    "scale-type": "centerCrop",
+                                                    "border-radius": "10dp"
+                                                },
+                                                "props": {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince1.jpeg"
+                                                }
+                                            },
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "height":"320dp",
+                                                    "width": "560dp",
+                                                    "background": "rgba(255,25,1,0.2)",
+                                                    "padding":"10dp",
+                                                    "border-radius":"16dp",
+                                                    "justify-content":"space-between"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "componentId": "demo_text_id_1",
+                                                        "props":{
+                                                            "text":"title 展示"
+                                                        },
+                                                        "styles": {
+                                                            "color": "blue",
+                                                            "font-size":"35dp"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"Text",
+                                                        "props":{
+                                                            "text":"小标题"
+                                                        },
+                                                        "styles":{
+                                                            "font-size":"25dp",
+                                                            "height": "80dp"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"Text",
+                                                        "props":{
+                                                            "text":"In one of the stars I shall be living. In one of them I shall be laughing. And so it will be as if all the stars were laughing, when you look at the sky at night… You – only you – will have stars that can laugh…"
+                                                        },
+                                                        "styles":{
+                                                            "margin-top": "8dp",
+                                                            "font-size":"30dp",
+                                                            "max-lines": "3",
+                                                            "text-overflow": "ellipsis",
+                                                            "line-spacing": "8dp"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "background": "transparent",
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start",
+                                    "margin-bottom": "30dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试2：横向列表展示"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "List",
+                                        "styles": {
+                                            "flex":"1",
+                                            "background":"transparent"
+                                        },
+                                        "props":{
+                                            "direction": "horizontal",
+                                            "data": [
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince1.jpeg",
+                                                    "desc": "第一个"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince2.jpeg",
+                                                    "desc": "第二个"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince3.jpeg",
+                                                    "desc": "第三个"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince4.jpeg",
+                                                    "desc": "第四个"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince5.jpeg",
+                                                    "desc": "第五个"
+                                                }
+                                            ]
+                                        },
+                                        "firstItem": [
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "flex": "1",
+                                                    "padding": "20dp",
+                                                    "align-items":"center"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Image",
+                                                        "styles": {
+                                                            "width":"160dp",
+                                                            "height":"220dp",
+                                                            "border-radius":"16dp",
+                                                            "scale-type":"centerCrop"
+                                                        },
+                                                        "props":{ 
+                                                            "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince8.jpeg"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "styles": {
+                                                            "font-size": "30dp",
+                                                            "margin-top": "16dp"
+                                                        },
+                                                        "props":{ 
+                                                            "text": "最前一个"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "lastItem": [
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "flex": "1",
+                                                    "padding": "20dp",
+                                                    "align-items":"center"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Image",
+                                                        "styles": {
+                                                            "width":"360dp",
+                                                            "height":"220dp",
+                                                            "border-radius":"16dp",
+                                                            "scale-type":"centerCrop"
+                                                        },
+                                                        "props":{ 
+                                                            "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince1.jpeg"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "styles": {
+                                                            "font-size": "30dp",
+                                                            "margin-top": "16dp"
+                                                        },
+                                                        "props":{ 
+                                                            "text": "最后一个"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "flex": "1",
+                                                    "padding": "20dp",
+                                                    "align-items":"center"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Image",
+                                                        "styles": {
+                                                            "width":"220dp",
+                                                            "height":"220dp",
+                                                            "border-radius":"16dp",
+                                                            "scale-type":"centerCrop"
+                                                        },
+                                                        "props":{ 
+                                                            "src": "${data.src}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "styles": {
+                                                            "font-size": "30dp",
+                                                            "margin-top": "16dp"
+                                                        },
+                                                        "props":{ 
+                                                            "text": "${data.desc}"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "background": "transparent",
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start",
+                                    "margin-bottom": "30dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试3：纵向列表展示"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "List",
+                                        "styles": {
+                                            "background":"transparent",
+                                            "flex":"1",
+                                            "padding-bottom":"0dp"
+                                        },
+                                        "props":{
+                                            "direction": "vertical",
+                                            "data": [
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince1.jpeg",
+                                                    "english": "Never frown, even when you are sad, because you never know who is falling in love with your smile.",
+                                                    "chinese": "纵然伤心，也不要愁眉不展，因为你不知是谁会爱上你的笑容。"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince2.jpeg",
+                                                    "english": "Dark clouds becomes heaven's flowers when kissed by light.",
+                                                    "chinese": "黑云受到光的接吻时，就变成了天上的花朵。"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince3.jpeg",
+                                                    "english": "The pet dog suspects the universe for scheming to take its place.",
+                                                    "chinese": "小狗怀疑大宇宙阴谋篡夺它的位置。"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince4.jpeg",
+                                                    "english": "The great walks with the small without fear. The middling keeps aloof.",
+                                                    "chinese": "大的不怕与小的同游，居中的却远避之。"
+                                                },
+                                                {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince5.jpeg",
+                                                    "english": "Not hammer-strokes, but dance of the water sings the pebbles into perfection.",
+                                                    "chinese": "不是锤的敲打，乃是水的载歌载舞，使鹅卵石臻於完美。"
+                                                }
+                                            ]
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "width":"85%",
+                                                    "height":"160dp",
+                                                    "flex-direction":"row",
+                                                    "padding": "20dp",
+                                                    "margin":"10dp",
+                                                    "align-items":"center"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Image",
+                                                        "styles": {
+                                                            "width":"120dp",
+                                                            "height":"120dp",
+                                                            "border-radius":"16dp",
+                                                            "scale-type":"centerCrop"
+                                                        },
+                                                        "props":{ 
+                                                            "src": "${data.src}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "Container",
+                                                        "styles": {
+                                                            "margin-left":"30dp",
+                                                            "justify-content":"space-around"
+                                                        },
+                                                        "props":{ 
+
+                                                        },
+                                                        "items":[
+                                                            {
+                                                                "type": "Text",
+                                                                "styles": {
+                                                                    "font-size": "26dp"
+                                                                },
+                                                                "props":{ 
+                                                                    "text": "${data.english}"
+                                                                }
+                                                            },
+                                                            {
+                                                                "type": "Text",
+                                                                "styles": {
+                                                                    "font-size": "26dp"
+                                                                },
+                                                                "props":{ 
+                                                                    "text": "${data.chinese}"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "background": "transparent",
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start",
+                                    "margin-bottom": "30dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试4：slot 测试"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "ScrollView",
+                                        "props":{
+                                            "direction":"vertical"
+                                        },
+                                        "styles": {
+                                            "flex":"1",
+                                            "justify-content": "flex-start",
+                                            "align-items": "center",
+                                            "background-color": "rgba(1, 1, 1, 0.3)",
+                                            "border-radius": "16dp",
+                                            "padding":"10dp"
+                                        },
+                                        "slot": "lastItem",
+                                        "items":[
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "width":"100%",
+                                                    "height":"80dp"
+                                                },
+                                                "items": [{
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "结束语"
+                                                    },
+                                                    "styles": {
+                                                        "font-size": "36dp",
+                                                        "padding-bottom": "20dp"
+                                                    }
+                                                }]
+                                            },
+                                            {
+                                                "type": "Text",
+                                                "props": {
+                                                    "text": "But if you tame me, it will be as if the sun came to shine on my life . I shall know the sound of a step that will be different from all the others. Other steps send me hurrying back underneath the ground. Yours will call me, like music, out of my burrow. And then look: you see the grain-fields down yonder? I do not ea t bread. Wheat is of no use to me. The wheat fields have nothing to say to me. And that is sad. But you have hair that is the colour of gold. Think how wonderful that will be when you have tamed me! The grain, which is also golden, will bring me bac k the thought of you. And I shall love to listen to the wind in the wheat..."
+                                                },
+                                                "styles": {
+                                                    "font-size": "28dp",
+                                                    "line-spacing":"12dp"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "events": {
+                            "onLoaded": [
+                                {
+                                    "type": "AutoPage",
+                                    "componentId":"demo_pager_1",
+                                    "durationInMillisecond": 2000
+                                }
+                            ],
+                            "onPageChanged": [
+                                {
+                                    "type": "SendEvent",
+                                    "componentId":"demo_pager_1_pageChanged"
+                                },
+                                {
+                                    "type": "InvokeMethod",
+                                    "componentId":"demo_pager_1",
+                                    "methodName": "pause",
+                                    "arguments": {}
+                                },
+                                {
+                                    "type": "InvokeMethod",
+                                    "componentId":"demo_pager_1",
+                                    "methodName": "play",
+                                    "delay": "2000",
+                                    "arguments": [100, 0]
+                                }
+                            ],
+                            "onPageEnd": [
+                                
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

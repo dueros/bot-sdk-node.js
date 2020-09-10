@@ -1,0 +1,314 @@
+{
+    "type":"DPL",
+    "version":"2.0",
+    "duration": 60000,
+	"stylesheet": [{
+		"bubble_Hint": {
+			"height": "44dp",
+            "padding-left": "24dp",
+            "padding-right": "24dp",
+            "min-width": "120dp",
+            "max-width": "600dp",
+            "justify-content": "center",
+            "align-items": "center",
+            "background-color": "rgba(255, 255, 255, 0.1)",
+            "border-radius": "18dp 20dp 20dp 0dp"
+		}
+	}],
+    "mainTemplate":{
+        "parameters":[
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "styles": {
+                    "flex": 1,
+                    "justify-content":"space-between"
+                },
+                "items": [
+                    {
+                        "type":"Audio",
+                        "componentId": "demo_audio_1",
+                        "props": {
+                            "src":"http://dbp-resource.gz.bcebos.com/5abf9942-2823-52c3-2649-1ece32b7dbfe/%E5%8A%AA%E5%8A%9B.mp3?authorization=bce-auth-v1%2Fa4d81bbd930c41e6857b989362415714%2F2019-05-22T06%3A15%3A35Z%2F-1%2F%2F7eb9724ee886f4d73c95d048ffc86651f7db53300f5811778e6b90226faf032f",
+                            "looping": false,
+                            "autoplay": true,
+                            "type":"music"
+                        },
+                        "events": {
+                            "onEnd": [{
+                                "type": "SendEvent",
+                                "arguments":["event_audio_end"],
+                                "componentId": "demo_audio_1"
+                            }]
+                        }
+                    },
+                    {
+                        "type": "Image",
+                        "styles": {
+                            "position": "absolute",
+                            "left": "0dp",
+                            "top": "0dp",
+                            "scale-type": "centerCrop",
+                            "height": "100%",
+                            "width": "100%"
+                        },
+                        "props": {
+                            "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                        }
+                    },
+                    {
+                        "type": "Header",
+                        "props": {
+                            "title": "音频组件测试（Audio）",
+                            "sideIcon": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+                            "sideText": "demo2.0"
+                        }
+                    },
+                    {
+                        "type": "ScrollView",
+                        "styles": {
+                            "flex": 1,
+                            "background": "transparent",
+                            "margin": "0dp 48dp"
+                        },
+                        "props": {
+                            "direction": "vertical"
+                        },
+                        "items": [
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "background": "transparent",
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start",
+                                    "margin-bottom": "30dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试1：音频播放"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type":"Container",
+                                        "styles": {
+                                            "width": "100%",
+                                            "border-radius": "16dp",
+                                            "padding": "16dp",
+                                            "background-color": "rgba(1, 1, 1, .2)"
+                                        },
+                                        "items":[
+                                            {
+                                                "type":"Container",
+                                                "styles": {
+                                                    "height": "80dp",
+                                                    "min-width": "80dp",
+                                                    "margin": "20dp",
+                                                    "justify-content": "center",
+                                                    "align-items": "center",
+                                                    "border-radius": "16dp",
+                                                    "padding": "16dp",
+                                                    "background-color": "rgba(1, 1, 1, .2)"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "componentId":"demo_audio_text_1",
+                                                        "styles":{
+                                                            "font-size": "20dp"
+                                                        },
+                                                        "props":{
+                                                            "text": "播放音频1"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type":"Container",
+                                        "styles": {
+                                            "flex-direction":"row",
+                                            "width": "100%",
+                                            "border-radius": "16dp",
+                                            "padding": "16dp",
+                                            "background-color": "rgba(1, 1, 1, .2)"
+                                        },
+                                        "items":[
+                                            {
+                                                "type":"Container",
+                                                "styles": {
+                                                    "height": "80dp",
+                                                    "min-width": "80dp",
+                                                    "margin": "20dp",
+                                                    "justify-content": "center",
+                                                    "align-items": "center",
+                                                    "border-radius": "16dp",
+                                                    "padding": "16dp",
+                                                    "background-color": "rgba(1, 1, 1, .2)"
+                                                },
+                                                "events":{
+                                                    "onClick": [
+                                                        {
+                                                            "type": "ControlMedia",
+                                                            "componentId": "demo_audio_1",
+                                                            "command": "pause"
+                                                        }
+                                                    ]
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "styles":{
+                                                            "font-size": "20dp"
+                                                        },
+                                                        "props":{
+                                                            "text": "暂停音频"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type":"Container",
+                                                "styles": {
+                                                    "height": "80dp",
+                                                    "min-width": "80dp",
+                                                    "margin": "20dp",
+                                                    "justify-content": "center",
+                                                    "align-items": "center",
+                                                    "border-radius": "16dp",
+                                                    "padding": "16dp",
+                                                    "background-color": "rgba(1, 1, 1, .2)"
+                                                },
+                                                "events":{
+                                                    "onClick": [
+                                                        {
+                                                            "type": "ControlMedia",
+                                                            "componentId": "demo_audio_1",
+                                                            "command": "play"
+                                                        }
+                                                    ]
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "styles":{
+                                                            "font-size": "20dp"
+                                                        },
+                                                        "props":{
+                                                            "text": "播放音频"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type":"Container",
+                                                "styles": {
+                                                    "height": "80dp",
+                                                    "min-width": "80dp",
+                                                    "margin": "20dp",
+                                                    "justify-content": "center",
+                                                    "align-items": "center",
+                                                    "border-radius": "16dp",
+                                                    "padding": "16dp",
+                                                    "background-color": "rgba(1, 1, 1, .2)"
+                                                },
+                                                "events":{
+                                                    "onClick": [
+                                                        {
+                                                            "type": "SetState",
+                                                            "componentId": "demo_audio_1",
+                                                            "state": "src",
+                                                            "value": "https://duerstatic.bj.bcebos.com/swan%2Fdbp%2Fgametest%2Faudio2.mp3"
+                                                        },
+                                                        {
+                                                            "type": "SetState",
+                                                            "delay": 500,
+                                                            "componentId": "demo_audio_text_1",
+                                                            "state": "text",
+                                                            "value": "播放音频2"
+                                                        }
+                                                    ]
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "styles":{
+                                                            "font-size": "20dp"
+                                                        },
+                                                        "props":{
+                                                            "text": "切换音频2"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type":"Container",
+                                                "styles": {
+                                                    "height": "80dp",
+                                                    "min-width": "80dp",
+                                                    "margin": "20dp",
+                                                    "justify-content": "center",
+                                                    "align-items": "center",
+                                                    "border-radius": "16dp",
+                                                    "padding": "16dp",
+                                                    "background-color": "rgba(1, 1, 1, .2)"
+                                                },
+                                                "events":{
+                                                    "onClick": [
+                                                        {
+                                                            "type": "SetState",
+                                                            "componentId": "demo_audio_1",
+                                                            "state": "src",
+                                                            "value": "http://dbp-resource.gz.bcebos.com/5abf9942-2823-52c3-2649-1ece32b7dbfe/%E5%8A%AA%E5%8A%9B.mp3?authorization=bce-auth-v1%2Fa4d81bbd930c41e6857b989362415714%2F2019-05-22T06%3A15%3A35Z%2F-1%2F%2F7eb9724ee886f4d73c95d048ffc86651f7db53300f5811778e6b90226faf032f"
+                                                        },
+                                                        {
+                                                            "type": "SetState",
+                                                            "delay": 500,
+                                                            "componentId": "demo_audio_text_1",
+                                                            "state": "text",
+                                                            "value": "播放音频1"
+                                                        }
+                                                    ]
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "styles":{
+                                                            "font-size": "20dp"
+                                                        },
+                                                        "props":{
+                                                            "text": "切换音频1"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]      
+    }
+}

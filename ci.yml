@@ -1,0 +1,12 @@
+Global:
+    tool: build_submitter
+
+Default:
+    profile: [sdk]
+
+Profiles:
+    - profile:
+      name: sdk
+      env: centos4u3
+      command: sh build.sh
+      release: true

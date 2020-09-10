@@ -1,0 +1,238 @@
+{
+    "type": "dpl",
+    "version": "2.0",
+    "duration": 130000,
+    "stylesheet": [{
+
+	},
+	{
+		"mediaQuery": "x5",
+		"classList": {
+            
+		}
+	}],
+    "dataSource": {
+        "demoList": [
+            {
+                "title": "图片",
+                "intent": "page_image"
+            },
+            {
+                "title": "文本",
+                "intent": "page_text"
+            },
+            {
+                "title": "滑动容器",
+                "intent": "page_scrollview"
+            },
+            {
+                "title": "列表",
+                "intent": "page_list"
+            },
+            {
+                "title": "多页",
+                "intent": "page_pager"
+            },
+            {
+                "title": "音频",
+                "intent": "page_audio"
+            },
+            {
+                "title": "视频",
+                "intent": "page_video"
+            }
+        ]
+    },
+    "layouts": {
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Image",
+                "componentId": "background",
+                "styles": {
+                    "position": "absolute",
+                    "left": "0dp",
+                    "top": "0dp",
+                    "scale-type": "centerCrop",
+                    "height": "100%",
+                    "width": "100%"
+                },
+                "props": {
+                    "src": "https://duerstatic.cdn.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                }
+            },
+            {
+                "type": "Header",
+                "props": {
+                    "title": "DPL 演示",
+                    "sideIcon": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+                    "sideText": "demo2.0"
+                }
+            },
+            {
+                "type": "Container",
+                "styles": {
+                    "flex": 1,
+                    "flex-direction":"row",
+                    "justify-content": "center",
+                    "align-items": "flex-start"
+                },
+                "items": [
+                    {
+                        "type": "ScrollView",
+                        "styles": {
+                            "background": "rgba(1,1,1,.2)",
+                            "justify-content": "center",
+                            "align-items": "center",
+                            "border-radius": "16dp",
+                            "width":"800dp",
+                            "height":"400dp",
+                            "padding":"6dp"
+                        },
+                        "props":{
+                            "direction": "vertical"
+                        },
+                        "items":[
+                            {
+                                "type": "Text",
+                                "styles": {
+                                    "color": "#ffffff",
+                                    "font-size": "24dp",
+                                    "line-spacing":"6dp"
+                                },
+                                "props": {
+                                    "text": "DPL 是 DuerOS Presentation Language 的缩写，是为面向有屏音箱的技能开发者提供的一个新的解决方案，主要解决原有固定模板（DBP 模板）样式单一、灵活度低、不易扩展等问题，采用 DPL 方式开发可以让你能够轻松的创造展现丰富、交互灵活的 DuerOS 有屏端技能。"
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "styles": {
+                                    "color": "blue",
+                                    "font-size": "24dp",
+                                    "padding":"16dp 0dp"
+                                },
+                                "props": {
+                                    "text": "点击查看使用文档"
+                                },
+                                "events": {
+                                    "onClick": [
+                                        {
+                                            "type": "SendEvent",
+                                            "arguments": ["page-webview"]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "styles": {
+                                    "color": "#ffffff",
+                                    "font-size": "24dp",
+                                    "padding":"16dp 0dp"
+                                },
+                                "props": {
+                                    "text": "DPL 提供了一套完整的有屏端技能开发解决方案，使用 DPL 可以在开发技能中提供如下的优势："
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "styles": {
+                                    "color": "#ffffff",
+                                    "font-size": "22dp",
+                                    "padding":"16dp 0dp",
+                                    "line-spacing":"6dp"
+                                },
+                                "props": {
+                                    "html": "<font color='#FF614A'>丰富的组件资源：</font>DPL 以组件的形式定义页面布局与事件交互，你可以使用 文本、图片、Pager、视频、音频多种的组件来构建你的技能模板，并可通过在页面或组件中的事件触发或基于服务端下发的指令执行，完成所希望实现的完整交互逻辑；"
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "styles": {
+                                    "color": "#ffffff",
+                                    "font-size": "22dp",
+                                    "padding":"16dp 0dp",
+                                    "line-spacing":"6dp"
+                                },
+                                "props": {
+                                    "html": "<font color='#FF614A'>弹性的设计：</font>DPL 中的内容和布局展现具有灵活性，你可以通过指令来定义和动态切换在不同交互阶段时，你所希望呈现在屏幕上的可视组件以及它们的不同展现内容，来满足所需的不同需求场景，并可非常方便的移植复用到其他拥有类似交互和呈现的其他 DPL 技能中；"
+                                }
+                            },
+                            {
+                                "type": "Text",
+                                "styles": {
+                                    "color": "#ffffff",
+                                    "font-size": "22dp",
+                                    "padding":"16dp 0dp",
+                                    "line-spacing":"6dp"
+                                },
+                                "props": {
+                                    "html": "<font color='#FF614A'>易用性：</font>为了方便快速上手，我们提供了丰富的、已经在实际应用中稳定可用的 DPL documents 实例模板以及相关的组件实例模板，你可以通过简单的修改来构建属于你自己的技能。尽管 DPL 看起来是一个全新的语言类型，但是它也遵守了一般化的编程规范，语法和协议上也尽可能的兼顾了服务端开发人员与前端开发人员的理解习惯，因此很容易上手熟悉。"
+                                }
+                            },
+                            {
+                                "type": "Container",
+                                "styles":{
+                                    "background": "rgba(1,1,1,.2)",
+                                    "flex-direction":"row",
+                                    "flex-wrap": "wrap",
+                                    "border-radius": "16dp",
+                                    "width":"720dp",
+                                    "min-height": "80dp",
+                                    "padding":"26dp",
+                                    "margin-top": "20dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "dFor": "<%=demoList%>",
+                                        "styles":{
+                                            "background": "rgba(1,1,1,.2)",
+                                            "justify-content": "center",
+                                            "align-items": "center",
+                                            "border-radius": "16dp",
+                                            "width":"120dp",
+                                            "height":"60dp",
+                                            "margin":"6dp",
+                                            "padding":"6dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type":"Text",
+                                                "styles":{
+                                                    "color":"#ffffff",
+                                                    "font-size":"22dp"
+                                                },
+                                                "props":{
+                                                    "text": "<%=$ITEM.title%>"
+                                                }
+                                            }
+                                        ],
+                                        "events":{
+                                            "onClick":[
+                                                {
+                                                    "type":"SendEvent",
+                                                    "arguments":["<%=$ITEM.intent%>"]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "Footer",
+                "props": {
+                    "hint": ["欢迎来到技能演示"]
+                }
+            }
+        ]
+    }
+}

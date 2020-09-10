@@ -1,0 +1,217 @@
+{
+    "type":"DPL",
+    "version":"2.0",
+    "stylesheet": [{
+		"bubble_Hint": {
+			"height": "44dp",
+            "padding-left": "24dp",
+            "padding-right": "24dp",
+            "min-width": "120dp",
+            "max-width": "600dp",
+            "justify-content": "center",
+            "align-items": "center",
+            "background-color": "rgba(255, 255, 255, 0.1)",
+            "border-radius": "18dp 20dp 20dp 0dp"
+		}
+    }],
+    "dataSource": {
+        "list1": [
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince1.jpeg",
+                "chinese":"布里干酪（一种白色柔软的干酪）",
+                "english": "brie"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince2.jpeg",
+                "chinese":"格鲁耶尔干酪（产于瑞士）",
+                "english": "gruyere"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince3.jpeg",
+                "chinese":"",
+                "english": "apple"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince4.jpeg",
+                "chinese":"",
+                "english": "banana"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince5.jpeg",
+                "chinese":"",
+                "english": "cranberry"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince6.jpeg",
+                "chinese":"",
+                "english": "dragonfruit"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince7.jpeg",
+                "chinese":"",
+                "english": "cherry"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince8.jpeg",
+                "chinese":"",
+                "english": "watermelon"
+            }
+        ],
+        "list2": [
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince1.jpeg",
+                "english": "Never frown, even when you are sad, because you never know who is falling in love with your smile.",
+                "chinese": "纵然伤心，也不要愁眉不展，因为你不知是谁会爱上你的笑容。"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince2.jpeg",
+                "english": "Dark clouds becomes heaven's flowers when kissed by light.",
+                "chinese": "黑云受到光的接吻时，就变成了天上的花朵。"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince3.jpeg",
+                "english": "The pet dog suspects the universe for scheming to take its place.",
+                "chinese": "小狗怀疑大宇宙阴谋篡夺它的位置。"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince4.jpeg",
+                "english": "The great walks with the small without fear. The middling keeps aloof.",
+                "chinese": "大的不怕与小的同游，居中的却远避之。"
+            },
+            {
+                "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince5.jpeg",
+                "english": "Not hammer-strokes, but dance of the water sings the pebbles into perfection.",
+                "chinese": "不是锤的敲打，乃是水的载歌载舞，使鹅卵石臻於完美。"
+            }
+        ]
+    },
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "styles": {
+                    "flex": 1,
+                    "justify-content":"space-between"
+                },
+                "items": [
+                    {
+                        "type": "Image",
+                        "styles": {
+                            "position": "absolute",
+                            "left": "0dp",
+                            "top": "0dp",
+                            "scale-type": "centerCrop",
+                            "height": "100%",
+                            "width": "100%"
+                        },
+                        "props": {
+                            "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                        }
+                    },
+                    {
+                        "type": "Header",
+                        "props": {
+                            "title": "列表组件测试（List）",
+                            "sideIcon": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+                            "sideText": "demo2.0"
+                        }
+                    },
+                    {
+                        "type": "List",
+                        "componentId": "demo_list",
+                        "styles": {
+                            "flex":"1",
+                            "background": "transparent",
+                            "margin": "0dp 48dp"
+                        },
+                        "props":{
+                            "direction": "vertical",
+                            "data": "${payload.list2}",
+                            "enableLoading": "ON"
+                        },
+                        "events": {
+                            "onScrollToEnd": [
+                                {
+                                    "type": "SendEvent",
+                                    "componentId": "demo_list",
+                                    "arguments": ["demo_list_scroll_end"]
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "width":"85%",
+                                    "height":"160dp",
+                                    "flex-direction":"row",
+                                    "padding": "20dp",
+                                    "margin":"10dp",
+                                    "align-items":"center"
+                                },
+                                "items": [
+                                    {
+                                        "type":"Image",
+                                        "styles": {
+                                            "width":"120dp",
+                                            "height":"120dp",
+                                            "border-radius":"16dp",
+                                            "scale-type":"centerCrop"
+                                        },
+                                        "props":{ 
+                                            "src": "${data.src}"
+                                        }
+                                    },
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "margin-left":"30dp",
+                                            "justify-content":"space-around"
+                                        },
+                                        "props":{ 
+
+                                        },
+                                        "items":[
+                                            {
+                                                "type": "Text",
+                                                "styles": {
+                                                    "font-size": "26dp"
+                                                },
+                                                "props":{ 
+                                                    "text": "${data.english}"
+                                                }
+                                            },
+                                            {
+                                                "type": "Text",
+                                                "styles": {
+                                                    "font-size": "26dp"
+                                                },
+                                                "props":{ 
+                                                    "text": "${data.chinese}"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type":"Footer",
+                        "styles": {
+                            "width":"100%"
+                        },
+                        "props": {
+                            "hint":[
+                                "a lovely day, isn't it?"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -104,4 +104,51 @@ describe('Nlu', () => {
             nlu.getIntentConfirmationStatus().should.equal('NONE');
         });
     });
+
+    describe('#setSelectSlot()', () => {
+        it('setSelectSlot', () => {
+            nlu.setOption("cityValue", 'ENTITY', ['aaa','bbb','ccc'], 1);
+            nlu.setSelectSlot("city");
+            nlu._directive.should.eql({
+                type: 'Dialog.SelectSlot',
+                slotToSelect: 'city',
+                updatedIntent: {
+                    name: intent.name,
+                    slots: intent.slots
+                },
+                options: [
+                    {
+                        type: "KEYWORD",
+                        value: "cityValue",
+                        entity: "ENTITY",
+                        synonyms: ['aaa','bbb','ccc'],
+                        index: 1
+                    }
+                ]
+            });
+        });
+    });
+
+    describe('#setSelectIntent()', () => {
+        it('setSelectIntent', () => {
+            nlu.setIntentOption("cityValue", 'ENTITY', ['aaa','bbb','ccc'], 1);
+            nlu.setSelectIntent();
+            nlu._directive.should.eql({
+                type: 'Dialog.SelectIntent',
+                options: [
+                    {
+                        type: "KEYWORD",
+                        value: "cityValue",
+                        entity: "ENTITY",
+                        synonyms: ['aaa','bbb','ccc'],
+                        index: 1,
+                        updatedIntent: {
+                            name: intent.name,
+                            slots: intent.slots
+                        },
+                    }
+                ]
+            });
+        });
+    });
 });

@@ -1,0 +1,51 @@
+{
+    "type":"DPL",
+    "version":"2.0",
+    "duration": 60000,
+    "renderConfig": {
+        "viewport": {
+            "width": 960
+        }
+    },
+    "mainTemplate":{
+        "parameters":[
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Image",
+                "styles": {
+                    "position": "absolute",
+                    "left": "0dp",
+                    "top": "0dp",
+                    "scale-type": "centerCrop",
+                    "height": "100%",
+                    "width": "100%"
+                },
+                "props": {
+                    "src": "https://duerstatic.cdn.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                }
+            },
+            {
+                "type": "WebView",
+                "componentId": "demo_webview",
+                "styles": {
+                    "width": "100%",
+                    "flex": 1
+                },
+                "props": {
+                    "url": "http://xiaodu.baidu.com/saiya/dpl/2.0/introduction.html",
+                    "scale": "100%",
+                    "controls": true,
+                    "controlBarPosition": "absolute",
+                    "title": "dpl2.0文档"
+                },
+                "events": {
+                    "onExit": [{
+                        "type": "PageDestroy"
+                    }]
+                }
+            }
+        ]
+    }
+}

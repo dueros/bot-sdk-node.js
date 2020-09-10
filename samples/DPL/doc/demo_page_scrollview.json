@@ -1,0 +1,403 @@
+{
+    "type":"DPL",
+    "version":"2.0",
+    "stylesheet": [{
+		"bubble_Hint": {
+			"height": "44dp",
+            "padding-left": "24dp",
+            "padding-right": "24dp",
+            "min-width": "120dp",
+            "max-width": "600dp",
+            "justify-content": "center",
+            "align-items": "center",
+            "background-color": "rgba(255, 255, 255, 0.1)",
+            "border-radius": "18dp 20dp 20dp 0dp"
+		}
+	}],
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "styles": {
+                    "flex": 1,
+                    "justify-content":"space-between"
+                },
+                "items": [
+                    {
+                        "type": "Image",
+                        "styles": {
+                            "position": "absolute",
+                            "left": "0dp",
+                            "top": "0dp",
+                            "scale-type": "centerCrop",
+                            "height": "100%",
+                            "width": "100%"
+                        },
+                        "props": {
+                            "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                        }
+                    },
+                    {
+                        "type": "Header",
+                        "props": {
+                            "title": "滑动容器组件测试（ScrollView）",
+                            "sideIcon": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+                            "sideText": "demo2.0"
+                        }
+                    },
+                    {
+                        "type": "ScrollView",
+                        "componentId": "demo_scrollview",
+                        "styles": {
+                            "flex": 1,
+                            "background": "transparent",
+                            "margin": "0dp 48dp"
+                        },
+                        "props": {
+                            "direction": "vertical",
+                            "scrollbar": false,
+                            "vslDisabled": true
+                        },
+                        "items":[
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start",
+                                    "margin-bottom": "30dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "componentId": "demo_scrollelement_target",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试1：左图右文展示"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type":"Container",
+                                        "styles": {
+                                            "width":"100%",
+                                            "flex-direction": "row",
+                                            "justify-content":"space-between"
+                                        },
+                                        "items":[
+                                            {
+                                                "type": "Image",
+                                                "componentId":"demo_image_id",
+                                                "styles": {
+                                                    "height": "320dp",
+                                                    "width": "280dp",
+                                                    "scale-type": "centerCrop",
+                                                    "border-radius": "10dp"
+                                                },
+                                                "props": {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince3.jpeg"
+                                                }
+                                            },
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "height":"320dp",
+                                                    "width": "560dp",
+                                                    "background": "rgba(255,25,1,0.2)",
+                                                    "padding":"10dp",
+                                                    "border-radius":"16dp",
+                                                    "justify-content":"space-between"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "componentId": "demo_text_id_1",
+                                                        "props":{
+                                                            "text":"title 展示"
+                                                        },
+                                                        "styles": {
+                                                            "color": "blue",
+                                                            "font-size":"35dp"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"Text",
+                                                        "props":{
+                                                            "text":"点我直接跳到底部"
+                                                        },
+                                                        "styles":{
+                                                            "font-size":"25dp",
+                                                            "height": "80dp",
+                                                            "color":"red"
+                                                        },
+                                                        "events": {
+                                                            "onClick": [
+                                                                {
+                                                                    "type": "ScrollToElement",
+                                                                    "componentId": "demo_scrollview",
+                                                                    "targetComponentId": "demo_scrollview_last",
+                                                                    "duration": 500,
+                                                                    "align": "center"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"Text",
+                                                        "props":{
+                                                            "text":"In one of the stars I shall be living. In one of them I shall be laughing. And so it will be as if all the stars were laughing, when you look at the sky at night… You – only you – will have stars that can laugh…"
+                                                        },
+                                                        "styles":{
+                                                            "margin-top": "8dp",
+                                                            "font-size":"30dp",
+                                                            "max-lines": "3",
+                                                            "text-overflow": "ellipsis",
+                                                            "line-spacing": "8dp"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "background": "transparent",
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start",
+                                    "margin-bottom": "30dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试2：右图左文展示"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type":"Container",
+                                        "componentId":"demo_scrollview_container_1",
+                                        "styles": {
+                                            "width":"100%",
+                                            "flex-direction": "row",
+                                            "justify-content":"space-between"
+                                        },
+                                        "items":[
+                                            {
+                                                "type": "Container",
+                                                "styles": {
+                                                    "height":"320dp",
+                                                    "width": "560dp",
+                                                    "background": "rgba(255,25,1,0.2)",
+                                                    "padding":"10dp",
+                                                    "border-radius":"16dp",
+                                                    "justify-content":"space-between"
+                                                },
+                                                "items": [
+                                                    {
+                                                        "type":"Text",
+                                                        "componentId": "demo_text_id_2",
+                                                        "props":{
+                                                            "text":"title 展示"
+                                                        },
+                                                        "styles": {
+                                                            "color": "blue",
+                                                            "font-size":"35dp"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"Text",
+                                                        "componentId":"demo_scrollview_text_1",
+                                                        "props":{
+                                                            "text":"点我切换展示内容"
+                                                        },
+                                                        "styles":{
+                                                            "font-size":"25dp",
+                                                            "height": "80dp",
+                                                            "color":"red"
+                                                        },
+                                                        "events":{
+                                                            "onClick":[
+                                                                {
+                                                                    "type":"SendEvent",
+                                                                    "componentId":"demo_scrollview_text_1",
+                                                                    "arguments": ["request_update"]
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"Text",
+                                                        "props":{
+                                                            "text":"In one of the stars I shall be living. In one of them I shall be laughing. And so it will be as if all the stars were laughing, when you look at the sky at night… You – only you – will have stars that can laugh…"
+                                                        },
+                                                        "styles":{
+                                                            "margin-top": "8dp",
+                                                            "font-size":"30dp",
+                                                            "max-lines": "3",
+                                                            "text-overflow": "ellipsis",
+                                                            "line-spacing": "8dp"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "Image",
+                                                "componentId":"demo_image_id",
+                                                "styles": {
+                                                    "height": "320dp",
+                                                    "width": "280dp",
+                                                    "scale-type": "centerCrop",
+                                                    "border-radius": "10dp"
+                                                },
+                                                "props": {
+                                                    "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince6.jpeg"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Container",
+                                "styles": {
+                                    "background": "transparent",
+                                    "justify-content": "flex-start",
+                                    "align-items": "flex-start",
+                                    "margin-bottom": "30dp"
+                                },
+                                "items": [
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "height": "44dp",
+                                            "margin":"16dp 0dp"
+                                        },
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "class": "bubble_Hint",
+                                                "items": [
+                                                    {
+                                                        "type": "Text",
+                                                        "props": {
+                                                            "text": "测试3：左文右视频展示"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Container",
+                                        "styles": {
+                                            "width":"100%",
+                                            "flex-direction":"row",
+                                            "justify-content":"space-around"
+                                        },
+                                        "items": [
+                                            {
+                                                "type":"Container",
+                                                "styles": {
+                                                    "width":"360dp",
+                                                    "height":"260dp",
+                                                    "padding": "10dp",
+                                                    "background": "rgba(255,25,1,0.2)",
+                                                    "border-radius":"16dp"
+                                                },
+                                                "items":[
+                                                    {
+                                                        "type": "Text",
+                                                        "styles":{
+                                                            "margin": "20dp 0dp"
+                                                        },
+                                                        "props":{
+                                                            "text": "title 文本"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "props":{
+                                                            "text": "一大段描述文本文本文本文本文本文本文本文本文本文本文本文本文本文本"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "Text",
+                                                        "props":{
+                                                            "text": "点击返回顶部"
+                                                        },
+                                                        "styles":{
+                                                            "color":"red"
+                                                        },
+                                                        "events": {
+                                                            "onClick": [
+                                                                {
+                                                                    "type": "ScrollToElement",
+                                                                    "componentId": "demo_scrollview",
+                                                                    "targetComponentId": "demo_scrollelement_target",
+                                                                    "duration": 100,
+                                                                    "align": "first"
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type":"Video",
+                                                "componentId": "demo_scrollview_last",
+                                                "styles": {
+                                                    "width":"460dp",
+                                                    "height":"260dp",
+                                                    "border-radius":"16dp"
+                                                },
+                                                "props": {
+                                                    "src": "https://dbp-dict.bj.bcebos.com/video2.mp4",
+                                                    "controls": false,
+                                                    "autoplay":true,
+                                                    "loop": true
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

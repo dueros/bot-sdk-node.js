@@ -1,0 +1,94 @@
+{
+    "type": "DPL",
+    "version": "2.0",
+    "mainTemplate": {
+      "parameters": [
+        "payload"
+      ],
+      "items": [
+        {
+            "type":"Container",
+            "componentId":"demo_scrollview_container_1",
+            "styles": {
+                "width":"100%",
+                "flex-direction": "row",
+                "justify-content":"space-between"
+            },
+            "items":[
+                {
+                    "type": "Image",
+                    "componentId":"demo_image_id",
+                    "styles": {
+                        "height": "320dp",
+                        "width": "280dp",
+                        "scale-type": "centerCrop",
+                        "border-radius": "10dp"
+                    },
+                    "props": {
+                        "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince3.jpeg"
+                    }
+                },
+                {
+                    "type": "Container",
+                    "styles": {
+                        "height":"320dp",
+                        "width": "560dp",
+                        "background": "rgba(255,25,1,0.2)",
+                        "padding":"10dp",
+                        "border-radius":"16dp",
+                        "justify-content":"space-between"
+                    },
+                    "items": [
+                        {
+                            "type":"Text",
+                            "componentId": "demo_text_id_1",
+                            "props":{
+                                "text":"title 展示"
+                            },
+                            "styles": {
+                                "color": "blue",
+                                "font-size":"35dp"
+                            }
+                        },
+                        {
+                            "type":"Text",
+                            "props":{
+                                "text":"点我直接跳到底部"
+                            },
+                            "styles":{
+                                "font-size":"25dp",
+                                "height": "80dp",
+                                "color":"red"
+                            },
+                            "events": {
+                                "onClick": [
+                                    {
+                                        "type": "ScrollToElement",
+                                        "componentId": "demo_scrollview",
+                                        "targetComponentId": "demo_scrollview_last",
+                                        "duration": 500,
+                                        "align": "center"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type":"Text",
+                            "props":{
+                                "text":"In one of the stars I shall be living. In one of them I shall be laughing. And so it will be as if all the stars were laughing, when you look at the sky at night… You – only you – will have stars that can laugh…"
+                            },
+                            "styles":{
+                                "margin-top": "8dp",
+                                "font-size":"30dp",
+                                "max-lines": "3",
+                                "text-overflow": "ellipsis",
+                                "line-spacing": "8dp"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+      ]
+    }
+  }

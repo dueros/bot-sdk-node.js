@@ -1,0 +1,44 @@
+
+{
+    "type":"DPL",
+    "version":"2.0",
+    "stylesheet": [{
+		"fullscreen": {
+			"height": "100%",
+            "width": "100%"
+		}
+	}],
+    "mainTemplate": {
+        "parameters":[
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Video",
+                "componentId": "demo_video",
+                "class": "fullscreen",
+                "props": {
+                    "src": "https://dbp-dict.cdn.bcebos.com/video2.mp4",
+                    "title":"video 全屏播放",
+                    "poster": "https://duerstatic.cdn.bcebos.com/swan%2Fdpl_demo%2Fbatman.jpg",
+                    "fullscreen":true,
+                    "autoplay":true,
+                    "loop":false,
+                    "preload":false,
+                    "controls":true,
+                    "destroy":true,
+                    "hint": ["a lovely day", "isn't it?"]
+                },
+                "events": {
+                    "onEnd": [
+                        {
+                            "type": "SendEvent",
+                            "componentId": "demo_video",
+                            "arguments":["event_video_end"]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

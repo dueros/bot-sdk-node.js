@@ -1,0 +1,412 @@
+{
+	"type": "DPL",
+    "version": "2.0",
+    "debugMode": true,
+    "stylesheet": [{
+		"bubble_Hint": {
+			"height": "44dp",
+            "padding-left": "24dp",
+            "padding-right": "24dp",
+            "min-width": "120dp",
+            "max-width": "600dp",
+            "justify-content": "center",
+            "align-items": "center",
+            "background-color": "rgba(255, 255, 255, 0.1)",
+            "border-radius": "18dp 20dp 20dp 0dp"
+		}
+	}],
+	"mainTemplate": {
+		"parameters": [
+			"payload"
+		],
+		"items": [{
+			"type": "Container",
+			"styles": {
+				"flex": 1,
+                "justify-content":"space-between"
+			},
+			"items": [
+                {
+                    "type": "Image",
+                    "styles": {
+                        "position": "absolute",
+                        "left": "0dp",
+                        "top": "0dp",
+                        "scale-type": "centerCrop",
+                        "height": "100%",
+                        "width": "100%"
+                    },
+                    "props": {
+                        "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                    }
+                },
+                {
+					"type": "Header",
+					"props": {
+						"title": "基础组件测试（Image）",
+						"sideIcon": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+						"sideText": "demo2.0"
+					}
+				},
+				{
+					"type": "ScrollView",
+					"styles": {
+						"flex": 1,
+						"background": "transparent",
+						"margin": "0dp 48dp"
+					},
+					"props": {
+						"direction": "vertical"
+					},
+					"items": [
+                        {
+							"type": "Container",
+							"styles": {
+								"background": "transparent",
+								"justify-content": "flex-start",
+								"align-items": "flex-start",
+								"margin-bottom": "30dp"
+							},
+							"items": [
+                                {
+									"type": "Container",
+									"styles": {
+                                        "height": "44dp",
+                                        "margin":"16dp 0dp"
+									},
+									"items": [
+                                        {
+                                            "type": "Container",
+                                            "class": "bubble_Hint",
+                                            "items": [
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "测试1：基础图片样式展示"
+                                                    }
+                                                }
+                                            ]
+									    }
+                                    ]
+								},
+								{
+									"type": "Container",
+									"styles": {
+										"padding": "16dp",
+										"width": "100%",
+										"border-radius": "16dp",
+										"background-color": "rgba(1, 1, 1, .2)"
+									},
+									"items": [
+                                        {
+                                            "type":"Container",
+                                            "styles":{
+                                                "padding": "16dp",
+                                                "border-radius": "16dp",
+                                                "background-color": "rgba(1, 1, 1, .2)",
+                                                "flex-direction":"row",
+                                                "justify-content":"space-between",
+                                                "flex-wrap":"wrap"
+                                            },
+                                            "items":[
+                                                {
+                                                    "type":"Container",
+                                                    "styles":{
+                                                        "align-items":"center"
+                                                    },
+                                                    "items":[
+                                                        {
+                                                            "type": "Image",
+                                                            "props": {
+                                                                "mask": "bubble",
+                                                                "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fbatman.jpg"
+                                                            },
+                                                            "styles": {
+                                                                "width":"200dp",
+                                                                "height":"280dp"
+                                                            }
+                                                        },
+                                                        {
+                                                            "type":"Text",
+                                                            "props":{
+                                                                "text": "角标icon展现"
+                                                            },
+                                                            "styles": {
+                                                                "margin":"10dp"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type":"Container",
+                                                    "styles":{
+                                                        "align-items":"center"
+                                                    },
+                                                    "items":[
+                                                        {
+                                                            "type": "Image",
+                                                            "props": {
+                                                                "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fbatman.jpg"
+                                                            },
+                                                            "styles": {
+                                                                "width":"200dp",
+                                                                "height":"280dp",
+                                                                "scale-type":"centerCrop",
+                                                                "border-radius":"16dp"
+                                                            }
+                                                        },
+                                                        {
+                                                            "type":"Text",
+                                                            "props":{
+                                                                "text": "圆角图片"
+                                                            },
+                                                            "styles": {
+                                                                "margin":"10dp"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type":"Container",
+                                                    "styles":{
+                                                        "align-items":"center"
+                                                    },
+                                                    "items":[
+                                                        {
+                                                            "type": "Image",
+                                                            "props": {
+                                                                "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fbatman.jpg"
+                                                            },
+                                                            "styles": {
+                                                                "rotation": "180",
+                                                                "width":"200dp",
+                                                                "height":"280dp"
+                                                            }
+                                                        },
+                                                        {
+                                                            "type":"Text",
+                                                            "props":{
+                                                                "text": "旋转180"
+                                                            },
+                                                            "styles": {
+                                                                "margin":"10dp"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+								}
+							]
+						},
+                        {
+							"type": "Container",
+							"styles": {
+								"background": "transparent",
+								"justify-content": "flex-start",
+								"align-items": "flex-start",
+								"margin-bottom": "30dp"
+							},
+							"items": [
+                                {
+									"type": "Container",
+									"styles": {
+                                        "height": "44dp",
+                                        "margin":"16dp 0dp"
+									},
+									"items": [
+                                        {
+                                            "type": "Container",
+                                            "class": "bubble_Hint",
+                                            "items": [
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "测试2：基础图片执行效果"
+                                                    }
+                                                }
+                                            ]
+									    }
+                                    ]
+								},
+								{
+									"type": "Container",
+									"styles": {
+										"padding": "16dp",
+										"width": "100%",
+										"border-radius": "16dp",
+										"background-color": "rgba(1, 1, 1, .2)"
+									},
+									"items": [
+                                        {
+                                            "type":"Container",
+                                            "styles":{
+                                                "padding": "16dp",
+                                                "border-radius": "16dp",
+                                                "background-color": "rgba(1, 1, 1, .2)",
+                                                "flex-direction":"row",
+                                                "justify-content":"space-between",
+                                                "flex-wrap":"wrap"
+                                            },
+                                            "items":[
+                                                {
+                                                    "type":"Container",
+                                                    "styles":{
+                                                        "align-items":"center"
+                                                    },
+                                                    "items":[
+                                                        {
+                                                            "type": "Image",
+                                                            "componentId": "demo_image_id_1",
+                                                            "props": {
+                                                                "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fbatman.jpg"
+                                                            },
+                                                            "styles": {
+                                                                "width":"200dp",
+                                                                "height":"280dp",
+                                                                "scale-type":"centerCrop",
+                                                                "border-radius":"16dp"
+                                                            },
+                                                            "events":{
+                                                                "onClick":[
+                                                                    {
+                                                                        "type":"SendEvent",
+                                                                        "componentId": "demo_image_id_1",
+                                                                        "augments":["event_image_click"]
+                                                                    },
+                                                                    {
+                                                                        "type":"SetState",
+                                                                        "componentId": "demo_text_id_1",
+                                                                        "state": "text",
+                                                                        "value": "不许再点啦"
+                                                                    },
+                                                                    {
+                                                                        "type":"SetState",
+                                                                        "componentId": "demo_image_id_1",
+                                                                        "delay": 1000,
+                                                                        "state": "clickable",
+                                                                        "value": "disable"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type":"Text",
+                                                            "componentId": "demo_text_id_1",
+                                                            "props":{
+                                                                "text": "图片点击切换"
+                                                            },
+                                                            "styles": {
+                                                                "margin":"10dp"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type":"Container",
+                                                    "styles":{
+                                                        "align-items":"center"
+                                                    },
+                                                    "items":[
+                                                        {
+                                                            "type": "Image",
+                                                            "componentId": "demo_image_id_2",
+                                                            "props": {
+                                                                "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fbatman.jpg"
+                                                            },
+                                                            "styles": {
+                                                                "width":"200dp",
+                                                                "height":"280dp",
+                                                                "scale-type":"centerCrop",
+                                                                "border-radius":"16dp"
+                                                            },
+                                                            "events":{
+                                                                "onClick":[
+                                                                    {
+                                                                        "type":"Animation",
+                                                                        "componentId":"demo_image_id_2",
+                                                                        "easing":"ease-in",
+                                                                        "attribute":"rotation",
+                                                                        "from":"0",
+                                                                        "to":"360",
+                                                                        "duration":500,
+                                                                        "repeatCount":"infinite",
+                                                                        "repeatMode":"restart"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type":"Text",
+                                                            "props":{
+                                                                "text": "图片点击旋转"
+                                                            },
+                                                            "styles": {
+                                                                "margin":"10dp"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type":"Container",
+                                                    "styles":{
+                                                        "align-items":"center"
+                                                    },
+                                                    "items":[
+                                                        {
+                                                            "type": "Image",
+                                                            "componentId": "demo_image_id_3",
+                                                            "props": {
+                                                                "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fbatman.jpg"
+                                                            },
+                                                            "styles": {
+                                                                "width":"200dp",
+                                                                "height":"280dp",
+                                                                "scale-type":"centerCrop",
+                                                                "border-radius":"16dp"
+                                                            },
+                                                            "events":{
+                                                                "onClick":[
+                                                                    {
+                                                                        "type":"Animation",
+                                                                        "componentId":"demo_image_id_3",
+                                                                        "easing":"shake(30, 3, 300, 30)"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "type":"Text",
+                                                            "props":{
+                                                                "text": "图片点击抖动"
+                                                            },
+                                                            "styles": {
+                                                                "margin":"10dp"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "Footer",
+					"styles": {
+						"width": "100%"
+					},
+					"props": {
+						"hint": [
+							"a lovely day, isn't it?"
+						]
+					}
+				}
+			]
+		}]
+	}
+}

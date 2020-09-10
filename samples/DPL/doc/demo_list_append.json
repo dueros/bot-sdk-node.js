@@ -1,0 +1,73 @@
+{
+    "type": "DPL",
+    "version": "2.0",
+    "dataSource": {
+        "appendListItem": {
+            "src": "https://duerstatic.cdn.bcebos.com/swan/dpl_demo/little_prince1.jpeg",
+            "english": "Never frown, even when you are sad, because you never know who is falling in love with your smile.",
+            "chinese": "纵然伤心，也不要愁眉不展，因为你不知是谁会爱上你的笑容。"
+        }
+    },
+    "mainTemplate": {
+      "parameters": [
+        "payload"
+      ], 
+      "items": [
+        {
+            "type": "Container",
+            "styles": {
+                "width":"85%",
+                "height":"160dp",
+                "flex-direction":"row",
+                "padding": "20dp",
+                "margin":"10dp",
+                "align-items":"center"
+            },
+            "items": [
+                {
+                    "type":"Image",
+                    "styles": {
+                        "width":"120dp",
+                        "height":"120dp",
+                        "border-radius":"16dp",
+                        "scale-type":"centerCrop"
+                    },
+                    "props":{ 
+                        "src": "${payload.appendListItem.src}"
+                    }
+                },
+                {
+                    "type": "Container",
+                    "styles": {
+                        "margin-left":"30dp",
+                        "justify-content":"space-around"
+                    },
+                    "props":{ 
+
+                    },
+                    "items":[
+                        {
+                            "type": "Text",
+                            "styles": {
+                                "font-size": "26dp"
+                            },
+                            "props":{ 
+                                "text": "${payload.appendListItem.english}"
+                            }
+                        },
+                        {
+                            "type": "Text",
+                            "styles": {
+                                "font-size": "26dp"
+                            },
+                            "props":{ 
+                                "text": "${payload.appendListItem.chinese}"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+    }
+  }

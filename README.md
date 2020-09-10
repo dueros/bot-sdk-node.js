@@ -1108,6 +1108,8 @@ this.botMonitor.setMonitorEnabled(true);
 
     * 支付
         * [Charge(支付指令)](doc/directive/Pay/Charge.md)
+    * DPL2.0 
+        * [DPL2.0](http://xiaodu.baidu.com/saiya/dpl/2.0/introduction.html)
     * 授权
         * [AskForPermissionsConsent(授权指令)](doc/directive/Permission/AskForPermissionsConsent.md)
     * 录音

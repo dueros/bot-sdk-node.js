@@ -1,0 +1,495 @@
+{
+	"type": "DPL",
+	"version": "2.0",
+	"stylesheet": [{
+		"bubble_Hint": {
+			"height": "44dp",
+            "padding-left": "24dp",
+            "padding-right": "24dp",
+            "min-width": "120dp",
+            "max-width": "600dp",
+            "justify-content": "center",
+            "align-items": "center",
+            "background-color": "rgba(255, 255, 255, 0.1)",
+            "border-radius": "18dp 20dp 20dp 0dp"
+		}
+	}],
+	"mainTemplate": {
+		"parameters": [
+			"payload"
+		],
+		"items": [{
+			"type": "Container",
+			"styles": {
+				"flex": 1,
+                "justify-content":"space-between"
+			},
+			"items": [
+                {
+                    "type": "Image",
+                    "styles": {
+                        "position": "absolute",
+                        "left": "0dp",
+                        "top": "0dp",
+                        "scale-type": "centerCrop",
+                        "height": "100%",
+                        "width": "100%"
+                    },
+                    "props": {
+                        "src": "https://duerstatic.bj.bcebos.com/swan%2Fdpl_demo%2Fcommon-bg.png"
+                    }
+                },
+                {
+					"type": "Header",
+					"props": {
+						"title": "基础组件测试（Text）",
+						"sideIcon": "https://d2o906d8ln7ui1.cloudfront.net/images/cheeseskillicon.png",
+						"sideText": "demo2.0"
+					}
+				},
+				{
+					"type": "ScrollView",
+					"styles": {
+						"flex": 1,
+						"background": "transparent",
+						"margin": "0dp 48dp"
+					},
+					"props": {
+						"direction": "vertical"
+					},
+					"items": [
+                        {
+							"type": "Container",
+							"styles": {
+								"background": "transparent",
+								"justify-content": "flex-start",
+								"align-items": "flex-start",
+								"margin-bottom": "30dp"
+							},
+							"items": [
+                                {
+									"type": "Container",
+									"styles": {
+										"height": "44dp",
+										"margin":"16dp 0dp"
+									},
+									"items": [
+                                        {
+                                            "type": "Container",
+                                            "class": "bubble_Hint",
+                                            "items": [
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "测试1：基础文本样式展示"
+                                                    }
+                                                }
+                                            ]
+									    }
+                                    ]
+								},
+								{
+									"type": "Container",
+									"styles": {
+										"padding": "16dp",
+										"width": "100%",
+										"border-radius": "16dp",
+										"background-color": "rgba(1, 1, 1, .2)"
+									},
+									"items": [
+                                        {
+                                            "type":"Container",
+                                            "styles":{
+                                                "padding": "16dp",
+                                                "border-radius": "16dp",
+                                                "background-color": "rgba(1, 1, 1, .2)"
+                                            },
+                                            "items":[
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "一级标题"
+                                                    },
+                                                    "styles": {
+                                                        "font-size":"60dp",
+                                                        "margin": "10dp 0dp"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "详情、歌词等播报文字"
+                                                    },
+                                                    "styles": {
+                                                        "font-size":"48dp",
+                                                        "margin": "10dp 0dp"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "主标题列表、详情页等"
+                                                    },
+                                                    "styles": {
+                                                        "font-size":"34dp",
+                                                        "margin": "10dp 0dp"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "次要标题"
+                                                    },
+                                                    "styles": {
+                                                        "font-size":"26dp",
+                                                        "margin": "10dp 0dp"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "标题栏等辅助信息"
+                                                    },
+                                                    "styles": {
+                                                        "font-size":"24dp",
+                                                        "margin": "10dp 0dp"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "来源、时间、地点、次级辅助信息等"
+                                                    },
+                                                    "styles": {
+                                                        "font-size":"20dp",
+                                                        "margin": "10dp 0dp"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "html": "我们现在可以支持<font color='#FF614A'><big>HTML</big></font>啦"
+                                                    },
+                                                    "styles": {
+                                                        "font-size":"20dp",
+                                                        "margin": "10dp 0dp",
+                                                        "color": "blue"
+                                                    },
+                                                    "events": {
+                                                        "onClick": [
+                                                            {
+                                                                "type": "SendEvent",
+                                                                "arguments": ["a nonsense click"]
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "type":"Container",
+                                                    "styles":{
+                                                        "flex-direction":"row"
+                                                    },
+                                                    "items":[
+                                                        {
+                                                            "type": "Text",
+                                                            "props": {
+                                                                "text": "粗体"
+                                                            },
+                                                            "styles": {
+                                                                "font-style":"bold",
+                                                                "padding": "16dp",
+                                                                "border-radius": "16dp",
+                                                                "background-color": "rgba(1, 1, 1, .2)",
+                                                                "font-size":"20dp",
+                                                                "margin": "10dp"
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "Text",
+                                                            "props": {
+                                                                "text": "斜体"
+                                                            },
+                                                            "styles": {
+                                                                "font-style":"italic",
+                                                                "padding": "16dp",
+                                                                "border-radius": "16dp",
+                                                                "background-color": "rgba(1, 1, 1, .2)",
+                                                                "font-size":"20dp",
+                                                                "margin": "10dp"
+                                                            }
+                                                        },
+                                                        {
+                                                            "type": "Text",
+                                                            "props": {
+                                                                "text": "蓝色"
+                                                            },
+                                                            "styles": {
+                                                                "color":"blue",
+                                                                "padding": "16dp",
+                                                                "border-radius": "16dp",
+                                                                "background-color": "rgba(1, 1, 1, .2)",
+                                                                "font-size":"20dp",
+                                                                "margin": "10dp"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+								}
+							]
+						},
+						{
+							"type": "Container",
+							"styles": {
+								"background": "transparent",
+								"justify-content": "flex-start",
+								"align-items": "flex-start",
+								"margin-bottom": "30dp"
+							},
+							"items": [
+                                {
+									"type": "Container",
+									"styles": {
+										"height": "44dp",
+										"margin":"16dp 0dp"
+									},
+									"items": [{
+										"type": "Container",
+										"class": "bubble_Hint",
+										"items": [{
+											"type": "Text",
+											"props": {
+												"text": "测试2：基础文本行展示"
+											}
+										}]
+									}]
+								},
+								{
+									"type": "Container",
+									"styles": {
+										"padding": "16dp",
+										"width": "100%",
+										"border-radius": "16dp",
+										"background-color": "rgba(1, 1, 1, .2)"
+									},
+									"items": [
+                                        {
+                                            "type": "Text",
+                                            "props": {
+                                                "text": "一行文本多余截断一行文本多余截断一行文本多余截断一行文本多余截断一行文本多余截断一行文本多余截断"
+                                            },
+                                            "styles": {
+                                                "margin": "10dp",
+                                                "width":"100%",
+                                                "max-lines":"1"
+                                            }
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "props": {
+                                                "text": "两行文本多余省略两行文本多余省略两行文本多余省略两行文本多余省略两行文本多余省略两行文本多余省略两行文本多余省略两行文本多余省略两行文本多余省略"
+                                            },
+                                            "styles": {
+                                                "margin": "10dp",
+                                                "width":"100%",
+                                                "max-lines":"2",
+                                                "text-overflow":"ellipsis"
+                                            }
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "props": {
+                                                "text": "额外增加行间距额外增加行间距额外增加行间距额外增加行间距额外增加行间距额外增加行间距额外增加行间距额外增加行间距额外增加行间距额外增加行间距"
+                                            },
+                                            "styles": {
+                                                "margin": "10dp",
+                                                "width":"100%",
+                                                "line-spacing":"12dp"
+                                            }
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "props": {
+                                                "text": "额外增加字间距额外增加字间距额外增加字间距额外增加字间距额外增加字间距额外增加字间距额外增加字间距额外增加字间距额外增加字间距额外增加字间距"
+                                            },
+                                            "styles": {
+                                                "margin": "10dp",
+                                                "width":"100%",
+                                                "letter-spacing":"2dp"
+                                            }
+                                        },
+                                        {
+                                            "type":"Container",
+                                            "styles":{
+                                                "flex-direction":"row",
+                                                "width":"100%"
+                                            },
+                                            "items":[
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "文本居左"
+                                                    },
+                                                    "styles": {
+                                                        "flex":1,
+                                                        "padding": "16dp",
+                                                        "border-radius": "16dp",
+                                                        "text-align":"left",
+										                "background-color": "rgba(1, 1, 1, .2)",
+                                                        "margin": "10dp",
+                                                        "width":"100%"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "文本居中"
+                                                    },
+                                                    "styles": {
+                                                        "flex":1,
+                                                        "padding": "16dp",
+                                                        "border-radius": "16dp",
+                                                        "text-align":"center",
+										                "background-color": "rgba(1, 1, 1, .2)",
+                                                        "margin": "10dp",
+                                                        "width":"100%"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "Text",
+                                                    "props": {
+                                                        "text": "文本居右"
+                                                    },
+                                                    "styles": {
+                                                        "flex":1,
+                                                        "padding": "16dp",
+                                                        "border-radius": "16dp",
+                                                        "text-align":"right",
+										                "background-color": "rgba(1, 1, 1, .2)",
+                                                        "margin": "10dp",
+                                                        "width":"100%"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+								}
+							]
+						},
+                        {
+							"type": "Container",
+							"styles": {
+								"background": "transparent",
+								"justify-content": "flex-start",
+								"align-items": "flex-start",
+								"margin-bottom": "30dp"
+							},
+							"items": [
+                                {
+									"type": "Container",
+									"styles": {
+										"height": "44dp",
+										"margin":"16dp 0dp"
+									},
+									"items": [{
+										"type": "Container",
+										"class": "bubble_Hint",
+										"items": [{
+											"type": "Text",
+											"props": {
+												"text": "测试3：文本点击效果"
+											}
+										}]
+									}]
+								},
+								{
+									"type": "Container",
+									"styles": {
+										"padding": "16dp",
+										"width": "100%",
+										"border-radius": "16dp",
+										"background-color": "rgba(1, 1, 1, .2)"
+									},
+									"items": [
+                                        {
+                                            "type": "Text",
+                                            "componentId": "demo_text_id_1",
+                                            "props": {
+                                                "text": "文本点击上报事件 && 执行文本替换"
+                                            },
+                                            "styles": {
+                                                "margin": "10dp",
+                                                "width":"100%"
+                                            },
+                                            "events":{
+                                                "onClick":[
+                                                    {
+                                                        "type":"SendEvent",
+                                                        "componentId": "demo_text_id_1",
+                                                        "augments":["event_text_click"]
+                                                    },
+                                                    {
+                                                        "type":"SetState",
+                                                        "componentId": "demo_text_id_1",
+                                                        "state": "text",
+                                                        "value": "嗖的一下上报了一条事件，不许再点啦"
+                                                    },
+                                                    {
+                                                        "type":"SetState",
+                                                        "delay": 1000,
+                                                        "componentId": "demo_text_id_1",
+                                                        "state": "clickable",
+                                                        "value": "disable"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "type": "Text",
+                                            "componentId": "demo_text_id_2",
+                                            "props": {
+                                                "text": "文本点击触发动画"
+                                            },
+                                            "styles": {
+                                                "margin": "10dp",
+                                                "width":"100%"
+                                            },
+                                            "events":{
+                                                "onClick":[
+                                                    {
+                                                        "type": "Animation",
+                                                        "componentId": "demo_text_id_2",
+                                                        "from": "0dp",
+                                                        "to": "520dp",
+                                                        "easing": "ease-in",
+                                                        "attribute": "left",
+                                                        "duration": 500,
+                                                        "repeatCount": "3",
+                                                        "repeatMode": "reverse"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "Footer",
+					"styles": {
+						"width": "100%"
+					},
+					"props": {
+						"hint": [
+							"a lovely day, isn't it?"
+						]
+					}
+				}
+			]
+		}]
+	}
+}
