@@ -142,7 +142,7 @@ node index.js
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate1 = BaseBot.Directive.Display.BodyTemplate1;
+const BodyTemplate1 = BaseBot.Directive.Display.Template.BodyTemplate1;
 
 let bodyTemplate = new BodyTemplate1();
 //设置模版token
@@ -167,7 +167,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate2 = BaseBot.Directive.Display.BodyTemplate2;
+const BodyTemplate2 = BaseBot.Directive.Display.Template.BodyTemplate2;
 
 let bodyTemplate = new BodyTemplate2();
 //设置模版token
@@ -197,7 +197,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate3 = BaseBot.Directive.Display.BodyTemplate3;
+const BodyTemplate3 = BaseBot.Directive.Display.Template.BodyTemplate3;
 
 let bodyTemplate = new BodyTemplate3();
 //设置模版token
@@ -227,7 +227,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate4 = BaseBot.Directive.Display.BodyTemplate4;
+const BodyTemplate4 = BaseBot.Directive.Display.Template.BodyTemplate4;
 
 let bodyTemplate = new BodyTemplate4();
 //设置模版token
@@ -257,7 +257,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate5 = BaseBot.Directive.Display.BodyTemplate5;
+const BodyTemplate5 = BaseBot.Directive.Display.Template.BodyTemplate5;
 
 let bodyTemplate = new BodyTemplate5();
 //设置模版token
@@ -284,7 +284,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate6 = BaseBot.Directive.Display.BodyTemplate6;
+const BodyTemplate6 = BaseBot.Directive.Display.Template.BodyTemplate6;
 
 let bodyTemplate = new BodyTemplate6();
 //设置模版token
@@ -455,7 +455,7 @@ return {
 ```javascript
 const BaseBot = require('bot-sdk');
 const RenderTemplate = BaseBot.Directive.Display.RenderTemplate;
-const BodyTemplate3 = BaseBot.Directive.Display.BodyTemplate1;
+const BodyTemplate3 = BaseBot.Directive.Display.Template.BodyTemplate1;
 
 this.addEventListener('Display.ElementSelected', function(event) {
     let token = event.token;
